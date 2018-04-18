@@ -130,9 +130,9 @@ namespace BiosMoneyApp.GerenteApp
 
             if (DGVEmpresas.DataSource != null)
             {
-                int i = 0;
+                long i = 0;
 
-                if (int.TryParse(txtBuscar.Text, out i))
+                if (Int64.TryParse(txtBuscar.Text, out i))
                 {
 
                     resultado = (from Empresa emp in (List<Empresa>)DGVEmpresas.DataSource
