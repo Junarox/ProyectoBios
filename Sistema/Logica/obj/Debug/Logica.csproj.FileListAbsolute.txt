@@ -1,0 +1,117 @@
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\Logica\bin\Debug\Logica.dll
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\Logica\bin\Debug\Logica.pdb
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\Logica\bin\Debug\EntidadesCompartidas.dll
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\Logica\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\Logica\obj\Debug\Logica.dll
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\Logica\obj\Debug\Logica.pdb
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+F:\ProyectX\BiosMoney\Logica\bin\Debug\Logica.dll
+F:\ProyectX\BiosMoney\Logica\bin\Debug\Logica.pdb
+F:\ProyectX\BiosMoney\Logica\bin\Debug\EntidadesCompartidas.dll
+F:\ProyectX\BiosMoney\Logica\bin\Debug\Persistencia.dll
+F:\ProyectX\BiosMoney\Logica\bin\Debug\EntidadesCompartidas.pdb
+F:\ProyectX\BiosMoney\Logica\bin\Debug\Persistencia.pdb
+F:\ProyectX\BiosMoney\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+F:\ProyectX\BiosMoney\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+F:\ProyectX\BiosMoney\Logica\obj\Debug\Logica.dll
+F:\ProyectX\BiosMoney\Logica\obj\Debug\Logica.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney\Logica\bin\Debug\Logica.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney\Logica\bin\Debug\Logica.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney\Logica\bin\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney\Logica\bin\Debug\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney\Logica\bin\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney\Logica\bin\Debug\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+D:\bios\BIOSMONEY DIEGO\BiosMoney\Logica\obj\Debug\Logica.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney\Logica\obj\Debug\Logica.pdb
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\Logica\bin\Debug\Logica.dll
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\Logica\bin\Debug\Logica.pdb
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\Logica\bin\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\Logica\bin\Debug\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\Logica\bin\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\Logica\bin\Debug\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\Logica\obj\Debug\Logica.dll
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\Logica\obj\Debug\Logica.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\Logica\bin\Debug\Logica.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\Logica\bin\Debug\Logica.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\Logica\bin\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\Logica\bin\Debug\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\Logica\bin\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\Logica\bin\Debug\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\Logica\obj\Debug\Logica.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\Logica\obj\Debug\Logica.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\Logica\bin\Debug\Logica.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\Logica\bin\Debug\Logica.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\Logica\bin\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\Logica\bin\Debug\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\Logica\bin\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\Logica\bin\Debug\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\Logica\obj\Debug\Logica.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\Logica\obj\Debug\Logica.pdb
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\Logica\bin\Debug\Logica.dll
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\Logica\bin\Debug\Logica.pdb
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\Logica\bin\Debug\EntidadesCompartidas.dll
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\Logica\bin\Debug\Persistencia.dll
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\Logica\bin\Debug\EntidadesCompartidas.pdb
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\Logica\bin\Debug\Persistencia.pdb
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\Logica\obj\Debug\Logica.dll
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\Logica\obj\Debug\Logica.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\Logica\bin\Debug\Logica.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\Logica\bin\Debug\Logica.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\Logica\bin\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\Logica\bin\Debug\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\Logica\bin\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\Logica\bin\Debug\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\Logica\obj\Debug\Logica.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\Logica\obj\Debug\Logica.pdb
+C:\Users\Juna\Desktop\BiosMoney_v6\Logica\bin\Debug\Logica.dll
+C:\Users\Juna\Desktop\BiosMoney_v6\Logica\bin\Debug\Logica.pdb
+C:\Users\Juna\Desktop\BiosMoney_v6\Logica\bin\Debug\EntidadesCompartidas.dll
+C:\Users\Juna\Desktop\BiosMoney_v6\Logica\bin\Debug\Persistencia.dll
+C:\Users\Juna\Desktop\BiosMoney_v6\Logica\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\Juna\Desktop\BiosMoney_v6\Logica\bin\Debug\Persistencia.pdb
+C:\Users\Juna\Desktop\BiosMoney_v6\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+C:\Users\Juna\Desktop\BiosMoney_v6\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\Juna\Desktop\BiosMoney_v6\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\Juna\Desktop\BiosMoney_v6\Logica\obj\Debug\Logica.dll
+C:\Users\Juna\Desktop\BiosMoney_v6\Logica\obj\Debug\Logica.pdb
+C:\Users\Juna\Desktop\BiosMoney_v11\Logica\bin\Debug\Logica.dll
+C:\Users\Juna\Desktop\BiosMoney_v11\Logica\bin\Debug\Logica.pdb
+C:\Users\Juna\Desktop\BiosMoney_v11\Logica\bin\Debug\EntidadesCompartidas.dll
+C:\Users\Juna\Desktop\BiosMoney_v11\Logica\bin\Debug\Persistencia.dll
+C:\Users\Juna\Desktop\BiosMoney_v11\Logica\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\Juna\Desktop\BiosMoney_v11\Logica\bin\Debug\Persistencia.pdb
+C:\Users\Juna\Desktop\BiosMoney_v11\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+C:\Users\Juna\Desktop\BiosMoney_v11\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\Juna\Desktop\BiosMoney_v11\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\Juna\Desktop\BiosMoney_v11\Logica\obj\Debug\Logica.dll
+C:\Users\Juna\Desktop\BiosMoney_v11\Logica\obj\Debug\Logica.pdb
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Logica\bin\Debug\Logica.dll
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Logica\bin\Debug\Logica.pdb
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Logica\bin\Debug\EntidadesCompartidas.dll
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Logica\bin\Debug\Persistencia.dll
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Logica\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Logica\bin\Debug\Persistencia.pdb
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Logica\obj\Debug\Logica.dll
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Logica\obj\Debug\Logica.pdb
+D:\ProyectoBios\Sistema\Logica\bin\Debug\Logica.dll
+D:\ProyectoBios\Sistema\Logica\bin\Debug\Logica.pdb
+D:\ProyectoBios\Sistema\Logica\bin\Debug\EntidadesCompartidas.dll
+D:\ProyectoBios\Sistema\Logica\bin\Debug\Persistencia.dll
+D:\ProyectoBios\Sistema\Logica\bin\Debug\EntidadesCompartidas.pdb
+D:\ProyectoBios\Sistema\Logica\bin\Debug\Persistencia.pdb
+D:\ProyectoBios\Sistema\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+D:\ProyectoBios\Sistema\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+D:\ProyectoBios\Sistema\Logica\obj\Debug\Logica.csproj.CopyComplete
+D:\ProyectoBios\Sistema\Logica\obj\Debug\Logica.dll
+D:\ProyectoBios\Sistema\Logica\obj\Debug\Logica.pdb

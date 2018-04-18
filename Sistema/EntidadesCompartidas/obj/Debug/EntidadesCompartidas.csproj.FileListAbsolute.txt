@@ -1,0 +1,64 @@
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.dll
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.csprojResolveAssemblyReference.cache
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.dll
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.csproj.CoreCompileInputs.cache
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb
+F:\ProyectX\BiosMoney\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.dll
+F:\ProyectX\BiosMoney\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
+F:\ProyectX\BiosMoney\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.csproj.CoreCompileInputs.cache
+F:\ProyectX\BiosMoney\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
+F:\ProyectX\BiosMoney\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.csprojResolveAssemblyReference.cache
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.dll
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb
+C:\Users\Juna\Desktop\BiosMoney_v6\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.dll
+C:\Users\Juna\Desktop\BiosMoney_v6\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\Juna\Desktop\BiosMoney_v6\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.csproj.CoreCompileInputs.cache
+C:\Users\Juna\Desktop\BiosMoney_v6\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
+C:\Users\Juna\Desktop\BiosMoney_v6\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb
+C:\Users\Juna\Desktop\BiosMoney_v6\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.csprojResolveAssemblyReference.cache
+C:\Users\Juna\Desktop\BiosMoney_v11\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.dll
+C:\Users\Juna\Desktop\BiosMoney_v11\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\Juna\Desktop\BiosMoney_v11\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.csprojResolveAssemblyReference.cache
+C:\Users\Juna\Desktop\BiosMoney_v11\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.csproj.CoreCompileInputs.cache
+C:\Users\Juna\Desktop\BiosMoney_v11\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
+C:\Users\Juna\Desktop\BiosMoney_v11\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.dll
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.csprojResolveAssemblyReference.cache
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.csproj.CoreCompileInputs.cache
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb
+D:\ProyectoBios\Sistema\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.dll
+D:\ProyectoBios\Sistema\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
+D:\ProyectoBios\Sistema\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.csprojResolveAssemblyReference.cache
+D:\ProyectoBios\Sistema\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.csproj.CoreCompileInputs.cache
+D:\ProyectoBios\Sistema\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
+D:\ProyectoBios\Sistema\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb

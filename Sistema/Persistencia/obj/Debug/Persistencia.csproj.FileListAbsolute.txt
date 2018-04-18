@@ -1,0 +1,92 @@
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\Persistencia\obj\Debug\Persistencia.pdb
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
+F:\ProyectX\BiosMoney\Persistencia\bin\Debug\Persistencia.dll
+F:\ProyectX\BiosMoney\Persistencia\bin\Debug\Persistencia.pdb
+F:\ProyectX\BiosMoney\Persistencia\bin\Debug\EntidadesCompartidas.dll
+F:\ProyectX\BiosMoney\Persistencia\bin\Debug\EntidadesCompartidas.pdb
+F:\ProyectX\BiosMoney\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
+F:\ProyectX\BiosMoney\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+F:\ProyectX\BiosMoney\Persistencia\obj\Debug\Persistencia.dll
+F:\ProyectX\BiosMoney\Persistencia\obj\Debug\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney\Persistencia\bin\Debug\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney\Persistencia\bin\Debug\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney\Persistencia\bin\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney\Persistencia\bin\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
+D:\bios\BIOSMONEY DIEGO\BiosMoney\Persistencia\obj\Debug\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney\Persistencia\obj\Debug\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\Persistencia\obj\Debug\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\Persistencia\obj\Debug\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\Persistencia\bin\Debug\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\Persistencia\bin\Debug\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\Persistencia\bin\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\Persistencia\bin\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\Persistencia\bin\Debug\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\Persistencia\bin\Debug\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\Persistencia\bin\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\Persistencia\bin\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\Persistencia\obj\Debug\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\Persistencia\obj\Debug\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\Persistencia\bin\Debug\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\Persistencia\bin\Debug\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\Persistencia\bin\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\Persistencia\bin\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\Persistencia\obj\Debug\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\Persistencia\obj\Debug\Persistencia.pdb
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\Persistencia\bin\Debug\Persistencia.dll
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\Persistencia\bin\Debug\Persistencia.pdb
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\Persistencia\bin\Debug\EntidadesCompartidas.dll
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\Persistencia\bin\Debug\EntidadesCompartidas.pdb
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\Persistencia\obj\Debug\Persistencia.dll
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\Persistencia\obj\Debug\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\Persistencia\bin\Debug\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\Persistencia\bin\Debug\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\Persistencia\bin\Debug\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\Persistencia\bin\Debug\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\Persistencia\obj\Debug\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\Persistencia\obj\Debug\Persistencia.pdb
+C:\Users\Juna\Desktop\BiosMoney_v6\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\Juna\Desktop\BiosMoney_v6\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\Juna\Desktop\BiosMoney_v6\Persistencia\bin\Debug\EntidadesCompartidas.dll
+C:\Users\Juna\Desktop\BiosMoney_v6\Persistencia\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\Juna\Desktop\BiosMoney_v6\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
+C:\Users\Juna\Desktop\BiosMoney_v6\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\Juna\Desktop\BiosMoney_v6\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+C:\Users\Juna\Desktop\BiosMoney_v6\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\Juna\Desktop\BiosMoney_v6\Persistencia\obj\Debug\Persistencia.pdb
+C:\Users\Juna\Desktop\BiosMoney_v11\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\Juna\Desktop\BiosMoney_v11\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\Juna\Desktop\BiosMoney_v11\Persistencia\bin\Debug\EntidadesCompartidas.dll
+C:\Users\Juna\Desktop\BiosMoney_v11\Persistencia\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\Juna\Desktop\BiosMoney_v11\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
+C:\Users\Juna\Desktop\BiosMoney_v11\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\Juna\Desktop\BiosMoney_v11\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+C:\Users\Juna\Desktop\BiosMoney_v11\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\Juna\Desktop\BiosMoney_v11\Persistencia\obj\Debug\Persistencia.pdb
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Persistencia\bin\Debug\EntidadesCompartidas.dll
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Persistencia\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\Juna\Desktop\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.pdb
+D:\ProyectoBios\Sistema\Persistencia\bin\Debug\Persistencia.dll
+D:\ProyectoBios\Sistema\Persistencia\bin\Debug\Persistencia.pdb
+D:\ProyectoBios\Sistema\Persistencia\bin\Debug\EntidadesCompartidas.dll
+D:\ProyectoBios\Sistema\Persistencia\bin\Debug\EntidadesCompartidas.pdb
+D:\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+D:\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+D:\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.dll
+D:\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.pdb
+D:\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
