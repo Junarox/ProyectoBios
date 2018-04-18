@@ -11,7 +11,6 @@ namespace EntidadesCompartidas
     {
         private string _horaInicio;
         private string _horaFin;
-        private string coso;
 
         [DataMember]
         public string HoraInicio
