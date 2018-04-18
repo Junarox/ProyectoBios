@@ -13,6 +13,7 @@ namespace Persistencia
         Gerente BuscarGerenteLogueo(string usu);
         void AltaGerente(Gerente Gerente);
         void ModificarClave(Gerente _gerente, string _clave);
+        List<Gerente> ListarGerentes();
 
     }
 }

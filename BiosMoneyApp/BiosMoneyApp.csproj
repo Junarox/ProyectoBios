@@ -63,6 +63,12 @@
     <Compile Include="GerenteApp\ABMEmpresa.Designer.cs">
       <DependentUpon>ABMEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="GerenteApp\AltaGerente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GerenteApp\AltaGerente.Designer.cs">
+      <DependentUpon>AltaGerente.cs</DependentUpon>
+    </Compile>
     <Compile Include="GerenteApp\MenuGerente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GerenteApp\ABMEmpresa.resx">
       <DependentUpon>ABMEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GerenteApp\AltaGerente.resx">
+      <DependentUpon>AltaGerente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GerenteApp\MenuGerente.resx">
       <DependentUpon>MenuGerente.cs</DependentUpon>

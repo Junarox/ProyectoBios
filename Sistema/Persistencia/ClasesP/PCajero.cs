@@ -145,11 +145,11 @@ namespace Persistencia
             return cajero;
         }
 
-        public List<Cajero> ListarCajero()
+        public List<Cajero> ListarCajeros()
         {
             List<Cajero> _cajeros = null;
             SqlConnection cnn = new SqlConnection(Conexion.Cnn);
-            SqlCommand cmd = new SqlCommand("ListarCajero", cnn);
+            SqlCommand cmd = new SqlCommand("ListarCajeros", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             try

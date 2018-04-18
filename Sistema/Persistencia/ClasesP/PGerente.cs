@@ -150,5 +150,37 @@ namespace Persistencia
                 cnn.Close();
             }
         }
+
+        public List<Gerente> ListarGerentes()
+        {
+            List<Gerente> _gerentes = null;
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlCommand cmd = new SqlCommand("ListarGerentes", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                cnn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    _gerentes = new List<Gerente>();
+                    while (reader.Read())
+                    {
+                        Gerente _gerente = new Gerente(Convert.ToInt32(reader["Ci"]), (string)reader["Usuario"], (string)reader["Clave"], (string)reader["NomCompleto"], (string)reader["Email"]);
+                        _gerentes.Add(_gerente);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cnn.Close();
+            }
+            return _gerentes;
+        }
     }
 }

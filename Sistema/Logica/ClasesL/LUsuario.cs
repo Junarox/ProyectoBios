@@ -59,9 +59,14 @@ namespace Logica
             return (FabricaP.GetPCajero().BuscarCajero(Ci));
         }
 
-        public List<Cajero> ListarCajero()
+        public List<Cajero> ListarCajeros()
         {
-            return (FabricaP.GetPCajero().ListarCajero());
+            return (FabricaP.GetPCajero().ListarCajeros());
+        }
+
+        public List<Gerente> ListarGerentes()
+        {
+            return (FabricaP.GetPGerente().ListarGerentes());
         }
 
         public void Modificar(Usuario _usu)

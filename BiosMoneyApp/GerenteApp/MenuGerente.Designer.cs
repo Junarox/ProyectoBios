@@ -38,6 +38,7 @@
             this.TSMIABMCajero = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIABMEmpresa = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.TSMIAltaGerente = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,21 +74,21 @@
             // TSMICambiarClave
             // 
             this.TSMICambiarClave.Name = "TSMICambiarClave";
-            this.TSMICambiarClave.Size = new System.Drawing.Size(180, 22);
+            this.TSMICambiarClave.Size = new System.Drawing.Size(162, 22);
             this.TSMICambiarClave.Text = "Cambiar Clave";
             this.TSMICambiarClave.Click += new System.EventHandler(this.TSMICambiarClave_Click);
             // 
             // TSMICambiarUsuario
             // 
             this.TSMICambiarUsuario.Name = "TSMICambiarUsuario";
-            this.TSMICambiarUsuario.Size = new System.Drawing.Size(180, 22);
+            this.TSMICambiarUsuario.Size = new System.Drawing.Size(162, 22);
             this.TSMICambiarUsuario.Text = "Cambiar Usuario";
             this.TSMICambiarUsuario.Click += new System.EventHandler(this.TSMICambiarUsuario_Click);
             // 
             // TSMISalir
             // 
             this.TSMISalir.Name = "TSMISalir";
-            this.TSMISalir.Size = new System.Drawing.Size(180, 22);
+            this.TSMISalir.Size = new System.Drawing.Size(162, 22);
             this.TSMISalir.Text = "Salir...";
             this.TSMISalir.Click += new System.EventHandler(this.TSMISalir_Click);
             // 
@@ -98,7 +99,8 @@
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSMIABMCajero,
-            this.TSMIABMEmpresa});
+            this.TSMIABMEmpresa,
+            this.TSMIAltaGerente});
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(51, 22);
@@ -108,14 +110,14 @@
             // TSMIABMCajero
             // 
             this.TSMIABMCajero.Name = "TSMIABMCajero";
-            this.TSMIABMCajero.Size = new System.Drawing.Size(148, 22);
+            this.TSMIABMCajero.Size = new System.Drawing.Size(180, 22);
             this.TSMIABMCajero.Text = "ABM Cajero";
             this.TSMIABMCajero.Click += new System.EventHandler(this.ABMCajero_Click);
             // 
             // TSMIABMEmpresa
             // 
             this.TSMIABMEmpresa.Name = "TSMIABMEmpresa";
-            this.TSMIABMEmpresa.Size = new System.Drawing.Size(148, 22);
+            this.TSMIABMEmpresa.Size = new System.Drawing.Size(180, 22);
             this.TSMIABMEmpresa.Text = "ABM Empresa";
             this.TSMIABMEmpresa.Click += new System.EventHandler(this.ABMEmpresa_Click);
             // 
@@ -129,6 +131,13 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(349, 408);
             this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // TSMIAltaGerente
+            // 
+            this.TSMIAltaGerente.Name = "TSMIAltaGerente";
+            this.TSMIAltaGerente.Size = new System.Drawing.Size(180, 22);
+            this.TSMIAltaGerente.Text = "Alta Gerente";
+            this.TSMIAltaGerente.Click += new System.EventHandler(this.TSMIAltaGerente_Click);
             // 
             // MenuGerente
             // 
@@ -164,5 +173,6 @@
         private System.Windows.Forms.ToolStripMenuItem TSMICambiarClave;
         private System.Windows.Forms.ToolStripMenuItem TSMICambiarUsuario;
         private System.Windows.Forms.ToolStripMenuItem TSMISalir;
+        private System.Windows.Forms.ToolStripMenuItem TSMIAltaGerente;
     }
 }

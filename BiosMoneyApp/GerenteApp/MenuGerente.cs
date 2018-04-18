@@ -66,5 +66,16 @@ namespace BiosMoneyApp.GerenteApp
             CambiarClave form = new CambiarClave(usu);
             form.ShowDialog();
         }
+
+        private void TSMIAltaGerente_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            AltaGerente myForm = new AltaGerente();
+            myForm.FormBorderStyle = FormBorderStyle.None;
+            myForm.TopLevel = false;
+            myForm.AutoScroll = true;
+            flowLayoutPanel1.Controls.Add(myForm);
+            myForm.Show();
+        }
     }
 }

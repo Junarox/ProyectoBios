@@ -13,7 +13,8 @@ namespace Logica
         void Alta(Usuario _usu);
         void BajaCajero(Usuario _cajero);
         Cajero BuscarCajero(int Ci);
-        List<Cajero> ListarCajero();
+        List<Cajero> ListarCajeros();
+        List<Gerente> ListarGerentes();
         void Modificar(Usuario _cajero);
         void ModificarClave(Usuario _usu, string clave1, string clave2);
     }

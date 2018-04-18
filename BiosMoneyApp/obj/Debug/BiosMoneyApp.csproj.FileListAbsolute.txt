@@ -36,3 +36,4 @@ D:\ProyectoBios\BiosMoneyApp\obj\Debug\BiosMoneyApp.GerenteApp.ABMCajero.resourc
 D:\ProyectoBios\BiosMoneyApp\obj\Debug\BiosMoneyApp.GerenteApp.MenuGerente.resources
 D:\ProyectoBios\BiosMoneyApp\obj\Debug\BiosMoneyApp.Login.resources
 D:\ProyectoBios\BiosMoneyApp\obj\Debug\BiosMoneyApp.CambiarClave.resources
+D:\ProyectoBios\BiosMoneyApp\obj\Debug\BiosMoneyApp.GerenteApp.AltaGerente.resources

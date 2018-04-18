@@ -25,7 +25,7 @@ namespace BiosMoneyApp.GerenteApp
         public override void Refresh()
         {
             DGVCajeros.DataSource = null;
-            DGVCajeros.DataSource = cs = FabricaL.GetLUsuario().ListarCajero();
+            DGVCajeros.DataSource = cs = FabricaL.GetLUsuario().ListarCajeros();
         }
 
         /// <summary>

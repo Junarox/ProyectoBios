@@ -16,6 +16,6 @@ namespace Persistencia
         void ModificarCajero(Cajero _cajero);
         void ModificarClave(Cajero _cajero, string clave);
         void BajaCajero(Cajero _cajero);
-        List<Cajero> ListarCajero();
+        List<Cajero> ListarCajeros();
     }
 }

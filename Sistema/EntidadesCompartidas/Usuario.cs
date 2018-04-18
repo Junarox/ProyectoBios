@@ -6,8 +6,8 @@ using System.Text;
 
 namespace EntidadesCompartidas
 {
-    [KnownType(typeof(Cajero))]
     [KnownType(typeof(Gerente))]
+    [KnownType(typeof(Cajero))]
 
     [DataContract]
     public abstract class Usuario
