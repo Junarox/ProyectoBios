@@ -111,6 +111,56 @@ BEGIN
 END
 GO
 
+CREATE PROCEDURE AltaGerente(@Usuario VARCHAR(30), @Clave VARCHAR(7), @CI INT, 
+@NomCompleto VARCHAR(50), @Email VARCHAR(50)) AS
+BEGIN
+	BEGIN TRANSACTION;
+
+	IF EXISTS(SELECT * FROM Usuarios U WHERE U.Ci = @CI)
+	BEGIN
+		ROLLBACK TRANSACTION;
+		RETURN -1;
+	END
+	ELSE
+	BEGIN
+		IF EXISTS(SELECT * FROM Gerentes G WHERE G.Email = @Email)
+		BEGIN
+			ROLLBACK TRANSACTION;
+			RETURN -2;
+		END
+		ELSE
+		BEGIN
+			INSERT Usuarios VALUES(@CI,@Usuario,@Clave,@NomCompleto)
+			IF(@@ERROR = 0)
+			BEGIN
+				INSERT INTO Gerentes VALUES(@CI,@Email)
+				IF(@@ERROR = 0)
+				BEGIN
+					COMMIT TRANSACTION;
+					RETURN 1;
+				END
+				ELSE
+				BEGIN
+					ROLLBACK TRANSACTION;
+					RETURN -3;
+				END
+			END
+			ELSE
+			BEGIN
+				ROLLBACK TRANSACTION;
+				RETURN -3;
+			END
+		END
+	END
+END
+GO
+
+CREATE PROCEDURE ListarGerentes AS
+BEGIN
+	SELECT * FROM Gerentes inner join Usuarios ON Gerentes.Ci = Usuarios.Ci
+END
+GO
+
 --	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--
 CREATE PROCEDURE AltaCajero (@Usuario VARCHAR(30), @Clave VARCHAR(7), @CI INT, 
 @NomCompleto VARCHAR(50), @HoraInicio VARCHAR(4), @HoraFin VARCHAR(4)) AS
@@ -243,7 +293,7 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE ListarCajero AS
+CREATE PROCEDURE ListarCajeros AS
 BEGIN
 	SELECT * FROM Cajeros inner join Usuarios ON Cajeros.Ci = Usuarios.Ci WHERE Cajeros.Baja = 0
 END
