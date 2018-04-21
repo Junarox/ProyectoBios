@@ -29,9 +29,9 @@ namespace Logica
             FabricaP.GetPContrato().AltaContrato(_contrato);
         }
 
-        public void BajaContrato(Empresa Empresa, int CodTipo)
+        public void BajaContrato(Contrato _contrato)
         {
-            FabricaP.GetPContrato().BajaContrato(Empresa.Codigo, CodTipo);
+            FabricaP.GetPContrato().BajaContrato(_contrato);
         }
 
         public Contrato BuscarContrato(int _CodEmpresa, int _CodTipo)

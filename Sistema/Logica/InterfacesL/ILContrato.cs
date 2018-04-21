@@ -12,7 +12,7 @@ namespace Logica
     public interface ILContrato
     {
         void AltaContrato(Contrato _contrato);
-        void BajaContrato(Empresa Empresa, int CodTipo);
+        void BajaContrato(Contrato _contrato);
         void ModContrato(Contrato _contrato);
         Contrato BuscarContrato(int _CodigoEmpresa, int _CodTipo);
         List<Contrato> ListarContrato(Empresa Empresa);

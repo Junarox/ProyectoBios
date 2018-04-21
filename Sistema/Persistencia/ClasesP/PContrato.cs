@@ -53,7 +53,7 @@ namespace Persistencia
             }
         }
 
-        public void BajaContrato(long CodEmpresa, int CodTipo)
+        public void BajaContrato(Contrato _contrato)
         {
             SqlConnection cnn = new SqlConnection(Conexion.Cnn);
             SqlCommand cmd = new SqlCommand("BajaContrato", cnn);
@@ -62,8 +62,8 @@ namespace Persistencia
             retorno.Direction = ParameterDirection.ReturnValue;
             cmd.Parameters.Add(retorno);
 
-            cmd.Parameters.AddWithValue("@CodEmpresa", CodEmpresa);
-            cmd.Parameters.AddWithValue("@CodTipo", CodTipo);
+            cmd.Parameters.AddWithValue("@CodEmpresa", _contrato.Empresa.Codigo);
+            cmd.Parameters.AddWithValue("@CodTipo", _contrato.CodContrato);
 
             try
             {

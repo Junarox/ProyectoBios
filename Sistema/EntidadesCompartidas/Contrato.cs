@@ -34,7 +34,13 @@ namespace EntidadesCompartidas
         public int CodContrato
         {
             get { return _CodContrato; }
-            set { _CodContrato = value; }
+            set
+            {
+                if (value.ToString().Trim().Length != 2)
+                    throw new Exception("El Código tiene que ser mayor a 10 y menor que 100.");
+                else
+                    _CodContrato = value;
+            }
         }
 
         [DataMember]
@@ -54,7 +60,7 @@ namespace EntidadesCompartidas
         public Contrato()
         {
             Empresa = new Empresa();
-            CodContrato = 00;
+            CodContrato = 10;
             NomContrato = "N/A";
         }
 

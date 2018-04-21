@@ -30,6 +30,9 @@ Email VARCHAR(50) CHECK(LEN(Email) <= 50) NOT NULL
 )
 go
 
+insert Usuarios values(48328032, 'Juna', 'asd', 'Diego Furtado')
+insert Gerentes values(48328032, 'diego32junarox@gmail.com')
+
 CREATE TABLE Cajeros (
 Ci BIGINT NOT NULL PRIMARY KEY FOREIGN KEY REFERENCES Usuarios(Ci),
 HoraInicio VARCHAR(4) CHECK(LEN(HoraInicio) = 4) NOT NULL,
@@ -48,9 +51,39 @@ Baja BIT
 )
 go
 
+CREATE TABLE Contratos (
+CodEmpresa INT CHECK(CodEmpresa BETWEEN 1000 AND 9999) FOREIGN KEY REFERENCES Empresas(Codigo) NOT NULL,
+CodTipo INT CHECK(CodTipo BETWEEN 10 AND 99) NOT NULL,
+Nombre VARCHAR(100) NOT NULL,
+Baja BIT,
+PRIMARY KEY (CodEmpresa, CodTipo)
+)
+GO
+
 --	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--
 
 -- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	--
+CREATE PROCEDURE Logueo(@Usuario VARCHAR(30), @Clave VARCHAR(7)) AS
+BEGIN
+	IF exists(SELECT *
+			FROM Usuarios U
+			WHERE U.Usuario = @Usuario and U.Clave = @Clave)
+	BEGIN
+		DECLARE @cedula int;
+		SELECT @cedula = U.Ci FROM Usuarios U WHERE U.Usuario = @Usuario;
+		IF exists (SELECT * FROM Cajeros C WHERE C.Ci = @cedula)
+			BEGIN
+
+				return 1;
+			END
+		ELSE IF exists (SELECT * FROM Gerentes G WHERE G.Ci = @cedula)
+		BEGIN
+			return 2;
+		END
+	END
+END
+GO
+
 CREATE PROCEDURE ModClave (@Ci VARCHAR(30), @Clave VARCHAR(7)) AS
 BEGIN
 	IF NOT (EXISTS (SELECT *
@@ -74,34 +107,6 @@ END
 GO
 
 --	GERENTE	--	GERENTE	--	GERENTE	--	GERENTE	--	GERENTE	--	GERENTE	--	GERENTE	--	GERENTE	--	GERENTE	--
-CREATE PROCEDURE Logueo(@Usuario VARCHAR(30), @Clave VARCHAR(7)) AS
-BEGIN
-	IF exists(SELECT *
-			FROM Usuarios U
-			WHERE U.Usuario = @Usuario and U.Clave = @Clave)
-	BEGIN
-		DECLARE @cedula int;
-		SELECT @cedula = U.Ci FROM Usuarios U WHERE U.Usuario = @Usuario;
-		IF exists (SELECT * FROM Cajeros C WHERE C.Ci = @cedula)
-			BEGIN
-
-				return 1;
-			END
-		ELSE IF exists (SELECT * FROM Gerentes G WHERE G.Ci = @cedula)
-		BEGIN
-			return 2;
-		END
-	END
-END
-GO
-
-CREATE PROCEDURE BuscarCajeroLogueo(@Usuario VARCHAR(30)) AS
-BEGIN
-	SELECT *
-	FROM Usuarios U INNER JOIN Cajeros C
-	ON U.Usuario = @Usuario and C.Ci= U.Ci and C.Baja = 0
-END
-GO
 
 CREATE PROCEDURE BuscarGerenteLogueo(@Usuario VARCHAR(30)) AS
 BEGIN
@@ -162,6 +167,14 @@ END
 GO
 
 --	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--
+CREATE PROCEDURE BuscarCajeroLogueo(@Usuario VARCHAR(30)) AS
+BEGIN
+	SELECT *
+	FROM Usuarios U INNER JOIN Cajeros C
+	ON U.Usuario = @Usuario and C.Ci= U.Ci and C.Baja = 0
+END
+GO
+
 CREATE PROCEDURE AltaCajero (@Usuario VARCHAR(30), @Clave VARCHAR(7), @CI INT, 
 @NomCompleto VARCHAR(50), @HoraInicio VARCHAR(4), @HoraFin VARCHAR(4)) AS
 BEGIN
@@ -414,5 +427,95 @@ BEGIN
 	SELECT *
 	FROM Empresas E
 	WHERE E.Baja = 0
+END
+GO
+
+--	CONTRATO	--	CONTRATO	--	CONTRATO	--	CONTRATO	--	CONTRATO	--	CONTRATO	--	CONTRATO	--	CONTRATO	--
+
+CREATE PROCEDURE AltaContrato (@CodEmpresa INT, @CodTipo INT, @Nombre VARCHAR(100)) AS
+BEGIN
+	IF EXISTS(SELECT *
+					FROM Contratos C
+					WHERE C.CodEmpresa = @CodEmpresa AND C.CodTipo = @CodTipo AND C.Baja = 1)
+	BEGIN
+		UPDATE Contratos
+		SET Baja = 0, Nombre = @Nombre
+		WHERE CodEmpresa = @CodEmpresa AND CodTipo = @CodTipo
+	END
+	ELSE IF EXISTS(SELECT *
+					FROM Contratos C
+					WHERE C.CodEmpresa = @CodEmpresa AND C.CodTipo = @CodTipo AND C.Baja = 0)
+					RETURN -1;
+	ELSE
+	BEGIN
+		INSERT Contratos
+		VALUES(@CodEmpresa,@CodTipo,@Nombre,0)
+		IF(@@ERROR = 0)
+			RETURN 1;
+		ELSE
+			RETURN -2;
+	END
+END
+GO
+
+CREATE PROCEDURE ModContrato (@CodEmpresa INT, @CodTipo INT, @Nombre VARCHAR(100)) AS
+BEGIN
+	IF NOT EXISTS(SELECT *
+					FROM Contratos C
+					WHERE C.CodEmpresa = @CodEmpresa AND C.CodTipo = @CodTipo)
+		RETURN -1;
+	IF EXISTS(SELECT *
+					FROM Contratos C
+					WHERE C.CodEmpresa = @CodEmpresa AND C.CodTipo = @CodTipo AND Baja = 1)
+		RETURN -1;
+	ELSE
+	BEGIN
+		UPDATE Contratos
+		SET Nombre = @Nombre
+		WHERE CodEmpresa = @CodEmpresa AND CodTipo = @CodTipo
+		IF(@@ERROR = 0)
+			RETURN 1;
+		ELSE
+			RETURN -2;
+	END
+END
+GO
+
+CREATE PROCEDURE BajaContrato (@CodEmpresa INT, @CodTipo INT) AS
+BEGIN
+	IF NOT EXISTS(SELECT *
+					FROM Contratos C
+					WHERE C.CodEmpresa = @CodEmpresa AND C.CodTipo = @CodTipo)
+		RETURN -1;
+	IF EXISTS(SELECT *
+					FROM Contratos C
+					WHERE C.CodEmpresa = @CodEmpresa AND C.CodTipo = @CodTipo AND Baja = 1)
+		RETURN -1;
+	ELSE
+	BEGIN
+		UPDATE Contratos
+		SET Baja = 1
+		WHERE CodEmpresa = @CodEmpresa AND CodTipo = @CodTipo
+		IF(@@ERROR = 0)
+			RETURN 1;
+		ELSE
+			RETURN -2;
+	END
+END
+GO
+
+CREATE PROCEDURE BuscarContrato (@CodEmpresa INT, @CodTipo INT) AS
+BEGIN
+	SELECT C.*, E.Rut
+	FROM Contratos C INNER JOIN Empresas E
+	ON C.CodEmpresa = @CodEmpresa AND C.CodTipo = @CodTipo AND C.CodEmpresa = E.Codigo AND C.Baja = 0
+END
+GO
+
+CREATE PROCEDURE ListarContrato (@CodEmpresa INT) AS
+BEGIN
+	SELECT C.*, E.Rut
+	FROM Contratos C INNER JOIN Empresas E
+	ON C.CodEmpresa = @CodEmpresa AND C.CodEmpresa = E.Codigo AND C.Baja = 0
 END
 GO

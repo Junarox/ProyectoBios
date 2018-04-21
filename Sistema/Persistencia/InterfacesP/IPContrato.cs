@@ -10,7 +10,7 @@ namespace Persistencia
     public interface IPContrato
     {
         void AltaContrato(Contrato _contrato);
-        void BajaContrato(long CodEmpresa, int CodTipo);
+        void BajaContrato(Contrato _contrato);
         void ModContrato(Contrato _contrato);
         Contrato BuscarContrato(int _CodEmpresa, int _CodTipo);
         List<Contrato> ListarContrato(int CodEmpresa);
