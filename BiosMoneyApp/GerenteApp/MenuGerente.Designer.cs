@@ -37,8 +37,9 @@
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.TSMIABMCajero = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIABMEmpresa = new System.Windows.Forms.ToolStripMenuItem();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.aBMContratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIAltaGerente = new System.Windows.Forms.ToolStripMenuItem();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,6 +101,7 @@
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSMIABMCajero,
             this.TSMIABMEmpresa,
+            this.aBMContratoToolStripMenuItem,
             this.TSMIAltaGerente});
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -110,16 +112,30 @@
             // TSMIABMCajero
             // 
             this.TSMIABMCajero.Name = "TSMIABMCajero";
-            this.TSMIABMCajero.Size = new System.Drawing.Size(180, 22);
+            this.TSMIABMCajero.Size = new System.Drawing.Size(150, 22);
             this.TSMIABMCajero.Text = "ABM Cajero";
             this.TSMIABMCajero.Click += new System.EventHandler(this.ABMCajero_Click);
             // 
             // TSMIABMEmpresa
             // 
             this.TSMIABMEmpresa.Name = "TSMIABMEmpresa";
-            this.TSMIABMEmpresa.Size = new System.Drawing.Size(180, 22);
+            this.TSMIABMEmpresa.Size = new System.Drawing.Size(150, 22);
             this.TSMIABMEmpresa.Text = "ABM Empresa";
             this.TSMIABMEmpresa.Click += new System.EventHandler(this.ABMEmpresa_Click);
+            // 
+            // aBMContratoToolStripMenuItem
+            // 
+            this.aBMContratoToolStripMenuItem.Name = "aBMContratoToolStripMenuItem";
+            this.aBMContratoToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.aBMContratoToolStripMenuItem.Text = "ABM Contrato";
+            this.aBMContratoToolStripMenuItem.Click += new System.EventHandler(this.aBMContratoToolStripMenuItem_Click);
+            // 
+            // TSMIAltaGerente
+            // 
+            this.TSMIAltaGerente.Name = "TSMIAltaGerente";
+            this.TSMIAltaGerente.Size = new System.Drawing.Size(150, 22);
+            this.TSMIAltaGerente.Text = "Alta Gerente";
+            this.TSMIAltaGerente.Click += new System.EventHandler(this.TSMIAltaGerente_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -127,17 +143,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 28);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 25);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(349, 408);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(349, 411);
             this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // TSMIAltaGerente
-            // 
-            this.TSMIAltaGerente.Name = "TSMIAltaGerente";
-            this.TSMIAltaGerente.Size = new System.Drawing.Size(180, 22);
-            this.TSMIAltaGerente.Text = "Alta Gerente";
-            this.TSMIAltaGerente.Click += new System.EventHandler(this.TSMIAltaGerente_Click);
             // 
             // MenuGerente
             // 
@@ -146,6 +156,8 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(349, 436);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.toolStrip1);
@@ -167,12 +179,13 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem TSMIABMCajero;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ToolStripMenuItem TSMIABMEmpresa;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
         private System.Windows.Forms.ToolStripMenuItem TSMICambiarClave;
         private System.Windows.Forms.ToolStripMenuItem TSMICambiarUsuario;
         private System.Windows.Forms.ToolStripMenuItem TSMISalir;
         private System.Windows.Forms.ToolStripMenuItem TSMIAltaGerente;
+        private System.Windows.Forms.ToolStripMenuItem aBMContratoToolStripMenuItem;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

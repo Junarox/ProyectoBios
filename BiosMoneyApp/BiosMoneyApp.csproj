@@ -63,6 +63,12 @@
     <Compile Include="GerenteApp\ABMEmpresa.Designer.cs">
       <DependentUpon>ABMEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="GerenteApp\ABMTipoContrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GerenteApp\ABMTipoContrato.Designer.cs">
+      <DependentUpon>ABMTipoContrato.cs</DependentUpon>
+    </Compile>
     <Compile Include="GerenteApp\AltaGerente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GerenteApp\ABMEmpresa.resx">
       <DependentUpon>ABMEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GerenteApp\ABMTipoContrato.resx">
+      <DependentUpon>ABMTipoContrato.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GerenteApp\AltaGerente.resx">
       <DependentUpon>AltaGerente.cs</DependentUpon>
@@ -125,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagenes\Agregar.png" />
+    <Content Include="Imagenes\Buscar.png" />
     <Content Include="Imagenes\Eliminar.png" />
     <Content Include="Imagenes\Logo.png" />
     <Content Include="Imagenes\Modificar.png" />

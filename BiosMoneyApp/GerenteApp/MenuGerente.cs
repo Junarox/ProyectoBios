@@ -77,5 +77,16 @@ namespace BiosMoneyApp.GerenteApp
             flowLayoutPanel1.Controls.Add(myForm);
             myForm.Show();
         }
+
+        private void aBMContratoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            ABMTipoContrato myForm = new ABMTipoContrato();
+            myForm.FormBorderStyle = FormBorderStyle.None;
+            myForm.TopLevel = false;
+            myForm.AutoScroll = true;
+            flowLayoutPanel1.Controls.Add(myForm);
+            myForm.Show();
+        }
     }
 }
