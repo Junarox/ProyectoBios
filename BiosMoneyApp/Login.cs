@@ -28,14 +28,16 @@ namespace BiosMoneyApp
                 if(usu is Cajero)
                 {
                     //Abrir el form Menu Cajeros.
-                    
+                    this.Hide();
+                    Form f = new Menu(usu);
+                    f.ShowDialog();
                     
                 }
                 else if(usu is Gerente)
                 {
                     //Abrir el form Menu Gerente
                     this.Hide();
-                    Form f = new MenuGerente(usu);
+                    Form f = new Menu(usu);
                     f.ShowDialog();
                 }
                 else

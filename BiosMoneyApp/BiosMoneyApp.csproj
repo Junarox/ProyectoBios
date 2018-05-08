@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CajeroApp\AltaDePago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CajeroApp\AltaDePago.Designer.cs">
+      <DependentUpon>AltaDePago.cs</DependentUpon>
+    </Compile>
     <Compile Include="CambiarClave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,20 +81,23 @@
     <Compile Include="GerenteApp\AltaGerente.Designer.cs">
       <DependentUpon>AltaGerente.cs</DependentUpon>
     </Compile>
-    <Compile Include="GerenteApp\MenuGerente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GerenteApp\MenuGerente.Designer.cs">
-      <DependentUpon>MenuGerente.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CajeroApp\AltaDePago.resx">
+      <DependentUpon>AltaDePago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CambiarClave.resx">
       <DependentUpon>CambiarClave.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,11 +113,11 @@
     <EmbeddedResource Include="GerenteApp\AltaGerente.resx">
       <DependentUpon>AltaGerente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GerenteApp\MenuGerente.resx">
-      <DependentUpon>MenuGerente.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -139,9 +148,7 @@
     <Content Include="Imagenes\Logo.png" />
     <Content Include="Imagenes\Modificar.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CajeroApp\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Sistema\EntidadesCompartidas\EntidadesCompartidas.csproj">
       <Project>{2d450a6a-1b55-4a0f-9c91-09877c6a3aac}</Project>

@@ -163,7 +163,6 @@ namespace BiosMoneyApp.GerenteApp
         private void txtBuscarCon_TextChanged(object sender, EventArgs e)
         {
             Refresh();
-
             List<Contrato> resultado = new List<Contrato>();
 
             if (DGVContratos.DataSource != null)
