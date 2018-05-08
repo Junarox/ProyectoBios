@@ -237,6 +237,7 @@
             // txtBuscarEmp
             // 
             this.txtBuscarEmp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBuscarEmp.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtBuscarEmp.Location = new System.Drawing.Point(0, 0);
             this.txtBuscarEmp.Margin = new System.Windows.Forms.Padding(0);
             this.txtBuscarEmp.Name = "txtBuscarEmp";
