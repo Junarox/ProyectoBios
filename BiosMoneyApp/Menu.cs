@@ -61,7 +61,9 @@ namespace BiosMoneyApp
 
         private void TSMISalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show("Está seguro que desea salir?", "Confirmar", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK) { MenuGerente_FormClosing(sender, e as FormClosingEventArgs); }
+            else { return; }
         }
 
         private void TSMICambiarClave_Click(object sender, EventArgs e)

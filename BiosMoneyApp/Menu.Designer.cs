@@ -126,35 +126,35 @@
             // TSMIABMCajero
             // 
             this.TSMIABMCajero.Name = "TSMIABMCajero";
-            this.TSMIABMCajero.Size = new System.Drawing.Size(180, 22);
+            this.TSMIABMCajero.Size = new System.Drawing.Size(150, 22);
             this.TSMIABMCajero.Text = "ABM Cajero";
             this.TSMIABMCajero.Click += new System.EventHandler(this.ABMCajero_Click);
             // 
             // TSMIABMEmpresa
             // 
             this.TSMIABMEmpresa.Name = "TSMIABMEmpresa";
-            this.TSMIABMEmpresa.Size = new System.Drawing.Size(180, 22);
+            this.TSMIABMEmpresa.Size = new System.Drawing.Size(150, 22);
             this.TSMIABMEmpresa.Text = "ABM Empresa";
             this.TSMIABMEmpresa.Click += new System.EventHandler(this.ABMEmpresa_Click);
             // 
             // TSMIABMContrato
             // 
             this.TSMIABMContrato.Name = "TSMIABMContrato";
-            this.TSMIABMContrato.Size = new System.Drawing.Size(180, 22);
+            this.TSMIABMContrato.Size = new System.Drawing.Size(150, 22);
             this.TSMIABMContrato.Text = "ABM Contrato";
             this.TSMIABMContrato.Click += new System.EventHandler(this.TSMIABMContrato_Click);
             // 
             // TSMIAltaGerente
             // 
             this.TSMIAltaGerente.Name = "TSMIAltaGerente";
-            this.TSMIAltaGerente.Size = new System.Drawing.Size(180, 22);
+            this.TSMIAltaGerente.Size = new System.Drawing.Size(150, 22);
             this.TSMIAltaGerente.Text = "Alta Gerente";
             this.TSMIAltaGerente.Click += new System.EventHandler(this.TSMIAltaGerente_Click);
             // 
             // TSMIAltaPago
             // 
             this.TSMIAltaPago.Name = "TSMIAltaPago";
-            this.TSMIAltaPago.Size = new System.Drawing.Size(180, 22);
+            this.TSMIAltaPago.Size = new System.Drawing.Size(150, 22);
             this.TSMIAltaPago.Text = "Alta de Pago";
             this.TSMIAltaPago.Click += new System.EventHandler(this.TSMIAltaPago_Click);
             // 

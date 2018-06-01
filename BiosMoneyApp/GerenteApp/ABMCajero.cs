@@ -56,7 +56,7 @@ namespace BiosMoneyApp.GerenteApp
         private void DGVCajeros_SelectionChanged(object sender, EventArgs e)
         {
             //Obtengo el usuario de la fila seleccionada.
-            Cajero usu = (Cajero)DGVCajeros.CurrentRow.DataBoundItem;
+            var usu = DGVCajeros.CurrentRow.DataBoundItem as Cajero;
 
             //Seteo los datos del usuario en los TextBox
             txtUsuario.Text = usu.Usu;
@@ -89,9 +89,14 @@ namespace BiosMoneyApp.GerenteApp
                 try
                 {
                     c.Ci = Convert.ToInt32(txtCedula.Text);
+                    
                 }
-                catch (FormatException) { throw new FormatException("El Documento debe contener 8 digitos."); }
-                catch (OverflowException) { throw new OverflowException("El Documento debe contener 8 digitos."); }
+                catch (FormatException)
+                {
+                    var wait = UseWaitCursor = true;
+                    MessageBox.Show("La Cédula debe contener 8 dígitos.", "Campo Inválido");
+                }
+                catch (OverflowException) { MessageBox.Show("La Cédula debe contener 8 dígitos.", "Campo Inválido"); }
 
                 c.Usu = txtUsuario.Text;
                 c.NomCompleto = txtNombreC.Text;
@@ -104,7 +109,7 @@ namespace BiosMoneyApp.GerenteApp
                 //Refresco el DataGrid con los nuevos datos.
                 Refresh();
             }
-            catch (Exception ex) { lblError.Text = ex.Message; }
+            catch (Exception ex) { MessageBox.Show(ex.Message,"Error"); }
         }
 
         /// <summary>
@@ -123,7 +128,7 @@ namespace BiosMoneyApp.GerenteApp
                 {
                     c = (Cajero)DGVCajeros.CurrentRow.DataBoundItem;
                 }
-                catch (NullReferenceException) { throw new NullReferenceException("No se ha seleccionado ningún Cajero."); }
+                catch (NullReferenceException) { MessageBox.Show("No se ha seleccionado ningún Cajero.", "Error"); }
 
                 //Modifico sus atributos.
                 c.NomCompleto = txtNombreC.Text;
@@ -137,7 +142,7 @@ namespace BiosMoneyApp.GerenteApp
                 //Refresco el DataGrid con los nuevos datos.
                 Refresh();
             }
-            catch (Exception ex) { lblError.Text = ex.Message; }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
         }
 
         /// <summary>
@@ -151,7 +156,7 @@ namespace BiosMoneyApp.GerenteApp
             Refresh();
 
             //Creo la nueva lista de Usuarios resultante del filtrado.
-            List<Cajero> resultado = new List<Cajero>();
+            var resultado = DGVCajeros.DataSource as List<Cajero>;
 
             //Este if es porque la primera vez que se inicia la aplicación, cuando se cargan los controles se llama al TextChanged 
             //y como el DataGrid está aún en null, se lanza la exception NullReferenceException
@@ -163,14 +168,9 @@ namespace BiosMoneyApp.GerenteApp
                 //Si lo que ingreso en el texto se puede transformar en un int, es porque estoy intentando filtrar por una cedula.
                 if (int.TryParse(txtBuscar.Text, out i))
                 {
-                    //Realizo el filtro mediante LinQ
-                    resultado = (from Cajero c in (List<Cajero>)DGVCajeros.DataSource
-                                 where c.Ci.ToString().StartsWith(txtBuscar.Text)
-                                 select c).ToList();
-
-                    //Vacío y seteo el DataGrid con los nuevos valores.
+                    //Seteo el DataGrid con los nuevos valores.
                     DGVCajeros.DataSource = null;
-                    DGVCajeros.DataSource = resultado;
+                    DGVCajeros.DataSource = resultado.Find(x => x.Ci.ToString().StartsWith(txtBuscar.Text));
                 }
 
                 //Si el texto del txtBuscar es distinto de "" y no se puede convertir en int por el caso anterior, es porque estoy filtrando
@@ -179,14 +179,8 @@ namespace BiosMoneyApp.GerenteApp
                 {
                     //Realizo el filtro mediante LinQ
                     //Aclaración: en el where, comparo el texto con los dos atributos y traigo los valores que coincidan, independientemente
-                    //de si uno coincide con el otro o no
-                    resultado = (from Cajero c in (List<Cajero>)DGVCajeros.DataSource
-                                 where (c.NomCompleto.ToLower().StartsWith(txtBuscar.Text.ToLower()) || c.Usu.ToLower().StartsWith(txtBuscar.Text.ToLower()))
-                                 select c).ToList();
-
-                    //Vacío y seteo el DataGrid con los nuevos valores.
                     DGVCajeros.DataSource = null;
-                    DGVCajeros.DataSource = resultado;
+                    DGVCajeros.DataSource = resultado.Find(c => c.NomCompleto.ToLower().StartsWith(txtBuscar.Text.ToLower()) || c.Usu.ToLower().StartsWith(txtBuscar.Text.ToLower()));
                 }
 
                 else
@@ -212,14 +206,14 @@ namespace BiosMoneyApp.GerenteApp
                 {
                     FabricaL.GetLUsuario().BajaCajero((Cajero)DGVCajeros.CurrentRow.DataBoundItem);
                 }
-                catch (NullReferenceException) { throw new NullReferenceException("No se ha selecionado ningún Cajero."); }
+                catch (NullReferenceException) { MessageBox.Show("No se ha selecionado ningún Cajero.", "Error"); }
 
                 //Vacío y seteo el DataGrid con los nuevos valores.
                 Refresh();
             }
             catch(Exception ex)
             {
-                lblError.Text = ex.Message;
+                MessageBox.Show(ex.Message,"Error");
             }
         }
 
@@ -235,7 +229,7 @@ namespace BiosMoneyApp.GerenteApp
                 //Traigo la lista del DataGrid (Puede usarse con el filtrado en conjunto).
                 try
                 {
-                    if(DGVCajeros.DataSource == null)
+                    if (DGVCajeros.DataSource == null)
                         throw new NullReferenceException();
                     List<Cajero> cs = (List<Cajero>)DGVCajeros.DataSource;
                 }
@@ -301,8 +295,7 @@ namespace BiosMoneyApp.GerenteApp
                         break;
                 }
             }
-
-            catch(Exception ex) { lblError.Text = ex.Message; }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
         }
     }
 }
