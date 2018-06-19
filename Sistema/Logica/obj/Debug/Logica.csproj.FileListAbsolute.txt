@@ -115,3 +115,14 @@ D:\ProyectoBios\Sistema\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
 D:\ProyectoBios\Sistema\Logica\obj\Debug\Logica.csproj.CopyComplete
 D:\ProyectoBios\Sistema\Logica\obj\Debug\Logica.dll
 D:\ProyectoBios\Sistema\Logica\obj\Debug\Logica.pdb
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Logica\bin\Debug\Logica.dll
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Logica\bin\Debug\Logica.pdb
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Logica\bin\Debug\EntidadesCompartidas.dll
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Logica\bin\Debug\Persistencia.dll
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Logica\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Logica\bin\Debug\Persistencia.pdb
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Logica\obj\Debug\Logica.csprojAssemblyReference.cache
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Logica\obj\Debug\Logica.dll
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Logica\obj\Debug\Logica.pdb

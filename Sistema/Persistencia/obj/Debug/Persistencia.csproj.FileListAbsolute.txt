@@ -90,3 +90,12 @@ D:\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
 D:\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.dll
 D:\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.pdb
 D:\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Persistencia\bin\Debug\EntidadesCompartidas.dll
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Persistencia\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.csprojAssemblyReference.cache
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\diego\source\repos\ProyectoBios\Sistema\Persistencia\obj\Debug\Persistencia.pdb

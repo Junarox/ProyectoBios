@@ -9,7 +9,7 @@ GO
 
 CREATE DATABASE BiosMoney ON(
 	NAME = BiosMoney,
-	FILENAME = 'D:\ProyectoBios\Sistema\BiosMoney.mdf'
+	FILENAME = 'C:\DataBases\BiosMoney.mdf'
 )
 GO
 

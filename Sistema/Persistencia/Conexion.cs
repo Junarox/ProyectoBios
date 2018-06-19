@@ -10,7 +10,7 @@ namespace Persistencia
         //private static string _cnn = "Data Source= localhost; Initial Catalog = BiosMoney; Integrated Security = true";
         
         //MATEO
-        private static string _cnn = "Data Source= Shuna; Initial Catalog = BiosMoney; Integrated Security = true";
+        private static string _cnn = "Data Source= localhost; Initial Catalog = BiosMoney; Integrated Security = true";
             
 
         public static string Cnn
