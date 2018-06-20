@@ -231,6 +231,8 @@ namespace Persistencia
                 if ((int)retorno.Value == -1)
                     throw new Exception("No existe el Cajero.");
                 if ((int)retorno.Value == -2)
+                    throw new Exception("Ya existe el Usuario: " + _cajero.Usu + ".");
+                if ((int)retorno.Value == -3)
                     throw new Exception("Error.");
 
             }

@@ -25,22 +25,25 @@ namespace BiosMoneyApp
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            try
+            if (usu.Clave.Equals(txtClave.Text))
             {
-                if (usu.Clave.Equals(txtClave.Text))
+                if (txtNuevaClave.Text.Equals(txtReClave.Text))
                 {
-                    if (txtNuevaClave.Text.Equals(txtReClave.Text))
+                    try
                     {
                         FabricaL.GetLUsuario().ModificarClave(usu, txtNuevaClave.Text, txtReClave.Text);
-                        lblError.Text ="Se ha modificado la clave con exito.";
                     }
-                    else
-                        throw new Exception("Las claves no coinciden.");
+                    catch(Exception ex) { MessageBox.Show(ex.Message, "Error"); }
+
+                    MessageBox.Show("Se ha modificado la clave con exito.");
+                    usu.Clave = txtNuevaClave.Text;
+                    this.Close();
                 }
                 else
-                    throw new Exception("Clave incorrecta.");
+                    MessageBox.Show("Las claves no coinciden.","Error");
             }
-            catch(Exception ex) { lblError.Text = ex.Message; }
+            else
+                MessageBox.Show("Clave incorrecta.","Error");
         }
     }
 }
