@@ -23,65 +23,67 @@ namespace Persistencia
 
         public void AltaContrato(Contrato _contrato, string usuario, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
-            SqlCommand cmd = new SqlCommand("AltaContrato", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
-            retorno.Direction = ParameterDirection.ReturnValue;
-            cmd.Parameters.Add(retorno);
+            using(SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave)))
+            {
+                using(SqlCommand cmd = new SqlCommand("AltaContrato", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@CodEmpresa", _contrato.Empresa.Codigo);
-            cmd.Parameters.AddWithValue("@CodTipo", _contrato.CodContrato);
-            cmd.Parameters.AddWithValue("@Nombre", _contrato.NomContrato);
+                    SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
+                    retorno.Direction = ParameterDirection.ReturnValue;
+                    cmd.Parameters.Add(retorno);
 
-            try
-            {
-                cnn.Open();
-                cmd.ExecuteNonQuery();
-                if ((int)retorno.Value == -1)
-                    throw new Exception("Este Contrato ya existe para esta Empresa.");
-                if ((int)retorno.Value == -2)
-                    throw new Exception("Error en la DB.");
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                cnn.Close();
+                    cmd.Parameters.AddWithValue("@CodEmpresa", _contrato.Empresa.Codigo);
+                    cmd.Parameters.AddWithValue("@CodTipo", _contrato.CodContrato);
+                    cmd.Parameters.AddWithValue("@Nombre", _contrato.NomContrato);
+
+                    try
+                    {
+                        cnn.Open();
+                        cmd.ExecuteNonQuery();
+                        if ((int)retorno.Value == -1)
+                            throw new Exception("Este Contrato ya existe para esta Empresa.");
+                        if ((int)retorno.Value == -2)
+                            throw new Exception("Error en la DB.");
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message);
+                    }
+                }
             }
         }
 
         public void BajaContrato(Contrato _contrato, string usuario, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
-            SqlCommand cmd = new SqlCommand("BajaContrato", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
-            retorno.Direction = ParameterDirection.ReturnValue;
-            cmd.Parameters.Add(retorno);
-
-            cmd.Parameters.AddWithValue("@CodEmpresa", _contrato.Empresa.Codigo);
-            cmd.Parameters.AddWithValue("@CodTipo", _contrato.CodContrato);
-
-            try
+            using(SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave)))
             {
-                cnn.Open();
-                cmd.ExecuteNonQuery();
+                using(SqlCommand cmd = new SqlCommand("BajaContrato", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                if ((int)retorno.Value == -1)
-                    throw new Exception("No existe este Contrato.");
-                if ((int)retorno.Value == -2)
-                    throw new Exception("Error en la DB.");
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                cnn.Close();
+                    SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
+                    retorno.Direction = ParameterDirection.ReturnValue;
+                    cmd.Parameters.Add(retorno);
+
+                    cmd.Parameters.AddWithValue("@CodEmpresa", _contrato.Empresa.Codigo);
+                    cmd.Parameters.AddWithValue("@CodTipo", _contrato.CodContrato);
+
+                    try
+                    {
+                        cnn.Open();
+                        cmd.ExecuteNonQuery();
+
+                        if ((int)retorno.Value == -1)
+                            throw new Exception("No existe este Contrato.");
+                        if ((int)retorno.Value == -2)
+                            throw new Exception("Error en la DB.");
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message);
+                    }
+                }
             }
         }
 
@@ -89,73 +91,78 @@ namespace Persistencia
         {
             Contrato _Contrato = null;
 
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
-            SqlCommand cmd = new SqlCommand("BuscarContrato", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@CodEmpresa", CodEmpresa);
-            cmd.Parameters.AddWithValue("@CodTipo", CodTipo);
-
-            try
+            using(SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave)))
             {
-                cnn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.HasRows)
+                using(SqlCommand cmd = new SqlCommand("BuscarContrato", cnn))
                 {
-                    reader.Read();
-                    _Contrato = new Contrato();
-                    _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa((int)reader["CodEmpresa"], usuario, clave);
-                    _Contrato.CodContrato = CodTipo;
-                    _Contrato.NomContrato = (string)reader["Nombre"];
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@CodEmpresa", CodEmpresa);
+                    cmd.Parameters.AddWithValue("@CodTipo", CodTipo);
+
+                    try
+                    {
+                        cnn.Open();
+
+                        using(SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                reader.Read();
+                                _Contrato = new Contrato();
+                                _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa((int)reader["CodEmpresa"], usuario, clave);
+                                _Contrato.CodContrato = CodTipo;
+                                _Contrato.NomContrato = (string)reader["Nombre"];
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message);
+                    }
                 }
             }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                cnn.Close();
-            }
+
             return _Contrato;
         }
 
         public List<Contrato> ListarContrato(int CodEmpresa, string usuario, string clave)
         {
             List<Contrato> _Contratos = null;
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
-            SqlCommand cmd = new SqlCommand("ListarContrato", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@CodEmpresa", CodEmpresa);
-
-            try
+            using(SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave)))
             {
-                cnn.Open();
-                cmd.ExecuteNonQuery();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.HasRows)
+                using(SqlCommand cmd = new SqlCommand("ListarContrato", cnn))
                 {
-                    _Contratos = new List<Contrato>();
-                    while (reader.Read())
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@CodEmpresa", CodEmpresa);
+
+                    try
                     {
-                        Contrato _Contrato = new Contrato();
-                        _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa(CodEmpresa, usuario, clave);
-                        _Contrato.CodContrato = Convert.ToInt32(reader["CodTipo"]);
-                        _Contrato.NomContrato = (string)reader["Nombre"];
-                        _Contratos.Add(_Contrato);
+                        cnn.Open();
+                        cmd.ExecuteNonQuery();
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.HasRows)
+                        {
+                            _Contratos = new List<Contrato>();
+                            while (reader.Read())
+                            {
+                                Contrato _Contrato = new Contrato();
+                                _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa(CodEmpresa, usuario, clave);
+                                _Contrato.CodContrato = Convert.ToInt32(reader["CodTipo"]);
+                                _Contrato.NomContrato = (string)reader["Nombre"];
+
+                                _Contratos.Add(_Contrato);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message);
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                cnn.Close();
             }
 
             return _Contratos;
@@ -164,36 +171,41 @@ namespace Persistencia
         public List<Contrato> ListarTodosLosContratos(string usuario, string clave)
         {
             List<Contrato> _Contratos = null;
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
-            SqlCommand cmd = new SqlCommand("ListarTodosLosContratos", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
 
-            try
+            using(SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave)))
             {
-                cnn.Open();
-                cmd.ExecuteNonQuery();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.HasRows)
+                using(SqlCommand cmd = new SqlCommand("ListarTodosLosContratos", cnn))
                 {
-                    _Contratos = new List<Contrato>();
-                    while (reader.Read())
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    try
                     {
-                        Contrato _Contrato = new Contrato();
-                        _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa((int)reader["CodEmpresa"], usuario, clave);
-                        _Contrato.CodContrato = Convert.ToInt32(reader["CodTipo"]);
-                        _Contrato.NomContrato = (string)reader["Nombre"];
-                        _Contratos.Add(_Contrato);
+                        cnn.Open();
+                        cmd.ExecuteNonQuery();
+
+                        using(SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                _Contratos = new List<Contrato>();
+
+                                while (reader.Read())
+                                {
+                                    Contrato _Contrato = new Contrato();
+                                    _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa((int)reader["CodEmpresa"], usuario, clave);
+                                    _Contrato.CodContrato = Convert.ToInt32(reader["CodTipo"]);
+                                    _Contrato.NomContrato = (string)reader["Nombre"];
+
+                                    _Contratos.Add(_Contrato);
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message);
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                cnn.Close();
             }
 
             return _Contratos;
@@ -201,73 +213,78 @@ namespace Persistencia
 
         public void ModContrato(Contrato _contrato, string usuario, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
-            SqlCommand cmd = new SqlCommand("ModContrato", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
-            retorno.Direction = ParameterDirection.ReturnValue;
-            cmd.Parameters.Add(retorno);
-
-            cmd.Parameters.AddWithValue("@CodEmpresa", _contrato.Empresa.Codigo);
-            cmd.Parameters.AddWithValue("@CodTipo", _contrato.CodContrato);
-            cmd.Parameters.AddWithValue("@Nombre", _contrato.NomContrato);
-
-            try
+            using(SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave)))
             {
-                cnn.Open();
-                cmd.ExecuteNonQuery();
+                using(SqlCommand cmd = new SqlCommand("ModContrato", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                if ((int)retorno.Value == -1)
-                    throw new Exception("No existe este Contrato en esta Empresa.");
-                if ((int)retorno.Value == -2)
-                    throw new Exception("Error en la DB.");
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                cnn.Close();
+                    SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
+                    retorno.Direction = ParameterDirection.ReturnValue;
+                    cmd.Parameters.Add(retorno);
+
+                    cmd.Parameters.AddWithValue("@CodEmpresa", _contrato.Empresa.Codigo);
+                    cmd.Parameters.AddWithValue("@CodTipo", _contrato.CodContrato);
+                    cmd.Parameters.AddWithValue("@Nombre", _contrato.NomContrato);
+
+                    try
+                    {
+                        cnn.Open();
+                        cmd.ExecuteNonQuery();
+
+                        if ((int)retorno.Value == -1)
+                            throw new Exception("No existe este Contrato en esta Empresa.");
+                        if ((int)retorno.Value == -2)
+                            throw new Exception("Error en la DB.");
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message);
+                    }
+                }
             }
         }
 
         public DateTime ChequearFacturaPaga(string[] _factura, string usuario, string clave)
         {
             DateTime _fecha = new DateTime(9999, 1, 1);
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
-            SqlCommand cmd = new SqlCommand("ChequearFacturaPaga", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
 
-            string x = _factura[2].Substring(0, 2) + "/" + _factura[2].Substring(2, 2) + "/" + _factura[2].Substring(4, 4);
-
-            cmd.Parameters.AddWithValue("@CodigoEmpresa", _factura[0]);
-            cmd.Parameters.AddWithValue("@TipoContrato", _factura[1]);
-            cmd.Parameters.AddWithValue("@FechaVencimiento", _factura[2].Substring(0, 2) + "/" + _factura[2].Substring(2, 2) + "/" + _factura[2].Substring(4, 4));
-            cmd.Parameters.AddWithValue("@CodigoCliente", _factura[3]);
-            cmd.Parameters.AddWithValue("@Monto", _factura[4]);
-
-            try
+            using(SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave)))
             {
-                cnn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.HasRows)
+                using(SqlCommand cmd = new SqlCommand("ChequearFacturaPaga", cnn))
                 {
-                    while (reader.Read())
-                    {
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                        _fecha = (DateTime)reader["Fecha"];
+                    string x = _factura[2].Substring(0, 2) + "/" + _factura[2].Substring(2, 2) + "/" + _factura[2].Substring(4, 4);
+
+                    cmd.Parameters.AddWithValue("@CodigoEmpresa", _factura[0]);
+                    cmd.Parameters.AddWithValue("@TipoContrato", _factura[1]);
+                    cmd.Parameters.AddWithValue("@FechaVencimiento", _factura[2].Substring(0, 2) + "/" + _factura[2].Substring(2, 2) + "/" + _factura[2].Substring(4, 4));
+                    cmd.Parameters.AddWithValue("@CodigoCliente", _factura[3]);
+                    cmd.Parameters.AddWithValue("@Monto", _factura[4]);
+
+                    try
+                    {
+                        cnn.Open();
+
+                        using(SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+                                    _fecha = (DateTime)reader["Fecha"];
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message);
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                cnn.Close();
-            }
+
             return _fecha;
         }
     }
