@@ -9,13 +9,13 @@ namespace Persistencia
 {
     public interface IPCajero
     {
-        int Logueo(string usu, string clave);
-        void AltaCajero(Cajero _cajero);
-        Cajero BuscarCajero(int Ci);
-        Cajero BuscarCajeroLogueo(string usu);
-        void ModificarCajero(Cajero _cajero);
-        void ModificarClave(Cajero _cajero, string clave);
-        void BajaCajero(Cajero _cajero);
-        List<Cajero> ListarCajeros();
+        int Logueo(string usuario, string clave);
+        void AltaCajero(Cajero cajero, string usuario, string clave);
+        Cajero BuscarCajero(int cedula, string usuario, string clave);
+        Cajero BuscarCajeroLogueo(string usuario, string clave);
+        void ModificarCajero(Cajero cajero, string usuario, string clave);
+        void ModificarClave(Cajero cajero, string clave);
+        void BajaCajero(Cajero cajero, string usuario, string clave);
+        List<Cajero> ListarCajeros(string usuario, string clave);
     }
 }

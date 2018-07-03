@@ -24,37 +24,37 @@ namespace Logica
             return _instancia;
         }
 
-        public void AltaContrato(Contrato _contrato)
+        public void AltaContrato(Contrato contrato, Usuario logueo)
         {
-            FabricaP.GetPContrato().AltaContrato(_contrato);
+            FabricaP.GetPContrato().AltaContrato(contrato, logueo.Usu, logueo.Clave);
         }
 
-        public void BajaContrato(Contrato _contrato)
+        public void BajaContrato(Contrato contrato, Usuario logueo)
         {
-            FabricaP.GetPContrato().BajaContrato(_contrato);
+            FabricaP.GetPContrato().BajaContrato(contrato, logueo.Usu, logueo.Clave);
         }
 
-        public Contrato BuscarContrato(int _CodEmpresa, int _CodTipo)
+        public Contrato BuscarContrato(int codEmpresa, int codTipo, Usuario logueo)
         {
-            return (FabricaP.GetPContrato().BuscarContrato(_CodEmpresa, _CodTipo));
+            return (FabricaP.GetPContrato().BuscarContrato(codEmpresa, codTipo, logueo.Usu, logueo.Clave));
         }
 
-        public List<Contrato> ListarContrato(Empresa Empresa)
+        public List<Contrato> ListarContrato(Empresa empresa, Usuario logueo)
         {
-            return (FabricaP.GetPContrato().ListarContrato(Empresa.Codigo));
+            return (FabricaP.GetPContrato().ListarContrato(empresa.Codigo, logueo.Usu, logueo.Clave));
         }
 
-        public List<Contrato> ListarTodosLosContratos()
+        public List<Contrato> ListarTodosLosContratos(Usuario logueo)
         {
-            return (FabricaP.GetPContrato().ListarTodosLosContratos());
+            return (FabricaP.GetPContrato().ListarTodosLosContratos(logueo.Usu, logueo.Clave));
         }
 
-        public void ModContrato(Contrato _contrato)
+        public void ModContrato(Contrato contrato, Usuario logueo)
         {
-            FabricaP.GetPContrato().ModContrato(_contrato);
+            FabricaP.GetPContrato().ModContrato(contrato, logueo.Usu, logueo.Clave);
         }
 
-        public string GenerarXMLContratos()
+        public string GenerarXMLContratos(Usuario logueo)
         {
             //Creo XML de contratos
             XmlDocument doc = new XmlDocument();
@@ -67,7 +67,7 @@ namespace Logica
                     listaContratos.Clear();
                 }
 
-                listaContratos = ListarTodosLosContratos();
+                listaContratos = ListarTodosLosContratos(logueo);
 
                 if (listaContratos != null)
                 {                 
@@ -123,17 +123,17 @@ namespace Logica
             }
         }
 
-        public DateTime ChequearFacturaPaga(string _factura)
+        public DateTime ChequearFacturaPaga(string factura, Usuario logueo)
         {
             //Creo array con los fragmentos del código de factura
-            string[] _facturas = new string[5];
-            _facturas[0] = _factura.Substring(0, 4);
-            _facturas[1] = _factura.Substring(4, 2);
-            _facturas[2] = _factura.Substring(6, 8);
-            _facturas[3] = _factura.Substring(14, 6);
-            _facturas[4] = _factura.Substring(20, 5);
+            string[] facturas = new string[5];
+            facturas[0] = factura.Substring(0, 4);
+            facturas[1] = factura.Substring(4, 2);
+            facturas[2] = factura.Substring(6, 8);
+            facturas[3] = factura.Substring(14, 6);
+            facturas[4] = factura.Substring(20, 5);
 
-            DateTime fecha = (FabricaP.GetPContrato().ChequearFacturaPaga(_facturas));
+            DateTime fecha = (FabricaP.GetPContrato().ChequearFacturaPaga(facturas, logueo.Usu, logueo.Clave));
 
             return fecha;
 

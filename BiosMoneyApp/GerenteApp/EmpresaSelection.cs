@@ -14,12 +14,14 @@ namespace BiosMoneyApp.GerenteApp
 {
     public partial class EmpresaSelection : Form
     {
+        private Usuario usuario;
         FlowLayoutPanel panel;
 
-        public EmpresaSelection(FlowLayoutPanel flowLayoutPanel1)
+        public EmpresaSelection(FlowLayoutPanel flowLayoutPanel1, Usuario usuario)
         {
+            this.usuario = usuario;
             InitializeComponent();
-            List<Empresa> empresas = FabricaL.GetEmpresa().ListarEmpresa();
+            List<Empresa> empresas = FabricaL.GetEmpresa().ListarEmpresa(usuario);
             DGVEmpresas.DataSource = empresas;
             panel = flowLayoutPanel1;
         }

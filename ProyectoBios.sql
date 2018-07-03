@@ -31,8 +31,8 @@ Email VARCHAR(50) CHECK(LEN(Email) <= 50) NOT NULL
 go
 
 select * from Usuarios
-insert Usuarios values(48328032, 'Juna', 'asd', 'Diego Furtado')
-insert Gerentes values(48328032, 'diego32junarox@gmail.com')
+
+--insert Gerentes values(48328032, 'diego32junarox@gmail.com')
 
 CREATE TABLE Cajeros (
 Ci BIGINT NOT NULL PRIMARY KEY FOREIGN KEY REFERENCES Usuarios(Ci),
@@ -62,6 +62,51 @@ PRIMARY KEY (CodEmpresa, CodTipo)
 GO
 
 --	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--
+Create Procedure NuevoUsuarioSql @Usuario varchar(30), @Clave varchar(7) AS
+Begin
+	
+	--primero creo el usuario de logueo
+	Declare @VarSentencia varchar(200)
+	Set @VarSentencia = 'CREATE LOGIN [' +  @Usuario + '] WITH PASSWORD = ' + QUOTENAME(@Clave, '''')
+	Exec (@VarSentencia)
+	
+	if (@@ERROR <> 0)
+		return -1
+		
+	
+	--segundo asigno rol especificao al usuario recien creado
+	Exec sp_addsrvrolemember @loginame=@Usuario, @rolename = sysadmin
+	
+	if (@@ERROR = 0)
+		return 1
+	else
+		return -2
+
+End
+go
+
+Create Procedure NuevoUsuarioBD @Usuario VARCHAR(30) AS
+Begin
+	--primero creo el usuario 
+	Declare @VarSentencia varchar(200)
+	Set @VarSentencia = 'Create User [' +  @Usuario + '] From Login [' + @Usuario + ']'
+	Exec (@VarSentencia)
+	
+	if (@@ERROR <> 0)
+		return -1
+		
+	
+	--segundo asigno rol especificao al usuario recien creado
+	Exec sp_addrolemember @rolename=db_ddladmin, @membername=@Usuario
+	
+	if (@@ERROR = 0)
+		return 1
+	else
+		return -2
+	
+
+End
+go
 
 -- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	--
 CREATE PROCEDURE Logueo(@Usuario VARCHAR(30), @Clave VARCHAR(7)) AS
@@ -151,13 +196,34 @@ BEGIN
 				END
 				ELSE
 				BEGIN
-					COMMIT TRANSACTION;
-					RETURN 1;
+					exec NuevoUsuarioSql @Usuario, @Clave
+					if(@@ERROR != 0)
+					BEGIN
+						ROLLBACK TRANSACTION;
+						RETURN -3;
+					END
+					ELSE
+					BEGIN
+						exec NuevoUsuarioBD @Usuario
+						IF(@@ERROR != 0)
+						BEGIN
+							ROLLBACK TRANSACTION;
+							RETURN -3;
+						END
+						ELSE
+						BEGIN
+							COMMIT TRANSACTION;
+							RETURN 1;
+						END
+					END
 				END
 			END
 		END
 	END
 END
+GO
+
+EXEC AltaGerente 'Juna', 'asd', 48328032, 'Diego Furtado', 'diego32junarox@gmail.com'
 GO
 
 CREATE PROCEDURE ListarGerentes AS

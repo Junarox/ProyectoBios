@@ -15,6 +15,8 @@ namespace BiosMoneyApp.GerenteApp
 {
     public partial class AltaGerente : Form
     {
+        Usuario usuario;
+
         //Esto determina como se va a ordenar la lista del DataGrid
         private bool cambio;
 
@@ -27,11 +29,12 @@ namespace BiosMoneyApp.GerenteApp
         public override void Refresh()
         {
             DGVGerentes.DataSource = null;
-            DGVGerentes.DataSource = gs = FabricaL.GetLUsuario().ListarGerentes();
+            DGVGerentes.DataSource = gs = FabricaL.GetLUsuario().ListarGerentes(usuario);
         }
 
-        public AltaGerente()
+        public AltaGerente(Usuario usuario)
         {
+            this.usuario = usuario;
             InitializeComponent();
             DGVGerentes.AutoGenerateColumns = false;
             Refresh();
@@ -61,7 +64,7 @@ namespace BiosMoneyApp.GerenteApp
                 g.Email = txtEmail.Text;
 
                 //Llamo a la fabrica para darlo de alta.
-                FabricaL.GetLUsuario().Alta(g);
+                FabricaL.GetLUsuario().Alta(g,usuario);
 
                 //Refresco el DataGrid con los nuevos datos.
                 Refresh();

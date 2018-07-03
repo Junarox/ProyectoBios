@@ -19,18 +19,18 @@ namespace Logica
             return _instancia;
         }
 
-        public Usuario Logueo(string usu, string clave)
+        public Usuario Logueo(string usuario, string clave)
         {
             Usuario _usu = null;
 
-            int i = FabricaP.GetPCajero().Logueo(usu, clave);
+            int i = FabricaP.GetPCajero().Logueo(usuario, clave);
             switch (i)
             {
                 case 1:
-                    _usu = FabricaP.GetPCajero().BuscarCajeroLogueo(usu);
+                    _usu = FabricaP.GetPCajero().BuscarCajeroLogueo(usuario, clave);
                     break;
                 case 2:
-                    _usu = FabricaP.GetPGerente().BuscarGerenteLogueo(usu);
+                    _usu = FabricaP.GetPGerente().BuscarGerenteLogueo(usuario);
                     break;
                 default:
                     throw new Exception("Usuario o Contraseña incorrectos.");
@@ -39,54 +39,54 @@ namespace Logica
             return _usu;
         }
 
-        public void Alta(Usuario _usu)
+        public void Alta(Usuario usuario, Usuario logueo)
         {
-            if (_usu is Cajero)
-                FabricaP.GetPCajero().AltaCajero((Cajero)_usu);
-            else if (_usu is Gerente)
-                FabricaP.GetPGerente().AltaGerente((Gerente)_usu);
+            if (usuario is Cajero)
+                FabricaP.GetPCajero().AltaCajero((Cajero)usuario, logueo.Usu, logueo.Clave);
+            else if (usuario is Gerente)
+                FabricaP.GetPGerente().AltaGerente((Gerente)usuario, logueo.Usu, logueo.Clave);
             else
                 throw new Exception("Usuario no reconocido.");
         }
 
-        public void BajaCajero(Usuario Usu)
+        public void BajaCajero(Usuario usuario, Usuario logueo)
         {
-            FabricaP.GetPCajero().BajaCajero((Cajero)Usu);
+            FabricaP.GetPCajero().BajaCajero((Cajero)usuario, logueo.Usu, logueo.Clave);
         }
 
-        public Cajero BuscarCajero(int Ci)
+        public Cajero BuscarCajero(int cedula, Usuario logueo)
         {
-            return (FabricaP.GetPCajero().BuscarCajero(Ci));
+            return (FabricaP.GetPCajero().BuscarCajero(cedula, logueo.Usu,logueo.Clave));
         }
 
-        public List<Cajero> ListarCajeros()
+        public List<Cajero> ListarCajeros(Usuario logueo)
         {
-            return (FabricaP.GetPCajero().ListarCajeros());
+            return (FabricaP.GetPCajero().ListarCajeros(logueo.Usu,logueo.Clave));
         }
 
-        public List<Gerente> ListarGerentes()
+        public List<Gerente> ListarGerentes(Usuario logueo)
         {
-            return (FabricaP.GetPGerente().ListarGerentes());
+            return (FabricaP.GetPGerente().ListarGerentes(logueo.Usu,logueo.Clave));
         }
 
-        public void Modificar(Usuario _usu)
+        public void Modificar(Usuario usuario, Usuario logueo)
         {
-            if (_usu is Cajero)
-                FabricaP.GetPCajero().ModificarCajero((Cajero)_usu);
+            if (usuario is Cajero)
+                FabricaP.GetPCajero().ModificarCajero((Cajero)usuario, logueo.Usu, logueo.Clave);
             else
                 throw new Exception("Usuario no reconocido.");
         }
 
-        public void ModificarClave(Usuario _usu, string clave, string reclave)
+        public void ModificarClave(Usuario usuario, string clave, string reclave)
         {
             if (clave.Equals(reclave))
             {
                 if (clave.Length <= 7)
                 {
-                    if (_usu is Cajero)
-                        FabricaP.GetPCajero().ModificarClave((Cajero)_usu, clave);
-                    else if (_usu is Gerente)
-                        FabricaP.GetPGerente().ModificarClave((Gerente)_usu, clave);
+                    if (usuario is Cajero)
+                        FabricaP.GetPCajero().ModificarClave((Cajero)usuario, clave);
+                    else if (usuario is Gerente)
+                        FabricaP.GetPGerente().ModificarClave((Gerente)usuario, clave);
 
                 }
                 else

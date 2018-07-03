@@ -8,10 +8,10 @@ namespace Logica
 {
     public interface ILEmpresa
     {
-        void AltaEmpresa(Empresa _empresa);
-        void ModEmpresa(Empresa _empresa);
-        void BajaEmpresa(Empresa _empresa);
-        Empresa BuscarEmpresa(int _codigo);
-        List<Empresa> ListarEmpresa();
+        void AltaEmpresa(Empresa empresa, Usuario logueo);
+        void ModEmpresa(Empresa empresa, Usuario logueo);
+        void BajaEmpresa(Empresa empresa, Usuario logueo);
+        Empresa BuscarEmpresa(int codigo, Usuario logueo);
+        List<Empresa> ListarEmpresa(Usuario logueo);
     }
 }

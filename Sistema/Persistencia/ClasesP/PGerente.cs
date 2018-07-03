@@ -20,13 +20,13 @@ namespace Persistencia
             return _instancia;
         }
 
-        public int Logueo(string usu, string Clave)
+        public int Logueo(string usuario, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("Logueo", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Usuario", usu);
-            cmd.Parameters.AddWithValue("@Clave", Clave);
+            cmd.Parameters.AddWithValue("@Usuario", usuario);
+            cmd.Parameters.AddWithValue("@Clave", clave);
             SqlParameter retorno = new SqlParameter("@retorno", SqlDbType.Int);
             retorno.Direction = ParameterDirection.ReturnValue;
             cmd.Parameters.Add(retorno);
@@ -56,7 +56,7 @@ namespace Persistencia
         public Gerente BuscarGerenteLogueo(string usu)
         {
             Gerente _gerente = null;
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.CnnLogueo());
             SqlCommand cmd = new SqlCommand("BuscarGerenteLogueo", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Usuario", usu);
@@ -87,9 +87,9 @@ namespace Persistencia
             return _gerente;
         }
 
-        public void AltaGerente(Gerente Gerente)
+        public void AltaGerente(Gerente Gerente, string usuario, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("AltaGerente", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
@@ -120,16 +120,16 @@ namespace Persistencia
             }
         }
 
-        public void ModificarClave(Gerente _gerente, string _clave)
+        public void ModificarClave(Gerente gerente, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(gerente.Usu, gerente.Clave));
             SqlCommand cmd = new SqlCommand("ModClave", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
             retorno.Direction = ParameterDirection.ReturnValue;
             cmd.Parameters.Add(retorno);
-            cmd.Parameters.AddWithValue("@Ci", _gerente.Ci);
-            cmd.Parameters.AddWithValue("@Clave", _clave);
+            cmd.Parameters.AddWithValue("@Usuario", gerente.Usu);
+            cmd.Parameters.AddWithValue("@Clave", clave);
 
             try
             {
@@ -151,10 +151,10 @@ namespace Persistencia
             }
         }
 
-        public List<Gerente> ListarGerentes()
+        public List<Gerente> ListarGerentes(string usuario, string clave)
         {
             List<Gerente> _gerentes = null;
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("ListarGerentes", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 

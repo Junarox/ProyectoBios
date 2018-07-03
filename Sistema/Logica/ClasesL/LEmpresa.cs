@@ -23,29 +23,29 @@ namespace Logica
             return _instancia;
         }
 
-        public void AltaEmpresa(Empresa _empresa)
+        public void AltaEmpresa(Empresa empresa, Usuario logueo)
         {
-            FabricaP.GetPEmpresa().AltaEmpresa(_empresa);
+            FabricaP.GetPEmpresa().AltaEmpresa(empresa, logueo.Usu, logueo.Clave);
         }
 
-        public void BajaEmpresa(Empresa empresa)
+        public void BajaEmpresa(Empresa empresa, Usuario logueo)
         {
-            FabricaP.GetPEmpresa().BajaEmpresa(empresa);
+            FabricaP.GetPEmpresa().BajaEmpresa(empresa, logueo.Usu, logueo.Clave);
         }
 
-        public Empresa BuscarEmpresa(int _codigo)
+        public Empresa BuscarEmpresa(int codigo, Usuario logueo)
         {
-            return (FabricaP.GetPEmpresa().BuscarEmpresa(_codigo));
+            return (FabricaP.GetPEmpresa().BuscarEmpresa(codigo, logueo.Usu, logueo.Clave));
         }
 
-        public List<Empresa> ListarEmpresa()
+        public List<Empresa> ListarEmpresa(Usuario logueo)
         {
-            return (FabricaP.GetPEmpresa().ListarEmpresa());
+            return (FabricaP.GetPEmpresa().ListarEmpresa(logueo.Usu, logueo.Clave));
         }
 
-        public void ModEmpresa(Empresa _empresa)
+        public void ModEmpresa(Empresa empresa, Usuario logueo)
         {
-            FabricaP.GetPEmpresa().ModEmpresa(_empresa);
+            FabricaP.GetPEmpresa().ModEmpresa(empresa, logueo.Usu, logueo.Clave);
         }
                 
         

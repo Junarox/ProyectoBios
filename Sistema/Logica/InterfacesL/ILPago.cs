@@ -8,8 +8,8 @@ namespace Logica
 {
     public interface ILPago
     {
-        void AltaPago(Pago _pago);
-        List<Pago> ListarPagos();
-        List<LineaPago> ListarFacturas(int _NumeroInterno);
+        void AltaPago(Pago pago, Usuario logueo);
+        List<Pago> ListarPagos(Usuario logueo);
+        List<LineaPago> ListarFacturas(int _NumeroInterno, Usuario logueo);
     }
 }

@@ -9,13 +9,13 @@ namespace Logica
 {
     public interface ILUsuario
     {
-        Usuario Logueo(string usu, string clave);
-        void Alta(Usuario _usu);
-        void BajaCajero(Usuario _cajero);
-        Cajero BuscarCajero(int Ci);
-        List<Cajero> ListarCajeros();
-        List<Gerente> ListarGerentes();
-        void Modificar(Usuario _cajero);
-        void ModificarClave(Usuario _usu, string clave1, string clave2);
+        Usuario Logueo(string usuario, string clave);
+        void Alta(Usuario usuario, Usuario logueo);
+        void BajaCajero(Usuario cajero, Usuario logueo);
+        Cajero BuscarCajero(int Ci, Usuario logueo);
+        List<Cajero> ListarCajeros(Usuario logueo);
+        List<Gerente> ListarGerentes(Usuario logueo);
+        void Modificar(Usuario cajero, Usuario logueo);
+        void ModificarClave(Usuario usuario, string clave1, string clave2);
     }
 }

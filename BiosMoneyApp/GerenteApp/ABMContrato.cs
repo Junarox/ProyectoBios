@@ -14,10 +14,12 @@ namespace BiosMoneyApp.GerenteApp
 {
     public partial class ABMContrato : Form
     {
+        private Usuario usuario;
         FlowLayoutPanel panel;
 
-        public ABMContrato()
+        public ABMContrato(Usuario usuario)
         {
+            this.usuario = usuario;
             InitializeComponent();
         }
 
@@ -31,7 +33,7 @@ namespace BiosMoneyApp.GerenteApp
 
         private void BtnCambiarEmp_Click(object sender, EventArgs e)
         {
-            Form cambiarEmp = new EmpresaSelection(panel);
+            Form cambiarEmp = new EmpresaSelection(panel, usuario);
             cambiarEmp.ShowDialog();
         }
     }

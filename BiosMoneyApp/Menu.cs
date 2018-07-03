@@ -15,19 +15,19 @@ namespace BiosMoneyApp
 {
     public partial class Menu : Form
     {
-        private Usuario usu;
+        private Usuario usuario;
 
-        public Menu(Usuario usu)
+        public Menu(Usuario usuario)
         {
             InitializeComponent();
-            this.usu = usu;
-            CheckUsu(usu);
+            this.usuario = usuario;
+            CheckUsu(usuario);
         }
 
         private void ABMCajero_Click(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
-            ABMCajero myForm = new ABMCajero();
+            ABMCajero myForm = new ABMCajero(usuario);
             myForm.FormBorderStyle = FormBorderStyle.None;
             myForm.TopLevel = false;
             myForm.AutoScroll = true;
@@ -38,7 +38,7 @@ namespace BiosMoneyApp
         private void ABMEmpresa_Click(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
-            ABMEmpresa myForm = new ABMEmpresa();
+            ABMEmpresa myForm = new ABMEmpresa(usuario);
             myForm.FormBorderStyle = FormBorderStyle.None;
             myForm.TopLevel = false;
             myForm.AutoScroll = true;
@@ -51,31 +51,51 @@ namespace BiosMoneyApp
             this.Hide();
             Login form = new Login();
             form.ShowDialog();
-            usu = null;
+            usuario = null;
         }
 
-        private void MenuGerente_FormClosing(object sender, FormClosingEventArgs e)
+        protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            Application.Exit();
+            base.OnFormClosing(e);
+            if (PreClosingConfirmation() == System.Windows.Forms.DialogResult.Yes)
+            {
+                Dispose(true);
+                Application.Exit();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+        private DialogResult PreClosingConfirmation()
+        {
+            DialogResult res = System.Windows.Forms.MessageBox.Show("Está seguro que desea salir?", "Salir", MessageBoxButtons.YesNo);
+            return res;
         }
 
         private void TSMISalir_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Está seguro que desea salir?", "Confirmar", MessageBoxButtons.OKCancel);
-            if (result == DialogResult.OK) { MenuGerente_FormClosing(sender, e as FormClosingEventArgs); }
-            else { return; }
+            if (PreClosingConfirmation() == System.Windows.Forms.DialogResult.Yes)
+            {
+                Dispose(true);
+                Application.Exit();
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void TSMICambiarClave_Click(object sender, EventArgs e)
         {
-            CambiarClave form = new CambiarClave(usu);
+            CambiarClave form = new CambiarClave(usuario);
             form.ShowDialog();
         }
 
         private void TSMIAltaGerente_Click(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
-            AltaGerente myForm = new AltaGerente();
+            AltaGerente myForm = new AltaGerente(usuario);
             myForm.FormBorderStyle = FormBorderStyle.None;
             myForm.TopLevel = false;
             myForm.AutoScroll = true;
@@ -85,7 +105,7 @@ namespace BiosMoneyApp
 
         private void TSMIABMContrato_Click(object sender, EventArgs e)
         {
-            Form f = new EmpresaSelection(flowLayoutPanel1);
+            Form f = new EmpresaSelection(flowLayoutPanel1, usuario);
             f.ShowDialog();
         }
 

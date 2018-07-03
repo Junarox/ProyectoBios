@@ -6,16 +6,17 @@ using System.Text;
 namespace Persistencia
 {
     internal class Conexion
-    {   //DIEGO
-        //private static string _cnn = "Data Source= localhost; Initial Catalog = BiosMoney; Integrated Security = true";
-        
-        //MATEO
-        private static string _cnn = "Data Source= localhost; Initial Catalog = BiosMoney; Integrated Security = true";
-            
-
-        public static string Cnn
+    {
+        public static string Cnn(string usuario, string clave)
         {
-            get { return _cnn; }
+            return "Data Source= localhost; Initial Catalog = BiosMoney; User = " + usuario+ "; Password = " + clave + ";";
         }
+
+        public static string CnnLogueo()
+        {
+            return "Data Source= localhost; Initial Catalog = BiosMoney; Integrated Security = true;";
+        }
+        
+
     }
 }

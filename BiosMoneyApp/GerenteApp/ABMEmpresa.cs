@@ -14,17 +14,19 @@ namespace BiosMoneyApp.GerenteApp
 {
     public partial class ABMEmpresa : Form
     {
+        private Usuario usuario;
         private bool cambio;
         private List<Empresa> emps = new List<Empresa>();
 
         public override void Refresh()
         {
             DGVEmpresas.DataSource = null;
-            DGVEmpresas.DataSource = emps = FabricaL.GetEmpresa().ListarEmpresa();
+            DGVEmpresas.DataSource = emps = FabricaL.GetEmpresa().ListarEmpresa(usuario);
         }
 
-        public ABMEmpresa()
+        public ABMEmpresa(Usuario usuario)
         {
+            this.usuario = usuario;
             InitializeComponent();
 
             DGVEmpresas.AutoGenerateColumns = false;
@@ -70,7 +72,7 @@ namespace BiosMoneyApp.GerenteApp
                 catch (NullReferenceException) { throw new NullReferenceException("El campo Teléfono no puede estar vacío."); }
                 catch (FormatException) { throw new FormatException("El campo Teléfono debe contener solo dígitos."); }
                 
-                FabricaL.GetEmpresa().AltaEmpresa(emp);
+                FabricaL.GetEmpresa().AltaEmpresa(emp, usuario);
 
                 Refresh();
             }
@@ -99,7 +101,7 @@ namespace BiosMoneyApp.GerenteApp
                 emp.DirFiscal = txtDirF.Text;
                 emp.Tel = Convert.ToInt32(txtTel.Text);
 
-                FabricaL.GetEmpresa().ModEmpresa(emp);
+                FabricaL.GetEmpresa().ModEmpresa(emp, usuario);
 
                 Refresh();
             }
@@ -113,7 +115,7 @@ namespace BiosMoneyApp.GerenteApp
             {
                 try
                 {
-                    FabricaL.GetEmpresa().BajaEmpresa((Empresa)DGVEmpresas.CurrentRow.DataBoundItem);
+                    FabricaL.GetEmpresa().BajaEmpresa((Empresa)DGVEmpresas.CurrentRow.DataBoundItem, usuario);
                 }
                 catch (NullReferenceException) { lblError.Text = "No se ha seleccionado ninguna Empresa."; }
 

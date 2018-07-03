@@ -21,9 +21,9 @@ namespace Persistencia
             return _instancia;
         }
 
-        public void AltaContrato(Contrato _contrato)
+        public void AltaContrato(Contrato _contrato, string usuario, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("AltaContrato", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
@@ -53,9 +53,9 @@ namespace Persistencia
             }
         }
 
-        public void BajaContrato(Contrato _contrato)
+        public void BajaContrato(Contrato _contrato, string usuario, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("BajaContrato", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
@@ -85,11 +85,11 @@ namespace Persistencia
             }
         }
 
-        public Contrato BuscarContrato(int CodEmpresa, int CodTipo)
+        public Contrato BuscarContrato(int CodEmpresa, int CodTipo, string usuario, string clave)
         {
             Contrato _Contrato = null;
 
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("BuscarContrato", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -105,7 +105,7 @@ namespace Persistencia
                 {
                     reader.Read();
                     _Contrato = new Contrato();
-                    _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa((int)reader["CodEmpresa"]);
+                    _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa((int)reader["CodEmpresa"], usuario, clave);
                     _Contrato.CodContrato = CodTipo;
                     _Contrato.NomContrato = (string)reader["Nombre"];
                 }
@@ -121,10 +121,10 @@ namespace Persistencia
             return _Contrato;
         }
 
-        public List<Contrato> ListarContrato(int CodEmpresa)
+        public List<Contrato> ListarContrato(int CodEmpresa, string usuario, string clave)
         {
             List<Contrato> _Contratos = null;
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("ListarContrato", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -142,7 +142,7 @@ namespace Persistencia
                     while (reader.Read())
                     {
                         Contrato _Contrato = new Contrato();
-                        _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa(CodEmpresa);
+                        _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa(CodEmpresa, usuario, clave);
                         _Contrato.CodContrato = Convert.ToInt32(reader["CodTipo"]);
                         _Contrato.NomContrato = (string)reader["Nombre"];
                         _Contratos.Add(_Contrato);
@@ -161,10 +161,10 @@ namespace Persistencia
             return _Contratos;
         }
 
-        public List<Contrato> ListarTodosLosContratos()
+        public List<Contrato> ListarTodosLosContratos(string usuario, string clave)
         {
             List<Contrato> _Contratos = null;
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("ListarTodosLosContratos", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -180,7 +180,7 @@ namespace Persistencia
                     while (reader.Read())
                     {
                         Contrato _Contrato = new Contrato();
-                        _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa((int)reader["CodEmpresa"]);
+                        _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa((int)reader["CodEmpresa"], usuario, clave);
                         _Contrato.CodContrato = Convert.ToInt32(reader["CodTipo"]);
                         _Contrato.NomContrato = (string)reader["Nombre"];
                         _Contratos.Add(_Contrato);
@@ -199,9 +199,9 @@ namespace Persistencia
             return _Contratos;
         }
 
-        public void ModContrato(Contrato _contrato)
+        public void ModContrato(Contrato _contrato, string usuario, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("ModContrato", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
@@ -232,10 +232,10 @@ namespace Persistencia
             }
         }
 
-        public DateTime ChequearFacturaPaga(string[] _factura)
+        public DateTime ChequearFacturaPaga(string[] _factura, string usuario, string clave)
         {
             DateTime _fecha = new DateTime(9999, 1, 1);
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("ChequearFacturaPaga", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 

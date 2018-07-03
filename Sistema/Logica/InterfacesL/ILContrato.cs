@@ -11,12 +11,12 @@ namespace Logica
 {
     public interface ILContrato
     {
-        void AltaContrato(Contrato _contrato);
-        void BajaContrato(Contrato _contrato);
-        void ModContrato(Contrato _contrato);
-        Contrato BuscarContrato(int _CodigoEmpresa, int _CodTipo);
-        List<Contrato> ListarContrato(Empresa Empresa);
-        string GenerarXMLContratos();
-        DateTime ChequearFacturaPaga(string _factura);
+        void AltaContrato(Contrato contrato, Usuario logueo);
+        void BajaContrato(Contrato contrato, Usuario logueo);
+        void ModContrato(Contrato contrato, Usuario logueo);
+        Contrato BuscarContrato(int codigoEmpresa, int codTipo, Usuario logueo);
+        List<Contrato> ListarContrato(Empresa empresa, Usuario logueo);
+        string GenerarXMLContratos(Usuario logueo);
+        DateTime ChequearFacturaPaga(string factura, Usuario logueo);
     }
 }

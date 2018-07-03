@@ -9,11 +9,11 @@ namespace Persistencia
 {
     public interface IPGerente
     {
-        int Logueo(string usu, string Clave);
-        Gerente BuscarGerenteLogueo(string usu);
-        void AltaGerente(Gerente Gerente);
-        void ModificarClave(Gerente _gerente, string _clave);
-        List<Gerente> ListarGerentes();
+        int Logueo(string usuario, string clave);
+        Gerente BuscarGerenteLogueo(string usuario);
+        void AltaGerente(Gerente gerente, string usuario, string clave);
+        void ModificarClave(Gerente gerente, string _clave);
+        List<Gerente> ListarGerentes(string usuario, string clave);
 
     }
 }

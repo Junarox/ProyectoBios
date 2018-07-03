@@ -17,19 +17,19 @@ namespace Logica
             return _instancia;
         }
 
-        public List<Pago> ListarPagos()
+        public List<Pago> ListarPagos(Usuario logueo)
         {
-            return Persistencia.FabricaP.GetPPago().ListarPagos();
+            return Persistencia.FabricaP.GetPPago().ListarPagos(logueo.Usu, logueo.Clave);
         }
 
-        public void AltaPago(Pago _pago)
+        public void AltaPago(Pago pago, Usuario logueo)
         {
-           Persistencia.FabricaP.GetPPago().AltaPago(_pago);
+           Persistencia.FabricaP.GetPPago().AltaPago(pago,logueo.Usu, logueo.Clave);
         }
 
-        public List<LineaPago> ListarFacturas(int _NumeroInterno)
+        public List<LineaPago> ListarFacturas(int numeroInterno, Usuario logueo)
         {
-            return Persistencia.FabricaP.GetPPago().ListarFacturas(_NumeroInterno);
+            return Persistencia.FabricaP.GetPPago().ListarFacturas(numeroInterno, logueo.Usu,logueo.Clave);
         }
 
     }

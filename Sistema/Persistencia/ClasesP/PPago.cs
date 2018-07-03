@@ -19,11 +19,11 @@ namespace Persistencia
                 _instancia = new PPago();
             return _instancia;
         }
-        public List<Pago> ListarPagos()
+        public List<Pago> ListarPagos(string usuario, string clave)
         {
             List<Pago> listaPagos = null;
 
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario,clave));
             SqlCommand cmd = new SqlCommand("ListarPagos", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -38,8 +38,8 @@ namespace Persistencia
                     {
                         listaPagos.Add(new Pago((int)reader["NumInterno"],
                             (DateTime)reader["Fecha"], (int)reader["Monto"],
-                            PCajero.GetInstancia().BuscarCajero(Convert.ToInt32(reader["Cajero"])),
-                            ListarFacturas(Convert.ToInt32(reader["NumInterno"]))));
+                            PCajero.GetInstancia().BuscarCajero(Convert.ToInt32(reader["Cajero"]), usuario, clave),
+                            ListarFacturas(Convert.ToInt32(reader["NumInterno"]), usuario, clave)));
                     }
                 }
             }
@@ -54,11 +54,11 @@ namespace Persistencia
             return listaPagos;
 
         }
-        public List<LineaPago> ListarFacturas(int _NumeroInterno)
+        public List<LineaPago> ListarFacturas(int _NumeroInterno, string usuario, string clave)
         {
 
             List<LineaPago> listaFacturas = null;
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("ListarFacturas", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@NumeroInterno", _NumeroInterno);
@@ -75,7 +75,7 @@ namespace Persistencia
                         listaFacturas.Add(new LineaPago(Convert.ToInt32(reader["Monto"]), 
                             Convert.ToDateTime(reader["FechaVencimiento"]), 
                             Convert.ToInt32(reader["CodCliente"]), 
-                            PContrato.GetInstancia().BuscarContrato(Convert.ToInt32(reader["CodigoEmpresa"]), Convert.ToInt32(reader["TipoContrato"]))));
+                            PContrato.GetInstancia().BuscarContrato(Convert.ToInt32(reader["CodigoEmpresa"]), Convert.ToInt32(reader["TipoContrato"]), usuario, clave)));
                     }
                 }
             }
@@ -89,90 +89,77 @@ namespace Persistencia
             }
             return listaFacturas;
         }
-        public void AltaPago(Pago _pago)
+        public void AltaPago(Pago _pago, string usuario, string clave)
         {
-            using (SqlConnection cnn = new SqlConnection(Conexion.Cnn))
-            {
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
+            SqlTransaction transaccion;
+            transaccion = cnn.BeginTransaction("SampleTransaction");
+            SqlCommand cmd = new SqlCommand("AltaPago", cnn, transaccion);
+            cmd.Parameters.AddWithValue("@Fecha", _pago.Fecha);
+            cmd.Parameters.AddWithValue("@Monto", _pago.Monto);
+            cmd.Parameters.AddWithValue("@Cajero", _pago.Cajero.Ci);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
+            retorno.Direction = ParameterDirection.ReturnValue;
+            cmd.Parameters.Add(retorno);
 
+            try
+            {
                 cnn.Open();
 
-                SqlCommand cmd = new SqlCommand("AltaPago", cnn);
+                cmd.ExecuteNonQuery();
 
-                SqlTransaction transaccion;
-                transaccion = cnn.BeginTransaction("SampleTransaction");
+                //Verifico que el primer SP no haya dado error
+                switch ((int)retorno.Value)
+                {
+                    case -1:
+                        throw new Exception("Error al ingresar pago, intente nuevamente más tarde.");
+                    case -2:
+                        throw new Exception("No existe el usuario cajero que está ejecutando esta operación.");
+                    default:
+                        foreach (LineaPago factura in _pago.LineasPago)
+                        {
 
-                cmd.Connection = cnn;
-                cmd.Transaction = transaccion;
+                            cmd.Parameters.Clear();
+                            cmd.Transaction = transaccion;
+                            cmd.CommandText = "RegistrarFacturaEnPago";
 
+                            cmd.Parameters.Add(retorno);
+                            cmd.Parameters.AddWithValue("@CodigoEmpresa", factura.Contrato.Empresa.Codigo);
+                            cmd.Parameters.AddWithValue("@TipoContrato", factura.Contrato.CodContrato);
+                            cmd.Parameters.AddWithValue("@CodCliente", factura.CodigoCliente);
+                            cmd.Parameters.AddWithValue("@FechaVencimiento", factura.FechaVencimiento);
+                            cmd.Parameters.AddWithValue("@Monto", factura.Monto);
+
+                            cmd.ExecuteNonQuery();
+                            //Verifico que cada ingreso de factura no de error
+                            switch ((int)retorno.Value)
+                            {
+                                case -1:
+                                    throw new Exception("Error al registrar factura, intente nuevamente más tarde.");
+                                case -2:
+                                    throw new Exception("Error al registrar factura, no existe el tipo de contrato de la factura.\r\nPor favor verifique que el tipo de contrato exista y que no haya más de una factura para el mismo contrato.");
+                                default:
+                                    break;
+                            }
+                        }
+                        break;
+                }
+                transaccion.Commit();
+            }
+            catch (Exception ex)
+            {
                 try
                 {
-
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@Fecha", _pago.Fecha);
-                    cmd.Parameters.AddWithValue("@Monto", _pago.Monto);
-                    cmd.Parameters.AddWithValue("@Cajero", _pago.Cajero.Ci);
-                    SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
-                    retorno.Direction = ParameterDirection.ReturnValue;
-                    cmd.Parameters.Add(retorno);
-
-                    cmd.ExecuteNonQuery();
-
-                    //Verifico que el primer SP no haya dado error
-                    switch ((int)retorno.Value)
-                    {
-                        case -1:
-                            throw new Exception("Error al ingresar pago, intente nuevamente más tarde.");
-                        case -2:
-                            throw new Exception("No existe el usuario cajero que está ejecutando esta operación.");
-                        default:
-                            foreach (LineaPago factura in _pago.LineasPago)
-                            {
-
-                                cmd.Parameters.Clear();
-                                cmd.Transaction = transaccion;
-                                cmd.CommandText = "RegistrarFacturaEnPago";
-
-                                cmd.Parameters.Add(retorno);
-                                cmd.Parameters.AddWithValue("@CodigoEmpresa", factura.Contrato.Empresa.Codigo);
-                                cmd.Parameters.AddWithValue("@TipoContrato", factura.Contrato.CodContrato);
-                                cmd.Parameters.AddWithValue("@CodCliente", factura.CodigoCliente);
-                                cmd.Parameters.AddWithValue("@FechaVencimiento", factura.FechaVencimiento);
-                                cmd.Parameters.AddWithValue("@Monto", factura.Monto);
-
-                                cmd.ExecuteNonQuery();
-                                //Verifico que cada ingreso de factura no de error
-                                switch ((int)retorno.Value)
-                                {
-                                    case -1:
-                                        throw new Exception("Error al registrar factura, intente nuevamente más tarde.");
-                                    case -2:
-                                        throw new Exception("Error al registrar factura, no existe el tipo de contrato de la factura.\r\nPor favor verifique que el tipo de contrato exista y que no haya más de una factura para el mismo contrato.");
-                                    default:
-                                        break;
-                                }
-                            }
-                            break;
-                    }
-                    transaccion.Commit();
+                    //En caso de error hago Rollback para cancelar la transacción
+                    transaccion.Rollback();
                 }
-                catch (Exception ex)
+                catch (Exception ex2)
                 {
-                    try
-                    {
-                        //En caso de error hago Rollback para cancelar la transacción
-                        transaccion.Rollback();
-                    }
-                    catch (Exception ex2)
-                    {
-                        throw new Exception(ex2.Message);
-                    }
-                    throw new Exception(ex.Message);
+                    throw new Exception(ex2.Message);
                 }
+                throw new Exception(ex.Message);
             }
         }
-
-
-
     }
 }

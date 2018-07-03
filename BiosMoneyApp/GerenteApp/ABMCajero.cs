@@ -13,6 +13,8 @@ namespace BiosMoneyApp.GerenteApp
 {
     public partial class ABMCajero : Form
     {
+        Usuario usuario;
+
         //Esto determina como se va a ordenar la lista del DataGrid
         private bool cambio;
 
@@ -25,14 +27,16 @@ namespace BiosMoneyApp.GerenteApp
         public override void Refresh()
         {
             DGVCajeros.DataSource = null;
-            DGVCajeros.DataSource = cs = FabricaL.GetLUsuario().ListarCajeros();
+            DGVCajeros.DataSource = cs = FabricaL.GetLUsuario().ListarCajeros(usuario);
         }
 
         /// <summary>
         /// Esto sucede la primera vez que se abre el Form.
         /// </summary>
-        public ABMCajero()
+        public ABMCajero(Usuario usuario)
         {
+            this.usuario = usuario;
+
             //Se inicializa la UI.
             InitializeComponent();
             //Si no hago esto, el DataGrid me muestra todos los datos del Usuario.
@@ -93,18 +97,17 @@ namespace BiosMoneyApp.GerenteApp
                 }
                 catch (FormatException)
                 {
-                    var wait = UseWaitCursor = true;
                     MessageBox.Show("La Cédula debe contener 8 dígitos.", "Campo Inválido");
+                    return;
                 }
                 catch (OverflowException) { MessageBox.Show("La Cédula debe contener 8 dígitos.", "Campo Inválido"); }
-
                 c.Usu = txtUsuario.Text;
                 c.NomCompleto = txtNombreC.Text;
                 c.HoraInicio = CBHIHH.SelectedItem.ToString() + CBHIMM.SelectedItem.ToString();
                 c.HoraFin = CBHFHH.SelectedItem.ToString() + CBHFMM.SelectedItem.ToString();
 
                 //Llamo a la fabrica para darlo de alta.
-                FabricaL.GetLUsuario().Alta(c);
+                FabricaL.GetLUsuario().Alta(c, usuario);
 
                 //Refresco el DataGrid con los nuevos datos.
                 Refresh();
@@ -137,7 +140,7 @@ namespace BiosMoneyApp.GerenteApp
                 c.HoraFin = CBHFHH.SelectedItem.ToString() + CBHFMM.SelectedItem.ToString();
 
                 //LLamo a la fabrica para modificarlo en la DB.
-                FabricaL.GetLUsuario().Modificar(c);
+                FabricaL.GetLUsuario().Modificar(c, usuario);
 
                 //Refresco el DataGrid con los nuevos datos.
                 Refresh();
@@ -204,7 +207,7 @@ namespace BiosMoneyApp.GerenteApp
                 //Llamo a la fabrica y doy de baja al Usuario de la fila seleccionada.
                 try
                 {
-                    FabricaL.GetLUsuario().BajaCajero((Cajero)DGVCajeros.CurrentRow.DataBoundItem);
+                    FabricaL.GetLUsuario().BajaCajero((Cajero)DGVCajeros.CurrentRow.DataBoundItem, usuario);
                 }
                 catch (NullReferenceException) { MessageBox.Show("No se ha selecionado ningún Cajero.", "Error"); }
 

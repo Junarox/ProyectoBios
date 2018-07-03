@@ -20,9 +20,9 @@ namespace Persistencia
             return _instancia;
         }
 
-        public void AltaCajero(Cajero _cajero)
+        public void AltaCajero(Cajero _cajero, string usuario, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("AltaCajero", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
@@ -58,9 +58,9 @@ namespace Persistencia
 
         }
 
-        public void BajaCajero(Cajero _cajero)
+        public void BajaCajero(Cajero _cajero, string usuario, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("BajaCajero", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
@@ -85,15 +85,15 @@ namespace Persistencia
             }
         }
 
-        public Cajero BuscarCajero(int Ci)
+        public Cajero BuscarCajero(int cedula, string usuario, string clave)
         {
             Cajero cajero = null;
 
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("BuscarCajero", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@Ci", Ci);
+            cmd.Parameters.AddWithValue("@Ci", cedula);
             try
             {
                 cnn.Open();
@@ -115,15 +115,15 @@ namespace Persistencia
             return cajero;
         }
 
-        public Cajero BuscarCajeroLogueo(string usu)
+        public Cajero BuscarCajeroLogueo(string usuario, string clave)
         {
             Cajero cajero = null;
 
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario,clave));
             SqlCommand cmd = new SqlCommand("BuscarCajeroLogueo", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@Usuario", usu);
+            cmd.Parameters.AddWithValue("@Usuario", usuario);
             try
             {
                 cnn.Open();
@@ -145,10 +145,10 @@ namespace Persistencia
             return cajero;
         }
 
-        public List<Cajero> ListarCajeros()
+        public List<Cajero> ListarCajeros(string usuario, string clave)
         {
             List<Cajero> _cajeros = null;
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("ListarCajeros", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -177,13 +177,13 @@ namespace Persistencia
             return _cajeros;
         }
 
-        public int Logueo(string Usu, string Clave)
+        public int Logueo(string usuario, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("Logueo", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Usuario", Usu);
-            cmd.Parameters.AddWithValue("@Clave", Clave);
+            cmd.Parameters.AddWithValue("@Usuario", usuario);
+            cmd.Parameters.AddWithValue("@Clave", clave);
             SqlParameter retorno = new SqlParameter("@retorno", SqlDbType.Int);
             retorno.Direction = ParameterDirection.ReturnValue;
             cmd.Parameters.Add(retorno);
@@ -210,19 +210,19 @@ namespace Persistencia
             }
         }
 
-        public void ModificarCajero(Cajero _cajero)
+        public void ModificarCajero(Cajero cajero, string usuario, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("ModCajero", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter retorno = new SqlParameter("@retorno", SqlDbType.Int);
             retorno.Direction = ParameterDirection.ReturnValue;
             cmd.Parameters.Add(retorno);
 
-            cmd.Parameters.AddWithValue("@Ci", _cajero.Ci);
-            cmd.Parameters.AddWithValue("@NomCompleto", _cajero.NomCompleto);
-            cmd.Parameters.AddWithValue("@HoraInicio", _cajero.HoraInicio);
-            cmd.Parameters.AddWithValue("@HoraFin", _cajero.HoraFin);
+            cmd.Parameters.AddWithValue("@Ci", cajero.Ci);
+            cmd.Parameters.AddWithValue("@NomCompleto", cajero.NomCompleto);
+            cmd.Parameters.AddWithValue("@HoraInicio", cajero.HoraInicio);
+            cmd.Parameters.AddWithValue("@HoraFin", cajero.HoraFin);
 
             try
             {
@@ -231,7 +231,7 @@ namespace Persistencia
                 if ((int)retorno.Value == -1)
                     throw new Exception("No existe el Cajero.");
                 if ((int)retorno.Value == -2)
-                    throw new Exception("Ya existe el Usuario: " + _cajero.Usu + ".");
+                    throw new Exception("Ya existe el Usuario: " + cajero.Usu + ".");
                 if ((int)retorno.Value == -3)
                     throw new Exception("Error.");
 
@@ -246,15 +246,15 @@ namespace Persistencia
             }
         }
 
-        public void ModificarClave(Cajero _cajero, string clave)
+        public void ModificarClave(Cajero cajero, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(cajero.Usu, cajero.Clave));
             SqlCommand cmd = new SqlCommand("ModClave", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
             retorno.Direction = ParameterDirection.ReturnValue;
             cmd.Parameters.Add(retorno);
-            cmd.Parameters.AddWithValue("@Ci", _cajero.Ci);
+            cmd.Parameters.AddWithValue("@Usuario", cajero.Usu);
             cmd.Parameters.AddWithValue("clave", clave);
 
             try

@@ -20,9 +20,9 @@ namespace Persistencia
             return _instancia;
         }
 
-        public void AltaEmpresa(Empresa _empresa)
+        public void AltaEmpresa(Empresa _empresa, string usuario, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("AltaEmpresa", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
@@ -56,9 +56,9 @@ namespace Persistencia
             }
         }
 
-        public void BajaEmpresa(Empresa empresa)
+        public void BajaEmpresa(Empresa empresa, string usuario, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("BajaEmpresa", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
@@ -87,11 +87,11 @@ namespace Persistencia
             }
         }
 
-        public Empresa BuscarEmpresa(int _codigo)
+        public Empresa BuscarEmpresa(int _codigo, string usuario, string clave)
         {
             Empresa _Empresa = null;
 
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("BuscarEmpresa", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -124,10 +124,10 @@ namespace Persistencia
             return _Empresa;
         }
 
-        public List<Empresa> ListarEmpresa()
+        public List<Empresa> ListarEmpresa(string usuario, string clave)
         {
             List<Empresa> _Empresas = new List<Empresa>();
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("ListarEmpresas", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -157,9 +157,9 @@ namespace Persistencia
             return _Empresas;
         }
 
-        public void ModEmpresa(Empresa _empresa)
+        public void ModEmpresa(Empresa _empresa, string usuario, string clave)
         {
-            SqlConnection cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave));
             SqlCommand cmd = new SqlCommand("ModEmpresa", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
