@@ -37,31 +37,27 @@
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.DGVPagos = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtFactura = new System.Windows.Forms.TextBox();
-            this.BtnFactura = new System.Windows.Forms.PictureBox();
-            this.DGVCajeros = new System.Windows.Forms.DataGridView();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtNombreC = new System.Windows.Forms.TextBox();
-            this.txtCedula = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtTotal = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.AddCodigo = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TxtCodigoBar = new System.Windows.Forms.MaskedTextBox();
             this.statusStrip2.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVPagos)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnFactura)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVCajeros)).BeginInit();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddCodigo)).BeginInit();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip2
@@ -98,7 +94,7 @@
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip2.Size = new System.Drawing.Size(341, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(355, 25);
             this.toolStrip2.TabIndex = 11;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -110,6 +106,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(23, 22);
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -131,223 +128,182 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(-1, 24);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 22);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 97.73371F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.266289F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(342, 353);
             this.tableLayoutPanel1.TabIndex = 12;
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.AutoSize = true;
-            this.tableLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.DGVCajeros, 0, 1);
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.DGVPagos, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 0, 2);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(335, 156);
-            this.tableLayoutPanel6.TabIndex = 0;
+            this.tableLayoutPanel6.RowCount = 3;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.56677F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.43323F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(336, 339);
+            this.tableLayoutPanel6.TabIndex = 2;
+            // 
+            // DGVPagos
+            // 
+            this.DGVPagos.AllowUserToAddRows = false;
+            this.DGVPagos.AllowUserToDeleteRows = false;
+            this.DGVPagos.AllowUserToOrderColumns = true;
+            this.DGVPagos.AllowUserToResizeRows = false;
+            this.DGVPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVPagos.Location = new System.Drawing.Point(3, 60);
+            this.DGVPagos.Name = "DGVPagos";
+            this.DGVPagos.ReadOnly = true;
+            this.DGVPagos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.DGVPagos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DGVPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVPagos.Size = new System.Drawing.Size(329, 244);
+            this.DGVPagos.TabIndex = 1;
             // 
             // tableLayoutPanel7
             // 
-            this.tableLayoutPanel7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.tableLayoutPanel7.AutoSize = true;
             this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel7.Controls.Add(this.txtFactura, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.BtnFactura, 1, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(216, 0);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
+            this.tableLayoutPanel7.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.TxtTotal, 1, 0);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 310);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(119, 20);
-            this.tableLayoutPanel7.TabIndex = 9;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(330, 26);
+            this.tableLayoutPanel7.TabIndex = 2;
             // 
-            // txtFactura
+            // label2
             // 
-            this.txtFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtFactura.Location = new System.Drawing.Point(0, 0);
-            this.txtFactura.Margin = new System.Windows.Forms.Padding(0);
-            this.txtFactura.Name = "txtFactura";
-            this.txtFactura.Size = new System.Drawing.Size(100, 20);
-            this.txtFactura.TabIndex = 1;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(188, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Total:";
             // 
-            // BtnFactura
+            // TxtTotal
             // 
-            this.BtnFactura.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.BtnFactura.Image = ((System.Drawing.Image)(resources.GetObject("BtnFactura.Image")));
-            this.BtnFactura.Location = new System.Drawing.Point(103, 2);
-            this.BtnFactura.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.BtnFactura.MaximumSize = new System.Drawing.Size(23, 25);
-            this.BtnFactura.Name = "BtnFactura";
-            this.BtnFactura.Size = new System.Drawing.Size(16, 16);
-            this.BtnFactura.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.BtnFactura.TabIndex = 2;
-            this.BtnFactura.TabStop = false;
+            this.TxtTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.TxtTotal.Location = new System.Drawing.Point(228, 3);
+            this.TxtTotal.Name = "TxtTotal";
+            this.TxtTotal.ReadOnly = true;
+            this.TxtTotal.Size = new System.Drawing.Size(99, 20);
+            this.TxtTotal.TabIndex = 1;
             // 
-            // DGVCajeros
+            // tableLayoutPanel3
             // 
-            this.DGVCajeros.AllowUserToAddRows = false;
-            this.DGVCajeros.AllowUserToDeleteRows = false;
-            this.DGVCajeros.AllowUserToResizeRows = false;
-            this.DGVCajeros.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.DGVCajeros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DGVCajeros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Usuario,
-            this.Cedula,
-            this.NombreCompleto});
-            this.DGVCajeros.Location = new System.Drawing.Point(3, 23);
-            this.DGVCajeros.Name = "DGVCajeros";
-            this.DGVCajeros.ReadOnly = true;
-            this.DGVCajeros.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.DGVCajeros.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DGVCajeros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVCajeros.Size = new System.Drawing.Size(329, 130);
-            this.DGVCajeros.TabIndex = 0;
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.614379F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.AddCodigo, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 1, 1);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(330, 51);
+            this.tableLayoutPanel3.TabIndex = 3;
             // 
-            // Usuario
+            // AddCodigo
             // 
-            this.Usuario.DataPropertyName = "Usu";
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
+            this.AddCodigo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddCodigo.Image = ((System.Drawing.Image)(resources.GetObject("AddCodigo.Image")));
+            this.AddCodigo.Location = new System.Drawing.Point(312, 20);
+            this.AddCodigo.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.AddCodigo.MaximumSize = new System.Drawing.Size(23, 25);
+            this.AddCodigo.Name = "AddCodigo";
+            this.AddCodigo.Size = new System.Drawing.Size(18, 18);
+            this.AddCodigo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.AddCodigo.TabIndex = 3;
+            this.AddCodigo.TabStop = false;
+            this.AddCodigo.Click += new System.EventHandler(this.AddCodigo_Click);
             // 
-            // Cedula
+            // tableLayoutPanel4
             // 
-            this.Cedula.DataPropertyName = "Ci";
-            this.Cedula.HeaderText = "Cedula";
-            this.Cedula.Name = "Cedula";
-            this.Cedula.ReadOnly = true;
+            this.tableLayoutPanel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tableLayoutPanel4.AutoSize = true;
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel4.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel8, 1, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(12, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(294, 52);
+            this.tableLayoutPanel4.TabIndex = 4;
             // 
-            // NombreCompleto
+            // label5
             // 
-            this.NombreCompleto.DataPropertyName = "NomCompleto";
-            this.NombreCompleto.HeaderText = "Nombre";
-            this.NombreCompleto.Name = "NombreCompleto";
-            this.NombreCompleto.ReadOnly = true;
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Codigo de Barras:";
             // 
-            // tableLayoutPanel5
+            // tableLayoutPanel8
             // 
-            this.tableLayoutPanel5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel5.AutoSize = true;
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(65, 207);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(212, 101);
-            this.tableLayoutPanel5.TabIndex = 0;
+            this.tableLayoutPanel8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tableLayoutPanel8.AutoSize = true;
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 195F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.TxtCodigoBar, 0, 1);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(100, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 2;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(195, 46);
+            this.tableLayoutPanel8.TabIndex = 5;
             // 
-            // tableLayoutPanel2
+            // label6
             // 
-            this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel2.AutoSize = true;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.txtUsuario, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txtNombreC, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.txtCedula, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(2);
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(206, 82);
-            this.tableLayoutPanel2.TabIndex = 1;
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(4, 3);
+            this.label6.Margin = new System.Windows.Forms.Padding(0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(187, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Emp-Cod-YYYY/mm/dd-Cliente-Monto";
             // 
-            // label4
+            // TxtCodigoBar
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 60);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Monto Total:";
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtUsuario.Location = new System.Drawing.Point(101, 31);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
-            this.txtUsuario.TabIndex = 0;
-            // 
-            // txtNombreC
-            // 
-            this.txtNombreC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNombreC.Location = new System.Drawing.Point(101, 57);
-            this.txtNombreC.Name = "txtNombreC";
-            this.txtNombreC.Size = new System.Drawing.Size(100, 20);
-            this.txtNombreC.TabIndex = 0;
-            // 
-            // txtCedula
-            // 
-            this.txtCedula.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCedula.Location = new System.Drawing.Point(101, 5);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(100, 20);
-            this.txtCedula.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Numero Interno:";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Fecha Realizado:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Datos";
+            this.TxtCodigoBar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TxtCodigoBar.Location = new System.Drawing.Point(3, 23);
+            this.TxtCodigoBar.Mask = "0000-00-0000/00/00-000000-00000";
+            this.TxtCodigoBar.Name = "TxtCodigoBar";
+            this.TxtCodigoBar.Size = new System.Drawing.Size(189, 20);
+            this.TxtCodigoBar.TabIndex = 7;
             // 
             // AltaDePago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(340, 400);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.toolStrip2);
@@ -361,19 +317,18 @@
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVPagos)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnFactura)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVCajeros)).EndInit();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddCodigo)).EndInit();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -387,21 +342,16 @@
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.DataGridView DGVPagos;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.TextBox txtFactura;
-        private System.Windows.Forms.PictureBox BtnFactura;
-        private System.Windows.Forms.DataGridView DGVCajeros;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtNombreC;
-        private System.Windows.Forms.TextBox txtCedula;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtTotal;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.PictureBox AddCodigo;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.MaskedTextBox TxtCodigoBar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.Label label6;
     }
 }

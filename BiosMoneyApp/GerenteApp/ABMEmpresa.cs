@@ -105,7 +105,7 @@ namespace BiosMoneyApp.GerenteApp
 
                 Refresh();
             }
-            catch (Exception ex) { lblError.Text = ex.Message; }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
             
         }
 

@@ -34,9 +34,9 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.DGVEmpresas = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVContrato = new System.Windows.Forms.DataGridView();
+            this.CodContrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomContrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVEmpresas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVContrato)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.statusStrip2.SuspendLayout();
@@ -86,7 +86,7 @@
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel7, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.DGVEmpresas, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.DGVContrato, 0, 1);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
@@ -120,6 +120,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(100, 20);
             this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // pictureBox1
             // 
@@ -134,38 +135,46 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // DGVEmpresas
+            // DGVContrato
             // 
-            this.DGVEmpresas.AllowUserToAddRows = false;
-            this.DGVEmpresas.AllowUserToDeleteRows = false;
-            this.DGVEmpresas.AllowUserToResizeRows = false;
-            this.DGVEmpresas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.DGVEmpresas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DGVEmpresas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Codigo,
-            this.Nombre});
-            this.DGVEmpresas.Location = new System.Drawing.Point(3, 23);
-            this.DGVEmpresas.Name = "DGVEmpresas";
-            this.DGVEmpresas.ReadOnly = true;
-            this.DGVEmpresas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.DGVEmpresas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DGVEmpresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVEmpresas.Size = new System.Drawing.Size(329, 130);
-            this.DGVEmpresas.TabIndex = 0;
+            this.DGVContrato.AllowUserToAddRows = false;
+            this.DGVContrato.AllowUserToDeleteRows = false;
+            this.DGVContrato.AllowUserToResizeColumns = false;
+            this.DGVContrato.AllowUserToResizeRows = false;
+            this.DGVContrato.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DGVContrato.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVContrato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DGVContrato.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodContrato,
+            this.NomContrato});
+            this.DGVContrato.Location = new System.Drawing.Point(3, 23);
+            this.DGVContrato.MultiSelect = false;
+            this.DGVContrato.Name = "DGVContrato";
+            this.DGVContrato.ReadOnly = true;
+            this.DGVContrato.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.DGVContrato.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DGVContrato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVContrato.Size = new System.Drawing.Size(329, 130);
+            this.DGVContrato.TabIndex = 0;
+            this.DGVContrato.SelectionChanged += new System.EventHandler(this.DGVContrato_SelectionChanged);
             // 
-            // Codigo
+            // CodContrato
             // 
-            this.Codigo.DataPropertyName = "Codigo";
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
+            this.CodContrato.DataPropertyName = "CodContrato";
+            this.CodContrato.FillWeight = 50.76142F;
+            this.CodContrato.HeaderText = "Codigo";
+            this.CodContrato.Name = "CodContrato";
+            this.CodContrato.ReadOnly = true;
+            this.CodContrato.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // Nombre
+            // NomContrato
             // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
+            this.NomContrato.DataPropertyName = "NomContrato";
+            this.NomContrato.FillWeight = 149.2386F;
+            this.NomContrato.HeaderText = "Nombre";
+            this.NomContrato.Name = "NomContrato";
+            this.NomContrato.ReadOnly = true;
+            this.NomContrato.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // tableLayoutPanel8
             // 
@@ -296,6 +305,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(23, 22);
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -305,6 +315,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(23, 22);
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -314,6 +325,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(23, 22);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblEmpresa
             // 
@@ -335,6 +347,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(340, 400);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.statusStrip2);
@@ -349,7 +362,7 @@
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVEmpresas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVContrato)).EndInit();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
@@ -370,7 +383,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView DGVEmpresas;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.Label label6;
@@ -384,9 +396,10 @@
         private System.Windows.Forms.ToolStripButton btnAgregar;
         private System.Windows.Forms.ToolStripButton btnModificar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.ToolStripLabel lblEmpresa;
         private System.Windows.Forms.ToolStripButton BtnCambiarEmp;
+        private System.Windows.Forms.DataGridView DGVContrato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodContrato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomContrato;
     }
 }

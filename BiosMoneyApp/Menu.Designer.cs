@@ -88,21 +88,21 @@
             // TSMICambiarClave
             // 
             this.TSMICambiarClave.Name = "TSMICambiarClave";
-            this.TSMICambiarClave.Size = new System.Drawing.Size(180, 22);
+            this.TSMICambiarClave.Size = new System.Drawing.Size(162, 22);
             this.TSMICambiarClave.Text = "Cambiar Clave";
             this.TSMICambiarClave.Click += new System.EventHandler(this.TSMICambiarClave_Click);
             // 
             // TSMICambiarUsuario
             // 
             this.TSMICambiarUsuario.Name = "TSMICambiarUsuario";
-            this.TSMICambiarUsuario.Size = new System.Drawing.Size(180, 22);
+            this.TSMICambiarUsuario.Size = new System.Drawing.Size(162, 22);
             this.TSMICambiarUsuario.Text = "Cambiar Usuario";
             this.TSMICambiarUsuario.Click += new System.EventHandler(this.TSMICambiarUsuario_Click);
             // 
             // TSMISalir
             // 
             this.TSMISalir.Name = "TSMISalir";
-            this.TSMISalir.Size = new System.Drawing.Size(180, 22);
+            this.TSMISalir.Size = new System.Drawing.Size(162, 22);
             this.TSMISalir.Text = "Salir...";
             this.TSMISalir.Click += new System.EventHandler(this.TSMISalir_Click);
             // 
@@ -166,10 +166,10 @@
             this.ClientSize = new System.Drawing.Size(349, 436);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Menu";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.toolStrip1.ResumeLayout(false);

@@ -107,81 +107,87 @@ namespace Persistencia
 
         public void AltaPago(Pago _pago, string usuario, string clave)
         {
-            using(SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave)))
+            using (SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave)))
             {
-                using(SqlTransaction transaccion = cnn.BeginTransaction("SampleTransaction"))
+                try
                 {
-                    using(SqlCommand cmd = new SqlCommand("AltaPago", cnn, transaccion))
+                    cnn.Open();
+
+                    using (SqlTransaction transaccion = cnn.BeginTransaction("SampleTransaction"))
                     {
-                        cmd.Parameters.AddWithValue("@Fecha", _pago.Fecha);
-                        cmd.Parameters.AddWithValue("@Monto", _pago.Monto);
-                        cmd.Parameters.AddWithValue("@Cajero", _pago.Cajero.Ci);
-
-                        cmd.CommandType = CommandType.StoredProcedure;
-
-                        SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
-                        retorno.Direction = ParameterDirection.ReturnValue;
-                        cmd.Parameters.Add(retorno);
-
-                        try
+                        using (SqlCommand cmd = new SqlCommand("AltaPago", cnn, transaccion))
                         {
-                            cnn.Open();
-                            cmd.ExecuteNonQuery();
+                            cmd.Parameters.AddWithValue("@Fecha", _pago.Fecha);
+                            cmd.Parameters.AddWithValue("@Monto", _pago.Monto);
+                            cmd.Parameters.AddWithValue("@Cajero", _pago.Cajero.Ci);
 
-                            //Verifico que el primer SP no haya dado error
-                            switch ((int)retorno.Value)
-                            {
-                                case -1:
-                                    throw new Exception("Error al ingresar pago, intente nuevamente más tarde.");
-                                case -2:
-                                    throw new Exception("No existe el usuario cajero que está ejecutando esta operación.");
-                                default:
-                                    foreach (LineaPago factura in _pago.LineasPago)
-                                    {
+                            cmd.CommandType = CommandType.StoredProcedure;
 
-                                        cmd.Parameters.Clear();
-                                        //MATEO: Es necesario pasar la transaccion nuevamente??
-                                        cmd.Transaction = transaccion;
-                                        cmd.CommandText = "RegistrarFacturaEnPago";
+                            SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
+                            retorno.Direction = ParameterDirection.ReturnValue;
+                            cmd.Parameters.Add(retorno);
 
-                                        cmd.Parameters.Add(retorno);
-                                        cmd.Parameters.AddWithValue("@CodigoEmpresa", factura.Contrato.Empresa.Codigo);
-                                        cmd.Parameters.AddWithValue("@TipoContrato", factura.Contrato.CodContrato);
-                                        cmd.Parameters.AddWithValue("@CodCliente", factura.CodigoCliente);
-                                        cmd.Parameters.AddWithValue("@FechaVencimiento", factura.FechaVencimiento);
-                                        cmd.Parameters.AddWithValue("@Monto", factura.Monto);
-
-                                        cmd.ExecuteNonQuery();
-                                        //Verifico que cada ingreso de factura no de error
-                                        switch ((int)retorno.Value)
-                                        {
-                                            case -1:
-                                                throw new Exception("Error al registrar factura, intente nuevamente más tarde.");
-                                            case -2:
-                                                throw new Exception("Error al registrar factura, no existe el tipo de contrato de la factura.\r\nPor favor verifique que el tipo de contrato exista y que no haya más de una factura para el mismo contrato.");
-                                            default:
-                                                break;
-                                        }
-                                    }
-                                    break;
-                            }
-                            transaccion.Commit();
-                        }
-                        catch (Exception ex)
-                        {
                             try
                             {
-                                //En caso de error hago Rollback para cancelar la transacción
-                                transaccion.Rollback();
+                                cmd.ExecuteNonQuery();
+
+                                //Verifico que el primer SP no haya dado error
+                                switch ((int)retorno.Value)
+                                {
+                                    case -1:
+                                        throw new Exception("Error al ingresar pago, intente nuevamente más tarde.");
+                                    case -2:
+                                        throw new Exception("No existe el usuario cajero que está ejecutando esta operación.");
+                                    default:
+                                        foreach (LineaPago factura in _pago.LineasPago)
+                                        {
+
+                                            cmd.Parameters.Clear();
+                                            //MATEO: Es necesario pasar la transaccion nuevamente??
+                                            cmd.Transaction = transaccion;
+                                            cmd.CommandText = "RegistrarFacturaEnPago";
+
+                                            cmd.Parameters.Add(retorno);
+                                            cmd.Parameters.AddWithValue("@CodigoEmpresa", factura.Contrato.Empresa.Codigo);
+                                            cmd.Parameters.AddWithValue("@TipoContrato", factura.Contrato.CodContrato);
+                                            cmd.Parameters.AddWithValue("@CodCliente", factura.CodigoCliente);
+                                            cmd.Parameters.AddWithValue("@FechaVencimiento", factura.FechaVencimiento);
+                                            cmd.Parameters.AddWithValue("@Monto", factura.Monto);
+
+                                            cmd.ExecuteNonQuery();
+                                            //Verifico que cada ingreso de factura no de error
+                                            switch ((int)retorno.Value)
+                                            {
+                                                case -1:
+                                                    throw new Exception("Error al registrar factura, intente nuevamente más tarde.");
+                                                case -2:
+                                                    throw new Exception("Error al registrar factura, no existe el tipo de contrato de la factura.\r\nPor favor verifique que el tipo de contrato exista y que no haya más de una factura para el mismo contrato.");
+                                                default:
+                                                    break;
+                                            }
+                                        }
+                                        break;
+                                }
+                                transaccion.Commit();
                             }
-                            catch (Exception ex2)
+                            catch (Exception ex)
                             {
-                                throw new Exception(ex2.Message);
+                                try
+                                {
+                                    //En caso de error hago Rollback para cancelar la transacción
+                                    transaccion.Rollback();
+                                }
+                                catch (Exception ex2)
+                                {
+                                    throw new Exception(ex2.Message);
+                                }
+                                throw new Exception(ex.Message);
                             }
-                            throw new Exception(ex.Message);
                         }
                     }
                 }
+                catch(Exception ex)
+                { throw new Exception(ex.Message); }
             }
         }
     }

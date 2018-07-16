@@ -30,10 +30,6 @@ Email VARCHAR(50) CHECK(LEN(Email) <= 50) NOT NULL
 )
 go
 
-select * from Usuarios
-
---insert Gerentes values(48328032, 'diego32junarox@gmail.com')
-
 CREATE TABLE Cajeros (
 Ci BIGINT NOT NULL PRIMARY KEY FOREIGN KEY REFERENCES Usuarios(Ci),
 HoraInicio VARCHAR(4) CHECK(LEN(HoraInicio) <= 4) NOT NULL,
@@ -61,7 +57,64 @@ PRIMARY KEY (CodEmpresa, CodTipo)
 )
 GO
 
+CREATE TABLE Pagos(
+NumInterno INT IDENTITY (10000,1) PRIMARY KEY NOT NULL,
+Fecha DATETIME DEFAULT GETDATE() NOT NULL,
+Monto BIGINT NOT NULL,
+Cajero BIGINT FOREIGN KEY REFERENCES Usuarios(CI)
+)
+GO
+
+CREATE TABLE FacturasPagos(
+NumInterno INT NOT NULL FOREIGN KEY REFERENCES Pagos(NumInterno),
+CodigoEmpresa INT NOT NULL, 
+TipoContrato INT NOT NULL,
+CodCliente INT CHECK(CodCliente BETWEEN 100000 AND 999999) NOT NULL,
+FechaVencimiento DATE NOT NULL,
+Monto INT CHECK(Monto<99999) NOT NULL,
+FOREIGN KEY (CodigoEmpresa, TipoContrato) REFERENCES Contratos(CodEmpresa, CodTipo),
+PRIMARY KEY(NumInterno, CodigoEmpresa, TipoContrato) 
+)
+GO
+
+CREATE PROCEDURE AltaPago(@Fecha DATETIME, @Monto INT, @Cajero INT) AS
+BEGIN
+	IF EXISTS(SELECT * FROM Cajeros WHERE Ci = @Cajero)
+		BEGIN
+			INSERT INTO Pagos VALUES(@Fecha,@Monto,@Cajero)
+			IF(@@ERROR = 0)
+			RETURN 0
+			ELSE
+			RETURN -1
+		END
+	ELSE
+		BEGIN
+			RETURN -2
+		END
+END
+GO
+
+CREATE PROCEDURE RegistrarFacturaEnPago(@CodigoEmpresa INT, @TipoContrato INT, @CodCliente INT, @FechaVencimiento DATE, @Monto INT) AS
+BEGIN
+	IF EXISTS(SELECT * FROM Contratos C WHERE C.CodEmpresa = @CodigoEmpresa AND C.CodTipo = @TipoContrato)
+	AND NOT EXISTS(SELECT * FROM FacturasPagos FP WHERE FP.NumInterno = IDENT_CURRENT('Pagos') AND FP.CodigoEmpresa = @CodigoEmpresa AND FP.TipoContrato = @TipoContrato)
+	BEGIN
+		INSERT INTO FacturasPagos VALUES(IDENT_CURRENT('Pagos'), @CodigoEmpresa, @TipoContrato, @CodCliente, @FechaVencimiento, @Monto)
+		RETURN 0
+		IF(@@ERROR = 0)
+		RETURN 0
+		ELSE
+		RETURN -1
+	END
+	ELSE
+	BEGIN
+	RETURN -2
+	END
+END
+GO
+
 --	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--
+
 Create Procedure NuevoUsuarioSql @Usuario varchar(30), @Clave varchar(7) AS
 Begin
 	
@@ -103,12 +156,11 @@ Begin
 		return 1
 	else
 		return -2
-	
-
 End
 go
 
 -- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	-- USUARIO	--
+
 CREATE PROCEDURE Logueo(@Usuario VARCHAR(30), @Clave VARCHAR(7)) AS
 BEGIN
 	IF exists(SELECT *
@@ -129,11 +181,11 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE ModClave (@Ci VARCHAR(30), @Clave VARCHAR(7)) AS
+CREATE PROCEDURE ModClave (@Usuario VARCHAR(30), @Clave VARCHAR(7)) AS
 BEGIN
 	IF NOT (EXISTS (SELECT *
 					FROM Usuarios U
-					WHERE U.Ci = @Ci))
+					WHERE U.Usuario = @Usuario))
 		RETURN -1;
 	IF EXISTS (SELECT *
 				FROM Cajeros C
@@ -142,11 +194,20 @@ BEGIN
 	BEGIN
 		UPDATE Usuarios
 		SET Clave = @Clave
-		WHERE Ci = @Ci
+		WHERE Usuario = @Usuario
 		IF(@@ERROR != 0)
 			RETURN -2;
 		ELSE
-			RETURN 1;
+		BEGIN
+			Declare @VarSentencia varchar(200)
+			Set @VarSentencia = 'ALTER LOGIN [' +  @Usuario + '] WITH PASSWORD = ' + QUOTENAME(@Clave, '''')
+			Exec (@VarSentencia)
+		
+			IF (@@ERROR <> 0)
+				RETURN -2
+			ELSE
+				RETURN 1;
+		END
 	END
 END
 GO
@@ -223,9 +284,6 @@ BEGIN
 END
 GO
 
-EXEC AltaGerente 'Juna', 'asd', 48328032, 'Diego Furtado', 'diego32junarox@gmail.com'
-GO
-
 CREATE PROCEDURE ListarGerentes AS
 BEGIN
 	SELECT * FROM Gerentes inner join Usuarios ON Gerentes.Ci = Usuarios.Ci
@@ -233,6 +291,7 @@ END
 GO
 
 --	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--	CAJERO	--
+
 CREATE PROCEDURE BuscarCajeroLogueo(@Usuario VARCHAR(30)) AS
 BEGIN
 	SELECT *
@@ -561,5 +620,119 @@ BEGIN
 	SELECT C.*, E.Rut
 	FROM Contratos C INNER JOIN Empresas E
 	ON C.CodEmpresa = @CodEmpresa AND C.CodEmpresa = E.Codigo AND C.Baja = 0
+END
+GO
+
+-- DATOS PRUEBA  -- DATOS PRUEBA  -- DATOS PRUEBA  -- DATOS PRUEBA  -- DATOS PRUEBA  -- DATOS PRUEBA  -- DATOS PRUEBA  --
+
+CREATE PROCEDURE DatosPrueba AS
+BEGIN
+	EXEC AltaGerente 48328032, 'juna',		'asd',		'Diego Furtado',			'diego32junarox@gmail.com'
+	EXEC NuevoUsuarioSql	'juna',	'asd'
+	EXEC NuevoUsuarioBD		'juna'
+
+	EXEC AltaGerente 11111111, 'sebaok',	'kkk',		'Sebastian Figueredo',		'sebaok@hotmail.com'
+	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
+	EXEC NuevoUsuarioBD		'sebaok'
+
+	EXEC AltaCajero 22222222, 'desto',		'ooohhaa',	'Hernan Quiroga',	'0730',		'1300'
+	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
+	EXEC NuevoUsuarioBD		'sebaok'
+
+	EXEC AltaCajero 33333333, 'optis91',	'uhaha',	'Horacio Carcaja',	'1200',		'1600'
+	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
+	EXEC NuevoUsuarioBD		'sebaok'
+
+	EXEC AltaCajero 44444444, 'lafne',		'qweok',	'Mariana Larroza',	'1700',		'2230'
+	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
+	EXEC NuevoUsuarioBD		'sebaok'
+
+	EXEC AltaCajero 55555555, 'raftz',		'Laft',		'Sofía Urreta',		'0820',		'1630'
+	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
+	EXEC NuevoUsuarioBD		'sebaok'
+
+	EXEC AltaCajero 66666666, 'tali652',	'yubi6',	'Tatiana Lasteu',	'0640',		'1700'
+	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
+	EXEC NuevoUsuarioBD		'sebaok'
+
+	EXEC AltaCajero 77777777, 'Joaco55',	'ruta27',	'Joaquin Vila',		'1220',		'1650'
+	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
+	EXEC NuevoUsuarioBD		'sebaok'
+
+	EXEC AltaCajero 88888888, 'uma1995',	'lulu123',	'Lucia Ñedu',		'1800',		'2130'
+	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
+	EXEC NuevoUsuarioBD		'sebaok'
+
+	EXEC AltaCajero 99999999, 'nandu',		'uhxu78',	'Ximena Perez',		'1515',		'2150'
+	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
+	EXEC NuevoUsuarioBD		'sebaok'
+
+	EXEC BajaCajero 88888888
+	EXEC BajaCajero 99999999
+
+	INSERT Empresas VALUES(1234, 111111111111, 'Saura', '18 de julio 1234', 123456789, 0)
+	INSERT Empresas VALUES(4567, 222222222222, 'Lacost', 'Yucatan 2598', 4861312, 0)
+	INSERT Empresas VALUES(7891, 333333333333, 'CocaCola', '8 de Octubre 1296', 846615, 0)
+	INSERT Empresas VALUES(1472, 444444444444, 'Lay´s', 'Guayaqui 159', 3258865, 0)
+	INSERT Empresas VALUES(2583, 555555555555, 'Roller', 'Guayabos 2531', 985621, 0)
+	INSERT Empresas VALUES(3691, 666666666666, 'Abasto', 'Av. Italia 3065', 62348, 0)
+	INSERT Empresas VALUES(9874, 777777777777, 'Pop-UP', 'Bv. España 1232', 897415161156156, 0)
+	INSERT Empresas VALUES(6541, 888888888888, 'Netul', 'Av. Brasil 5620', 6161651, 0)
+	INSERT Empresas VALUES(3210, 999999999999, 'Tata', 'Gaboto 123', 656298012, 1)
+	INSERT Empresas VALUES(1255, 000000000000, 'El Dorado', 'Intendente Lois 2341', 654987413132, 1)
+
+	INSERT Contratos VALUES(1234, 11, 'CONTRATO 1', 0)
+	INSERT Contratos VALUES(1234, 12, 'CONTRATO 2', 0)
+	INSERT Contratos VALUES(1234, 13, 'CONTRATO 3', 0)
+	INSERT Contratos VALUES(1234, 14, 'CONTRATO 4', 0)
+	INSERT Contratos VALUES(1234, 15, 'CONTRATO 5', 1)
+	INSERT Contratos VALUES(1234, 16, 'CONTRATO 6', 0)
+	INSERT Contratos VALUES(1234, 17, 'CONTRATO 7', 0)
+
+	INSERT Contratos VALUES(4567, 11, 'CONTRATO 1', 0)
+	INSERT Contratos VALUES(4567, 12, 'CONTRATO 2', 0)
+	INSERT Contratos VALUES(4567, 13, 'CONTRATO 3', 0)
+	INSERT Contratos VALUES(4567, 14, 'CONTRATO 4', 0)
+	INSERT Contratos VALUES(4567, 15, 'CONTRATO 5', 0)
+	INSERT Contratos VALUES(4567, 16, 'CONTRATO 6', 1)
+	INSERT Contratos VALUES(4567, 17, 'CONTRATO 7', 1)
+
+	INSERT Contratos VALUES(7891, 11, 'CONTRATO 1', 0)
+	INSERT Contratos VALUES(7891, 12, 'CONTRATO 2', 0)
+	INSERT Contratos VALUES(7891, 13, 'CONTRATO 3', 0)
+	INSERT Contratos VALUES(7891, 14, 'CONTRATO 4', 0)
+	INSERT Contratos VALUES(7891, 15, 'CONTRATO 5', 0)
+	
+	INSERT Contratos VALUES(1472, 11, 'CONTRATO 1', 0)
+	INSERT Contratos VALUES(1472, 12, 'CONTRATO 2', 0)
+	INSERT Contratos VALUES(1472, 13, 'CONTRATO 3', 0)
+	INSERT Contratos VALUES(1472, 14, 'CONTRATO 4', 0)
+	INSERT Contratos VALUES(1472, 15, 'CONTRATO 5', 1)
+	INSERT Contratos VALUES(1472, 16, 'CONTRATO 6', 0)
+
+	INSERT Contratos VALUES(3691, 11, 'CONTRATO 1', 0)
+	INSERT Contratos VALUES(3691, 12, 'CONTRATO 2', 0)
+
+	INSERT Contratos VALUES(9874, 11, 'CONTRATO 1', 0)
+	INSERT Contratos VALUES(9874, 12, 'CONTRATO 2', 0)
+	INSERT Contratos VALUES(9874, 13, 'CONTRATO 3', 1)
+	INSERT Contratos VALUES(9874, 14, 'CONTRATO 4', 1)
+	INSERT Contratos VALUES(9874, 15, 'CONTRATO 5', 1)
+	INSERT Contratos VALUES(9874, 16, 'CONTRATO 6', 1)
+
+	INSERT Contratos VALUES(6541, 11, 'CONTRATO 1', 0)
+	INSERT Contratos VALUES(6541, 12, 'CONTRATO 2', 1)
+	INSERT Contratos VALUES(6541, 13, 'CONTRATO 3', 0)
+	INSERT Contratos VALUES(6541, 14, 'CONTRATO 4', 0)
+	INSERT Contratos VALUES(6541, 15, 'CONTRATO 5', 0)
+	INSERT Contratos VALUES(6541, 16, 'CONTRATO 6', 0)
+
+	INSERT Contratos VALUES(1255, 11, 'CONTRATO 1', 0)
+	INSERT Contratos VALUES(1255, 12, 'CONTRATO 2', 0)
+	INSERT Contratos VALUES(1255, 13, 'CONTRATO 3', 0)
+	INSERT Contratos VALUES(1255, 14, 'CONTRATO 4', 0)
+	INSERT Contratos VALUES(1255, 15, 'CONTRATO 5', 0)
+	INSERT Contratos VALUES(1255, 16, 'CONTRATO 6', 0)
+	
 END
 GO

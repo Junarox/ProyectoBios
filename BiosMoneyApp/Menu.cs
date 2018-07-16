@@ -112,7 +112,7 @@ namespace BiosMoneyApp
         private void TSMIAltaPago_Click(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
-            AltaDePago myForm = new AltaDePago();
+            AltaDePago myForm = new AltaDePago(usuario);
             myForm.FormBorderStyle = FormBorderStyle.None;
             myForm.TopLevel = false;
             myForm.AutoScroll = true;
@@ -122,41 +122,41 @@ namespace BiosMoneyApp
 
         private void CheckUsu(Usuario usu)
         {
-            if (usu is Gerente)
-            {
-                TSMIABMCajero.Visible = true;
-                TSMIABMCajero.Enabled = true;
+            //if (usu is Gerente)
+            //{
+            //    TSMIABMCajero.Visible = true;
+            //    TSMIABMCajero.Enabled = true;
 
-                TSMIABMEmpresa.Visible = true;
-                TSMIABMEmpresa.Enabled = true;
+            //    TSMIABMEmpresa.Visible = true;
+            //    TSMIABMEmpresa.Enabled = true;
 
-                TSMIABMContrato.Visible = true;
-                TSMIABMContrato.Enabled = true;
+            //    TSMIABMContrato.Visible = true;
+            //    TSMIABMContrato.Enabled = true;
 
-                TSMIAltaGerente.Visible = true;
-                TSMIAltaGerente.Enabled = true;
+            //    TSMIAltaGerente.Visible = true;
+            //    TSMIAltaGerente.Enabled = true;
 
-                TSMIAltaPago.Visible = false;
-                TSMIAltaPago.Enabled = false;
-            }
+            //    TSMIAltaPago.Visible = false;
+            //    TSMIAltaPago.Enabled = false;
+            //}
 
-            else
-            {
-                TSMIABMCajero.Visible = false;
-                TSMIABMCajero.Enabled = false;
+            //else
+            //{
+            //    TSMIABMCajero.Visible = false;
+            //    TSMIABMCajero.Enabled = false;
 
-                TSMIABMEmpresa.Visible = false;
-                TSMIABMEmpresa.Enabled = false;
+            //    TSMIABMEmpresa.Visible = false;
+            //    TSMIABMEmpresa.Enabled = false;
 
-                TSMIABMContrato.Visible = false;
-                TSMIABMContrato.Enabled = false;
+            //    TSMIABMContrato.Visible = false;
+            //    TSMIABMContrato.Enabled = false;
 
-                TSMIAltaGerente.Visible = false;
-                TSMIAltaGerente.Enabled = false;
+            //    TSMIAltaGerente.Visible = false;
+            //    TSMIAltaGerente.Enabled = false;
 
-                TSMIAltaPago.Visible = true;
-                TSMIAltaPago.Enabled = true;
-            }
+            //    TSMIAltaPago.Visible = true;
+            //    TSMIAltaPago.Enabled = true;
+            //}
         }
     }
 }

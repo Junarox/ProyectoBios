@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
@@ -16,7 +18,28 @@ namespace Persistencia
         {
             return "Data Source= localhost; Initial Catalog = BiosMoney; Integrated Security = true;";
         }
-        
+
+        public static void DatosPrueba()
+        {
+            using (SqlConnection cnn = new SqlConnection("Data Source= localhost; Initial Catalog = BiosMoney; Integrated Security = true;"))
+            {
+                using (SqlCommand cmd = new SqlCommand("DatosPrueba", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    try
+                    {
+                        cnn.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch(Exception ex)
+                    {
+                        throw new Exception(ex.Message);
+                    }
+                }
+            }
+            
+        }
 
     }
 }

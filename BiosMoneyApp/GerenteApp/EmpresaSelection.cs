@@ -21,6 +21,7 @@ namespace BiosMoneyApp.GerenteApp
         {
             this.usuario = usuario;
             InitializeComponent();
+            DGVEmpresas.AutoGenerateColumns = false;
             List<Empresa> empresas = FabricaL.GetEmpresa().ListarEmpresa(usuario);
             DGVEmpresas.DataSource = empresas;
             panel = flowLayoutPanel1;
@@ -36,13 +37,18 @@ namespace BiosMoneyApp.GerenteApp
             Empresa emp = (Empresa)DGVEmpresas.CurrentRow.DataBoundItem;
 
             panel.Controls.Clear();
-            ABMContrato myForm = new ABMContrato(panel, emp);
+            ABMContrato myForm = new ABMContrato(panel, emp, usuario);
             myForm.FormBorderStyle = FormBorderStyle.None;
             myForm.TopLevel = false;
             myForm.AutoScroll = true;
             panel.Controls.Add(myForm);
             myForm.Show();
             this.Close();
+        }
+
+        private void DGVEmpresas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            BtnOK_Click(sender,e);
         }
     }
 }

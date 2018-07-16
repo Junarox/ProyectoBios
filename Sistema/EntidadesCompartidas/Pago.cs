@@ -9,14 +9,14 @@ namespace EntidadesCompartidas
     [DataContract]
     public class Pago
     {
-        private int _NumeroInterno;
+        private int? _NumeroInterno;
         private DateTime _Fecha;
         private int _Monto;
         private Usuario _Cajero;
         private List<LineaPago> _LineasPago;
 
         [DataMember]
-        public int NumeroInterno
+        public int? NumeroInterno
         {
             get { return _NumeroInterno; }
             set { _NumeroInterno = value; }
@@ -50,7 +50,7 @@ namespace EntidadesCompartidas
             set { _LineasPago = value; }
         }
 
-        public Pago(int pNumeroInterno, DateTime pFecha, int pMonto, Usuario pCajero, List<LineaPago> pLineasPago)
+        public Pago(int? pNumeroInterno, DateTime pFecha, int pMonto, Usuario pCajero, List<LineaPago> pLineasPago)
         {
             NumeroInterno = pNumeroInterno;
             Fecha = pFecha;
