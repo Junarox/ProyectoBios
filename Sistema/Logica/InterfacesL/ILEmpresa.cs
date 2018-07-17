@@ -11,7 +11,7 @@ namespace Logica
         void AltaEmpresa(Empresa empresa, Usuario logueo);
         void ModEmpresa(Empresa empresa, Usuario logueo);
         void BajaEmpresa(Empresa empresa, Usuario logueo);
-        Empresa BuscarEmpresa(int codigo, Usuario logueo);
+        Empresa BuscarEmpresa(int codigo);
         List<Empresa> ListarEmpresa(Usuario logueo);
     }
 }

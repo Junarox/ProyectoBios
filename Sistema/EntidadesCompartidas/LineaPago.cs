@@ -14,6 +14,10 @@ namespace EntidadesCompartidas
         private int _CodigoCliente;
         private Contrato _Contrato;
 
+
+        [DataMember]
+        public string CodContrato { get { return Contrato.CodContrato.ToString(); } set { } }
+
         [DataMember]
         public Contrato Contrato
         {

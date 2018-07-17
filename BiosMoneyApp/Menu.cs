@@ -1,6 +1,5 @@
 ﻿using BiosMoneyApp.CajeroApp;
 using BiosMoneyApp.GerenteApp;
-using EntidadesCompartidas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BiosMoneyApp.ServicioWCF;
 namespace BiosMoneyApp
 {
     public partial class Menu : Form

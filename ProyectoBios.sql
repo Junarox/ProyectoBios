@@ -627,45 +627,29 @@ GO
 
 CREATE PROCEDURE DatosPrueba AS
 BEGIN
-	EXEC AltaGerente 48328032, 'juna',		'asd',		'Diego Furtado',			'diego32junarox@gmail.com'
-	EXEC NuevoUsuarioSql	'juna',	'asd'
+	EXEC AltaGerente		'juna',		'asd',	48328032, 		'Diego Furtado',		'diego32junarox@gmail.com'
+	EXEC NuevoUsuarioSql	'juna',		'asd'
 	EXEC NuevoUsuarioBD		'juna'
 
-	EXEC AltaGerente 11111111, 'sebaok',	'kkk',		'Sebastian Figueredo',		'sebaok@hotmail.com'
+	EXEC AltaGerente		'sebaok',	'kkk',	11111111, 		'Sebastian Figueredo',	'sebaok@hotmail.com'
 	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
 	EXEC NuevoUsuarioBD		'sebaok'
 
-	EXEC AltaCajero 22222222, 'desto',		'ooohhaa',	'Hernan Quiroga',	'0730',		'1300'
-	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
-	EXEC NuevoUsuarioBD		'sebaok'
+	EXEC AltaCajero			'desto',	'ooohhaa', 22222222, 	'Hernan Quiroga',	'0730',		'1300'
 
-	EXEC AltaCajero 33333333, 'optis91',	'uhaha',	'Horacio Carcaja',	'1200',		'1600'
-	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
-	EXEC NuevoUsuarioBD		'sebaok'
+	EXEC AltaCajero  'optis91',	'uhaha', 33333333,	'Horacio Carcaja',	'1200',		'1600'
 
-	EXEC AltaCajero 44444444, 'lafne',		'qweok',	'Mariana Larroza',	'1700',		'2230'
-	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
-	EXEC NuevoUsuarioBD		'sebaok'
+	EXEC AltaCajero  'lafne',		'qweok',44444444,	'Mariana Larroza',	'1700',		'2230'
 
-	EXEC AltaCajero 55555555, 'raftz',		'Laft',		'Sofía Urreta',		'0820',		'1630'
-	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
-	EXEC NuevoUsuarioBD		'sebaok'
+	EXEC AltaCajero  'raftz',		'Laft',		55555555,'Sofía Urreta',		'0820',		'1630'
 
-	EXEC AltaCajero 66666666, 'tali652',	'yubi6',	'Tatiana Lasteu',	'0640',		'1700'
-	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
-	EXEC NuevoUsuarioBD		'sebaok'
+	EXEC AltaCajero 'tali652',	'yubi6',	66666666, 'Tatiana Lasteu',	'0640',		'1700'
 
-	EXEC AltaCajero 77777777, 'Joaco55',	'ruta27',	'Joaquin Vila',		'1220',		'1650'
-	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
-	EXEC NuevoUsuarioBD		'sebaok'
+	EXEC AltaCajero  'Joaco55',	'ruta27',	77777777,'Joaquin Vila',		'1220',		'1650'
 
-	EXEC AltaCajero 88888888, 'uma1995',	'lulu123',	'Lucia Ñedu',		'1800',		'2130'
-	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
-	EXEC NuevoUsuarioBD		'sebaok'
+	EXEC AltaCajero 'uma1995',	'lulu123',	88888888, 'Lucia Ñedu',		'1800',		'2130'
 
-	EXEC AltaCajero 99999999, 'nandu',		'uhxu78',	'Ximena Perez',		'1515',		'2150'
-	EXEC NuevoUsuarioSql	'sebaok',	'kkk'
-	EXEC NuevoUsuarioBD		'sebaok'
+	EXEC AltaCajero  'nandu',		'uhxu78',	99999999,'Ximena Perez',		'1515',		'2150'
 
 	EXEC BajaCajero 88888888
 	EXEC BajaCajero 99999999

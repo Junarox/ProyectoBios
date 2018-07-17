@@ -95,5 +95,10 @@ namespace Logica
             else
                 throw new Exception("Las claves no coinciden.");
         }
+
+        public void ActualizarHorasExtra(Cajero _cajero, DateTime _fecha, int _minutosExtra)
+        {
+            FabricaP.GetPCajero().ActualizarHorasExtra(_cajero, _fecha, _minutosExtra);
+        }
     }
 }

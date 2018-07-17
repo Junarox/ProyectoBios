@@ -1,0 +1,14 @@
+C:\Users\diego\source\repos\ProyectoBios\MiServicio\bin\MiServicio.dll.config
+C:\Users\diego\source\repos\ProyectoBios\MiServicio\bin\MiServicio.dll
+C:\Users\diego\source\repos\ProyectoBios\MiServicio\bin\MiServicio.pdb
+C:\Users\diego\source\repos\ProyectoBios\MiServicio\bin\EntidadesCompartidas.dll
+C:\Users\diego\source\repos\ProyectoBios\MiServicio\bin\Logica.dll
+C:\Users\diego\source\repos\ProyectoBios\MiServicio\bin\Persistencia.dll
+C:\Users\diego\source\repos\ProyectoBios\MiServicio\bin\EntidadesCompartidas.pdb
+C:\Users\diego\source\repos\ProyectoBios\MiServicio\bin\Logica.pdb
+C:\Users\diego\source\repos\ProyectoBios\MiServicio\bin\Persistencia.pdb
+C:\Users\diego\source\repos\ProyectoBios\MiServicio\obj\Debug\MiServicio.csprojAssemblyReference.cache
+C:\Users\diego\source\repos\ProyectoBios\MiServicio\obj\Debug\MiServicio.csproj.CoreCompileInputs.cache
+C:\Users\diego\source\repos\ProyectoBios\MiServicio\obj\Debug\MiServicio.csproj.CopyComplete
+C:\Users\diego\source\repos\ProyectoBios\MiServicio\obj\Debug\MiServicio.dll
+C:\Users\diego\source\repos\ProyectoBios\MiServicio\obj\Debug\MiServicio.pdb

@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Logica;
-using EntidadesCompartidas;
+using BiosMoneyApp.ServicioWCF;
 
 namespace BiosMoneyApp.GerenteApp
 {
     public partial class EmpresaSelection : Form
     {
+        IMiServicio SServicio = new MiServicioClient();
         private Usuario usuario;
         FlowLayoutPanel panel;
 
@@ -22,7 +22,7 @@ namespace BiosMoneyApp.GerenteApp
             this.usuario = usuario;
             InitializeComponent();
             DGVEmpresas.AutoGenerateColumns = false;
-            List<Empresa> empresas = FabricaL.GetEmpresa().ListarEmpresa(usuario);
+            List<Empresa> empresas = SServicio.ListarEmpresa(usuario).ToList();
             DGVEmpresas.DataSource = empresas;
             panel = flowLayoutPanel1;
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BiosMoneyApp.ServicioWCF;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,13 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using EntidadesCompartidas;
-using Logica;
 
 namespace BiosMoneyApp
 {
     public partial class CambiarClave : Form
     {
+        IMiServicio SServicio = new MiServicioClient();
         private Usuario usu;
 
         public CambiarClave(Usuario usu)
@@ -31,7 +31,7 @@ namespace BiosMoneyApp
                 {
                     try
                     {
-                        FabricaL.GetLUsuario().ModificarClave(usu, txtNuevaClave.Text, txtReClave.Text);
+                        SServicio.ModificarClave(usu, txtNuevaClave.Text, txtReClave.Text);
                     }
                     catch(Exception ex) { MessageBox.Show(ex.Message, "Error"); }
 

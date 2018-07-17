@@ -175,7 +175,6 @@
             this.DGVEmpresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVEmpresas.Size = new System.Drawing.Size(329, 130);
             this.DGVEmpresas.TabIndex = 0;
-            this.DGVEmpresas.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVEmpresa_ColumnHeaderMouseClick);
             this.DGVEmpresas.SelectionChanged += new System.EventHandler(this.DGVEmpresas_SelectionChanged);
             // 
             // Rut

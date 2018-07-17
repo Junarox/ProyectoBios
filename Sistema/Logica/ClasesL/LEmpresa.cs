@@ -33,9 +33,9 @@ namespace Logica
             FabricaP.GetPEmpresa().BajaEmpresa(empresa, logueo.Usu, logueo.Clave);
         }
 
-        public Empresa BuscarEmpresa(int codigo, Usuario logueo)
+        public Empresa BuscarEmpresa(int codigo)
         {
-            return (FabricaP.GetPEmpresa().BuscarEmpresa(codigo, logueo.Usu, logueo.Clave));
+            return (FabricaP.GetPEmpresa().BuscarEmpresa(codigo));
         }
 
         public List<Empresa> ListarEmpresa(Usuario logueo)

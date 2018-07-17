@@ -17,5 +17,6 @@ namespace Logica
         List<Gerente> ListarGerentes(Usuario logueo);
         void Modificar(Usuario cajero, Usuario logueo);
         void ModificarClave(Usuario usuario, string clave1, string clave2);
+        void ActualizarHorasExtra(Cajero _cajero, DateTime _fecha, int _minutosExtra);
     }
 }

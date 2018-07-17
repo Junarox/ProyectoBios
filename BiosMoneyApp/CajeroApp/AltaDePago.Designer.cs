@@ -47,7 +47,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
-            this.TxtCodigoBar = new System.Windows.Forms.MaskedTextBox();
+            this.TxtCodigoBar = new System.Windows.Forms.TextBox();
+            this.CodContrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip2.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -163,6 +167,11 @@
             this.DGVPagos.AllowUserToOrderColumns = true;
             this.DGVPagos.AllowUserToResizeRows = false;
             this.DGVPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVPagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodContrato,
+            this.CodigoCliente,
+            this.FechaVencimiento,
+            this.Monto});
             this.DGVPagos.Location = new System.Drawing.Point(3, 60);
             this.DGVPagos.Name = "DGVPagos";
             this.DGVPagos.ReadOnly = true;
@@ -291,12 +300,38 @@
             // 
             // TxtCodigoBar
             // 
-            this.TxtCodigoBar.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TxtCodigoBar.Location = new System.Drawing.Point(3, 23);
-            this.TxtCodigoBar.Mask = "0000-00-0000/00/00-000000-00000";
             this.TxtCodigoBar.Name = "TxtCodigoBar";
             this.TxtCodigoBar.Size = new System.Drawing.Size(189, 20);
-            this.TxtCodigoBar.TabIndex = 7;
+            this.TxtCodigoBar.TabIndex = 0;
+            // 
+            // CodContrato
+            // 
+            this.CodContrato.DataPropertyName = "CodContrato";
+            this.CodContrato.HeaderText = "Contrato";
+            this.CodContrato.Name = "CodContrato";
+            this.CodContrato.ReadOnly = true;
+            // 
+            // CodigoCliente
+            // 
+            this.CodigoCliente.DataPropertyName = "CodigoCliente";
+            this.CodigoCliente.HeaderText = "Cliente";
+            this.CodigoCliente.Name = "CodigoCliente";
+            this.CodigoCliente.ReadOnly = true;
+            // 
+            // FechaVencimiento
+            // 
+            this.FechaVencimiento.DataPropertyName = "FechaVencimiento";
+            this.FechaVencimiento.HeaderText = "Fecha Venc.";
+            this.FechaVencimiento.Name = "FechaVencimiento";
+            this.FechaVencimiento.ReadOnly = true;
+            // 
+            // Monto
+            // 
+            this.Monto.DataPropertyName = "Monto";
+            this.Monto.HeaderText = "Monto";
+            this.Monto.Name = "Monto";
+            this.Monto.ReadOnly = true;
             // 
             // AltaDePago
             // 
@@ -349,9 +384,13 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.PictureBox AddCodigo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.MaskedTextBox TxtCodigoBar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox TxtCodigoBar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodContrato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaVencimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
     }
 }

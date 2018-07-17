@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ci" type="xs:int" />
+      <xs:element minOccurs="0" name="Clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NomCompleto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usu" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Usuario" nillable="true" type="tns:Usuario" />
+  <xs:complexType name="Gerente">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Usuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Gerente" nillable="true" type="tns:Gerente" />
+  <xs:complexType name="Cajero">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Usuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HoraFin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HoraInicio" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Cajero" nillable="true" type="tns:Cajero" />
+  <xs:complexType name="ArrayOfGerente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Gerente" nillable="true" type="tns:Gerente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGerente" nillable="true" type="tns:ArrayOfGerente" />
+  <xs:complexType name="ArrayOfCajero">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cajero" nillable="true" type="tns:Cajero" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCajero" nillable="true" type="tns:ArrayOfCajero" />
+  <xs:complexType name="Empresa">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="DirFiscal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rut" type="xs:long" />
+      <xs:element minOccurs="0" name="Tel" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Empresa" nillable="true" type="tns:Empresa" />
+  <xs:complexType name="ArrayOfEmpresa">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Empresa" nillable="true" type="tns:Empresa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmpresa" nillable="true" type="tns:ArrayOfEmpresa" />
+  <xs:complexType name="Contrato">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodContrato" type="xs:int" />
+      <xs:element minOccurs="0" name="Empresa" nillable="true" type="tns:Empresa" />
+      <xs:element minOccurs="0" name="NomContrato" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contrato" nillable="true" type="tns:Contrato" />
+  <xs:complexType name="ArrayOfContrato">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contrato" nillable="true" type="tns:Contrato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContrato" nillable="true" type="tns:ArrayOfContrato" />
+  <xs:complexType name="Pago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cajero" nillable="true" type="tns:Usuario" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LineasPago" nillable="true" type="tns:ArrayOfLineaPago" />
+      <xs:element minOccurs="0" name="Monto" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroInterno" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Pago" nillable="true" type="tns:Pago" />
+  <xs:complexType name="ArrayOfLineaPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LineaPago" nillable="true" type="tns:LineaPago" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLineaPago" nillable="true" type="tns:ArrayOfLineaPago" />
+  <xs:complexType name="LineaPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodContrato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoCliente" type="xs:int" />
+      <xs:element minOccurs="0" name="Contrato" nillable="true" type="tns:Contrato" />
+      <xs:element minOccurs="0" name="FechaVencimiento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Monto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LineaPago" nillable="true" type="tns:LineaPago" />
+  <xs:complexType name="ArrayOfPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pago" nillable="true" type="tns:Pago" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPago" nillable="true" type="tns:ArrayOfPago" />
+</xs:schema>

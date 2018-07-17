@@ -164,7 +164,7 @@ namespace Persistencia
 
         public List<Cajero> ListarCajeros(string usuario, string clave)
         {
-            List<Cajero> _cajeros = null;
+            List<Cajero> _cajeros = new List<Cajero>();
 
             using(SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave)))
             {
@@ -179,8 +179,6 @@ namespace Persistencia
                         {
                             if (reader.HasRows)
                             {
-                                _cajeros = new List<Cajero>();
-
                                 while (reader.Read())
                                 {
                                     Cajero _cajero = new Cajero(Convert.ToInt32(reader["Ci"]), (string)reader["Usuario"], (string)reader["Clave"], (string)reader["NomCompleto"], (string)reader["HoraInicio"], (string)reader["HoraFin"]);
@@ -303,6 +301,36 @@ namespace Persistencia
                         throw new Exception(ex.Message);
                     }
                 }
+            }
+        }
+
+        public void ActualizarHorasExtra(Cajero _cajero, DateTime _fecha, int _minutosExtra)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.CnnLogueo());
+            SqlCommand cmd = new SqlCommand("ActualizarHorasExtra", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlParameter retorno = new SqlParameter("@Retorno", SqlDbType.Int);
+            retorno.Direction = ParameterDirection.ReturnValue;
+            cmd.Parameters.Add(retorno);
+            cmd.Parameters.AddWithValue("@Cajero", _cajero.Ci);
+            cmd.Parameters.AddWithValue("@Fecha", _fecha.Year.ToString() + "/" + _fecha.Month.ToString() + "/" + _fecha.Day.ToString());
+            cmd.Parameters.AddWithValue("@MinutosExtra", _minutosExtra);
+
+            try
+            {
+                cnn.Open();
+                cmd.ExecuteNonQuery();
+                if ((int)retorno.Value == -1)
+                    throw new Exception("Error al registrar horas extra");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cnn.Close();
             }
         }
     }

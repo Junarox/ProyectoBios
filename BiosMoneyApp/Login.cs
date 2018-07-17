@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Logica;
-using EntidadesCompartidas;
-using BiosMoneyApp.GerenteApp;
+using BiosMoneyApp.ServicioWCF;
 
 namespace BiosMoneyApp
 {
     public partial class Login : Form
     {
+        IMiServicio SServicio = new MiServicioClient();
         public Login()
         {
             InitializeComponent();
@@ -24,7 +23,7 @@ namespace BiosMoneyApp
         {
             try
             {
-                Usuario usu = FabricaL.GetLUsuario().Logueo(lblUsu.Text, lblClave.Text);
+                Usuario usu = SServicio.Logueo(lblUsu.Text, lblClave.Text);
                 if(usu is Cajero)
                 {
                     //Abrir el form Menu Cajeros.

@@ -34,6 +34,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +58,11 @@
     </Compile>
     <Compile Include="CambiarClave.Designer.cs">
       <DependentUpon>CambiarClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServicioWCF\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="GerenteApp\ABMCajero.cs">
       <SubType>Form</SubType>
@@ -137,6 +144,37 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\ServicioWCF\BiosMoneyApp.ServicioWCF.Cajero.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioWCF\BiosMoneyApp.ServicioWCF.Contrato.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioWCF\BiosMoneyApp.ServicioWCF.Empresa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioWCF\BiosMoneyApp.ServicioWCF.Gerente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioWCF\BiosMoneyApp.ServicioWCF.LineaPago.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioWCF\BiosMoneyApp.ServicioWCF.Pago.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioWCF\BiosMoneyApp.ServicioWCF.Usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioWCF\MiServicio.wsdl" />
+    <None Include="Connected Services\ServicioWCF\MiServicio.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWCF\MiServicio1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWCF\MiServicio2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -151,21 +189,29 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ServicioWCF\MiServicio.disco" />
+    <None Include="Connected Services\ServicioWCF\configuration91.svcinfo" />
+    <None Include="Connected Services\ServicioWCF\configuration.svcinfo" />
+    <None Include="Connected Services\ServicioWCF\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Imagenes\Agregar.png" />
     <Content Include="Imagenes\Buscar.png" />
     <Content Include="Imagenes\Eliminar.png" />
     <Content Include="Imagenes\Logo.png" />
     <Content Include="Imagenes\Modificar.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Sistema\EntidadesCompartidas\EntidadesCompartidas.csproj">
-      <Project>{2d450a6a-1b55-4a0f-9c91-09877c6a3aac}</Project>
-      <Name>EntidadesCompartidas</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sistema\Logica\Logica.csproj">
-      <Project>{4f7887ba-49d2-4a90-bc27-8513c7612966}</Project>
-      <Name>Logica</Name>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServicioWCF\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MiServicio\MiServicio.csproj">
+      <Project>{4e0ad424-729a-4cb7-b513-66c28ec9ac78}</Project>
+      <Name>MiServicio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

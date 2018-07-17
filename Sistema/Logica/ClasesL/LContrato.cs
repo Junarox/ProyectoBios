@@ -44,9 +44,9 @@ namespace Logica
             return (FabricaP.GetPContrato().ListarContrato(empresa.Codigo, logueo.Usu, logueo.Clave));
         }
 
-        public List<Contrato> ListarTodosLosContratos(Usuario logueo)
+        public List<Contrato> ListarTodosLosContratos()
         {
-            return (FabricaP.GetPContrato().ListarTodosLosContratos(logueo.Usu, logueo.Clave));
+            return (FabricaP.GetPContrato().ListarTodosLosContratos());
         }
 
         public void ModContrato(Contrato contrato, Usuario logueo)
@@ -54,7 +54,7 @@ namespace Logica
             FabricaP.GetPContrato().ModContrato(contrato, logueo.Usu, logueo.Clave);
         }
 
-        public string GenerarXMLContratos(Usuario logueo)
+        public string GenerarXMLContratos()
         {
             //Creo XML de contratos
             XmlDocument doc = new XmlDocument();
@@ -67,7 +67,7 @@ namespace Logica
                     listaContratos.Clear();
                 }
 
-                listaContratos = ListarTodosLosContratos(logueo);
+                listaContratos = ListarTodosLosContratos();
 
                 if (listaContratos != null)
                 {                 
@@ -111,7 +111,7 @@ namespace Logica
 
                 if (doc != null)
                 {
-                    doc.Save("D:\\XMLPROYECTO\\archivo.xml");
+                    doc.Save("C:\\XMLPROYECTO\\archivo.xml");
                 }
 
 
@@ -123,7 +123,7 @@ namespace Logica
             }
         }
 
-        public DateTime ChequearFacturaPaga(string factura, Usuario logueo)
+        public DateTime ChequearFacturaPaga(string factura)
         {
             //Creo array con los fragmentos del código de factura
             string[] facturas = new string[5];
@@ -133,7 +133,7 @@ namespace Logica
             facturas[3] = factura.Substring(14, 6);
             facturas[4] = factura.Substring(20, 5);
 
-            DateTime fecha = (FabricaP.GetPContrato().ChequearFacturaPaga(facturas, logueo.Usu, logueo.Clave));
+            DateTime fecha = (FabricaP.GetPContrato().ChequearFacturaPaga(facturas));
 
             return fecha;
 

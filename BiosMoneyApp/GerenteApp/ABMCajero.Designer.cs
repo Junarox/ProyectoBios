@@ -493,7 +493,6 @@
             this.DGVCajeros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVCajeros.Size = new System.Drawing.Size(329, 130);
             this.DGVCajeros.TabIndex = 0;
-            this.DGVCajeros.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVCajeros_ColumnHeaderMouseClick);
             this.DGVCajeros.SelectionChanged += new System.EventHandler(this.DGVCajeros_SelectionChanged);
             // 
             // Usuario

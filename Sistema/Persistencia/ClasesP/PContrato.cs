@@ -110,7 +110,7 @@ namespace Persistencia
                             {
                                 reader.Read();
                                 _Contrato = new Contrato();
-                                _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa((int)reader["CodEmpresa"], usuario, clave);
+                                _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa((int)reader["CodEmpresa"]);
                                 _Contrato.CodContrato = CodTipo;
                                 _Contrato.NomContrato = (string)reader["Nombre"];
                             }
@@ -150,7 +150,7 @@ namespace Persistencia
                             while (reader.Read())
                             {
                                 Contrato _Contrato = new Contrato();
-                                _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa(CodEmpresa, usuario, clave);
+                                _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa(CodEmpresa);
                                 _Contrato.CodContrato = Convert.ToInt32(reader["CodTipo"]);
                                 _Contrato.NomContrato = (string)reader["Nombre"];
 
@@ -168,11 +168,11 @@ namespace Persistencia
             return _Contratos;
         }
 
-        public List<Contrato> ListarTodosLosContratos(string usuario, string clave)
+        public List<Contrato> ListarTodosLosContratos()
         {
             List<Contrato> _Contratos = null;
 
-            using(SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave)))
+            using(SqlConnection cnn = new SqlConnection(Conexion.CnnLogueo()))
             {
                 using(SqlCommand cmd = new SqlCommand("ListarTodosLosContratos", cnn))
                 {
@@ -181,7 +181,6 @@ namespace Persistencia
                     try
                     {
                         cnn.Open();
-                        cmd.ExecuteNonQuery();
 
                         using(SqlDataReader reader = cmd.ExecuteReader())
                         {
@@ -192,7 +191,7 @@ namespace Persistencia
                                 while (reader.Read())
                                 {
                                     Contrato _Contrato = new Contrato();
-                                    _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa((int)reader["CodEmpresa"], usuario, clave);
+                                    _Contrato.Empresa = FabricaP.GetPEmpresa().BuscarEmpresa((int)reader["CodEmpresa"]);
                                     _Contrato.CodContrato = Convert.ToInt32(reader["CodTipo"]);
                                     _Contrato.NomContrato = (string)reader["Nombre"];
 
@@ -245,11 +244,11 @@ namespace Persistencia
             }
         }
 
-        public DateTime ChequearFacturaPaga(string[] _factura, string usuario, string clave)
+        public DateTime ChequearFacturaPaga(string[] _factura)
         {
             DateTime _fecha = new DateTime(9999, 1, 1);
 
-            using(SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave)))
+            using(SqlConnection cnn = new SqlConnection(Conexion.CnnLogueo()))
             {
                 using(SqlCommand cmd = new SqlCommand("ChequearFacturaPaga", cnn))
                 {

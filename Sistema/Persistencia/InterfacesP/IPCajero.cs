@@ -17,5 +17,6 @@ namespace Persistencia
         void ModificarClave(Cajero cajero, string clave);
         void BajaCajero(Cajero cajero, string usuario, string clave);
         List<Cajero> ListarCajeros(string usuario, string clave);
+        void ActualizarHorasExtra(Cajero cajero, DateTime fecha, int minutosExtra);
     }
 }

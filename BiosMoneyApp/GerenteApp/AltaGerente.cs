@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,18 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using EntidadesCompartidas;
-using Logica;
-
+using BiosMoneyApp.ServicioWCF;
 
 namespace BiosMoneyApp.GerenteApp
 {
     public partial class AltaGerente : Form
     {
+        IMiServicio SServicio = new MiServicioClient();
         Usuario usuario;
-
-        //Esto determina como se va a ordenar la lista del DataGrid
-        private bool cambio;
 
         //Instancio la lista
         private List<Gerente> gs = new List<Gerente>();
@@ -29,7 +26,7 @@ namespace BiosMoneyApp.GerenteApp
         public override void Refresh()
         {
             DGVGerentes.DataSource = null;
-            DGVGerentes.DataSource = gs = FabricaL.GetLUsuario().ListarGerentes(usuario);
+            DGVGerentes.DataSource = gs = SServicio.ListarGerentes(usuario).ToList();
         }
 
         public AltaGerente(Usuario usuario)
@@ -64,93 +61,11 @@ namespace BiosMoneyApp.GerenteApp
                 g.Email = txtEmail.Text;
 
                 //Llamo a la fabrica para darlo de alta.
-                FabricaL.GetLUsuario().Alta(g,usuario);
+                SServicio.Alta(g,usuario);
 
                 //Refresco el DataGrid con los nuevos datos.
                 Refresh();
             }
-            catch (Exception ex) { lblError.Text = ex.Message; }
-        }
-
-        /// <summary>
-        /// Ordeno los datos del DataGrid dependiendo de la columna seleccionada.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DGVGerentes_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            try
-            {
-                //Traigo la lista del DataGrid (Puede usarse con el filtrado en conjunto).
-                try
-                {
-                    if (DGVGerentes.DataSource == null)
-                        throw new NullReferenceException();
-                    List<Gerente> cs = (List<Gerente>)DGVGerentes.DataSource;
-                }
-                catch (NullReferenceException) { throw new NullReferenceException("No existe ningún Cajero."); }
-
-                //Obtengo la columna a la que se le hizo click.
-                //DataPropertyName: devuelve el valor en string que utiliza el DataGrid para referenciarse con la variable del Objeto.
-                string headerText = DGVGerentes.Columns[e.ColumnIndex].DataPropertyName;
-
-                //Este es el switch que utiliza el bool cambio del principio de la clase.
-                //El bool se encuentra fuera del evento porque sino cada vez que este se llama, va a venir en su valor por defecto.
-                switch (cambio)
-                {
-                    //Por defecto es falso, entonces ordeno la lista de A-Z
-                    case false:
-                        //Dependiendo del valor de la columna a la que se le hizo click, ordeno en base a eso.
-                        switch (headerText)
-                        {
-                            case "NomCompleto":
-                                //Realizo el ordenamiento en base al Nombre Completo
-                                gs = gs.OrderBy(o => o.NomCompleto).ToList();
-                                break;
-
-                            case "Usu":
-                                //Realizo el ordenamiento en base al Usuario
-                                gs = gs.OrderBy(o => o.Usu).ToList();
-                                break;
-
-                            case "Ci":
-                                //Realizo el ordenamiento en base a la Cédula
-                                gs = gs.OrderBy(o => o.Ci).ToList();
-                                break;
-                        }
-
-                        //Vacío el DataGrid y lo seteo con la nueva lsita ordenada.
-                        DGVGerentes.DataSource = null;
-                        DGVGerentes.DataSource = gs;
-
-                        //Seteo el ordenamiento en el valor contrario, asi la proxima vez que se llame a este evento, en vez de ordenar de A-Z
-                        //ordenara la lista de Z-A
-                        cambio = true;
-                        break;
-
-                    //Lo mismo que arriba pero de Z-A
-                    case true:
-                        switch (headerText)
-                        {
-                            case "NomCompleto":
-                                gs = gs.OrderByDescending(o => o.NomCompleto).ToList();
-                                break;
-
-                            case "Usu":
-                                gs = gs.OrderByDescending(o => o.Usu).ToList();
-                                break;
-
-                            case "Ci":
-                                gs = gs.OrderByDescending(o => o.Ci).ToList();
-                                break;
-                        }
-                        DGVGerentes.DataSource = null;
-                        DGVGerentes.DataSource = gs;
-                        cambio = false;
-                        break;
-                }
-            }
-
             catch (Exception ex) { lblError.Text = ex.Message; }
         }
 

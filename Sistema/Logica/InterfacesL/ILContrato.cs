@@ -16,7 +16,7 @@ namespace Logica
         void ModContrato(Contrato contrato, Usuario logueo);
         Contrato BuscarContrato(int codigoEmpresa, int codTipo, Usuario logueo);
         List<Contrato> ListarContrato(Empresa empresa, Usuario logueo);
-        string GenerarXMLContratos(Usuario logueo);
-        DateTime ChequearFacturaPaga(string factura, Usuario logueo);
+        string GenerarXMLContratos();
+        DateTime ChequearFacturaPaga(string factura);
     }
 }

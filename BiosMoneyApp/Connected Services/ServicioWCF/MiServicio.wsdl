@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MiServicio" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:57110/MiServicio.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:57110/MiServicio.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:57110/MiServicio.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMiServicio_Logueo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logueo" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_Logueo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogueoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_Alta_InputMessage">
+    <wsdl:part name="parameters" element="tns:Alta" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_Alta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AltaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ListarGerentes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarGerentes" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ListarGerentes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarGerentesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ModificarClave_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarClave" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ModificarClave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarClaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_BajaCajero_InputMessage">
+    <wsdl:part name="parameters" element="tns:BajaCajero" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_BajaCajero_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BajaCajeroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_BuscarCajero_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarCajero" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_BuscarCajero_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarCajeroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_Modificar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Modificar" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_Modificar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ListarCajeros_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCajeros" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ListarCajeros_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCajerosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ActualizarHorasExtra_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarHorasExtra" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ActualizarHorasExtra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarHorasExtraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_AltaEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:AltaEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_AltaEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AltaEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ModEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ModEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_BajaEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:BajaEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_BajaEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BajaEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_BuscarEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_BuscarEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ListarEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ListarEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_AltaContrato_InputMessage">
+    <wsdl:part name="parameters" element="tns:AltaContrato" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_AltaContrato_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AltaContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_BajaContrato_InputMessage">
+    <wsdl:part name="parameters" element="tns:BajaContrato" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_BajaContrato_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BajaContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ModContrato_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModContrato" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ModContrato_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_BuscarContrato_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarContrato" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_BuscarContrato_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ListarContrato_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarContrato" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ListarContrato_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_GenerarXMLContratos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarXMLContratos" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_GenerarXMLContratos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarXMLContratosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ChequearFacturaPaga_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChequearFacturaPaga" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ChequearFacturaPaga_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChequearFacturaPagaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_AltaPago_InputMessage">
+    <wsdl:part name="parameters" element="tns:AltaPago" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_AltaPago_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AltaPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ListarPagos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPagos" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ListarPagos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPagosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ListarFacturas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarFacturas" />
+  </wsdl:message>
+  <wsdl:message name="IMiServicio_ListarFacturas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarFacturasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMiServicio">
+    <wsdl:operation name="Logueo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/Logueo" message="tns:IMiServicio_Logueo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/LogueoResponse" message="tns:IMiServicio_Logueo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Alta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/Alta" message="tns:IMiServicio_Alta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/AltaResponse" message="tns:IMiServicio_Alta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarGerentes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/ListarGerentes" message="tns:IMiServicio_ListarGerentes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/ListarGerentesResponse" message="tns:IMiServicio_ListarGerentes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarClave">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/ModificarClave" message="tns:IMiServicio_ModificarClave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/ModificarClaveResponse" message="tns:IMiServicio_ModificarClave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BajaCajero">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/BajaCajero" message="tns:IMiServicio_BajaCajero_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/BajaCajeroResponse" message="tns:IMiServicio_BajaCajero_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCajero">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/BuscarCajero" message="tns:IMiServicio_BuscarCajero_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/BuscarCajeroResponse" message="tns:IMiServicio_BuscarCajero_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Modificar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/Modificar" message="tns:IMiServicio_Modificar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/ModificarResponse" message="tns:IMiServicio_Modificar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCajeros">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/ListarCajeros" message="tns:IMiServicio_ListarCajeros_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/ListarCajerosResponse" message="tns:IMiServicio_ListarCajeros_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarHorasExtra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/ActualizarHorasExtra" message="tns:IMiServicio_ActualizarHorasExtra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/ActualizarHorasExtraResponse" message="tns:IMiServicio_ActualizarHorasExtra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AltaEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/AltaEmpresa" message="tns:IMiServicio_AltaEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/AltaEmpresaResponse" message="tns:IMiServicio_AltaEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/ModEmpresa" message="tns:IMiServicio_ModEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/ModEmpresaResponse" message="tns:IMiServicio_ModEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BajaEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/BajaEmpresa" message="tns:IMiServicio_BajaEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/BajaEmpresaResponse" message="tns:IMiServicio_BajaEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/BuscarEmpresa" message="tns:IMiServicio_BuscarEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/BuscarEmpresaResponse" message="tns:IMiServicio_BuscarEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/ListarEmpresa" message="tns:IMiServicio_ListarEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/ListarEmpresaResponse" message="tns:IMiServicio_ListarEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AltaContrato">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/AltaContrato" message="tns:IMiServicio_AltaContrato_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/AltaContratoResponse" message="tns:IMiServicio_AltaContrato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BajaContrato">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/BajaContrato" message="tns:IMiServicio_BajaContrato_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/BajaContratoResponse" message="tns:IMiServicio_BajaContrato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModContrato">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/ModContrato" message="tns:IMiServicio_ModContrato_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/ModContratoResponse" message="tns:IMiServicio_ModContrato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarContrato">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/BuscarContrato" message="tns:IMiServicio_BuscarContrato_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/BuscarContratoResponse" message="tns:IMiServicio_BuscarContrato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarContrato">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/ListarContrato" message="tns:IMiServicio_ListarContrato_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/ListarContratoResponse" message="tns:IMiServicio_ListarContrato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarXMLContratos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/GenerarXMLContratos" message="tns:IMiServicio_GenerarXMLContratos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/GenerarXMLContratosResponse" message="tns:IMiServicio_GenerarXMLContratos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChequearFacturaPaga">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/ChequearFacturaPaga" message="tns:IMiServicio_ChequearFacturaPaga_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/ChequearFacturaPagaResponse" message="tns:IMiServicio_ChequearFacturaPaga_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AltaPago">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/AltaPago" message="tns:IMiServicio_AltaPago_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/AltaPagoResponse" message="tns:IMiServicio_AltaPago_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPagos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/ListarPagos" message="tns:IMiServicio_ListarPagos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/ListarPagosResponse" message="tns:IMiServicio_ListarPagos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarFacturas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMiServicio/ListarFacturas" message="tns:IMiServicio_ListarFacturas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMiServicio/ListarFacturasResponse" message="tns:IMiServicio_ListarFacturas_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMiServicio" type="tns:IMiServicio">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Logueo">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/Logueo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Alta">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/Alta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarGerentes">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/ListarGerentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarClave">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/ModificarClave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BajaCajero">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/BajaCajero" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCajero">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/BuscarCajero" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Modificar">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/Modificar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCajeros">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/ListarCajeros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarHorasExtra">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/ActualizarHorasExtra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AltaEmpresa">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/AltaEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModEmpresa">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/ModEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BajaEmpresa">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/BajaEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEmpresa">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/BuscarEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEmpresa">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/ListarEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AltaContrato">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/AltaContrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BajaContrato">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/BajaContrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModContrato">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/ModContrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarContrato">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/BuscarContrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarContrato">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/ListarContrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarXMLContratos">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/GenerarXMLContratos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChequearFacturaPaga">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/ChequearFacturaPaga" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AltaPago">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/AltaPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPagos">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/ListarPagos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarFacturas">
+      <soap:operation soapAction="http://tempuri.org/IMiServicio/ListarFacturas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MiServicio">
+    <wsdl:port name="BasicHttpBinding_IMiServicio" binding="tns:BasicHttpBinding_IMiServicio">
+      <soap:address location="http://localhost:57110/MiServicio.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

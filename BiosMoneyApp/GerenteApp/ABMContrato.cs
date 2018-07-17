@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using EntidadesCompartidas;
-using Logica;
+using BiosMoneyApp.ServicioWCF;
 
 namespace BiosMoneyApp.GerenteApp
 {
     public partial class ABMContrato : Form
     {
+        IMiServicio SServicio = new MiServicioClient();
         private Usuario usuario;
         FlowLayoutPanel panel;
 
@@ -33,7 +33,7 @@ namespace BiosMoneyApp.GerenteApp
 
         private void CargarContratos(Empresa empresa)
         {
-            DGVContrato.DataSource = FabricaL.GetContrato().ListarContrato(empresa, usuario);   
+            DGVContrato.DataSource = SServicio.ListarContrato(empresa, usuario);   
         }
 
         private void BtnCambiarEmp_Click(object sender, EventArgs e)
@@ -46,8 +46,12 @@ namespace BiosMoneyApp.GerenteApp
         {
             try
             {
-                Contrato contrato = new Contrato(emp, Convert.ToInt32(txtCodigo.Text), txtNombre.Text);
-                FabricaL.GetContrato().AltaContrato(contrato, usuario);
+                Contrato contrato = new Contrato();
+                contrato.Empresa = emp;
+                contrato.CodContrato = Convert.ToInt32(txtCodigo.Text);
+                contrato.NomContrato = txtNombre.Text;
+                SServicio.AltaContrato(contrato, usuario);
+
                 Refresh();
             }
             catch(Exception ex) { MessageBox.Show(ex.Message, "Error"); }
@@ -97,7 +101,7 @@ namespace BiosMoneyApp.GerenteApp
         public override void Refresh()
         {
             DGVContrato.DataSource = null;
-            DGVContrato.DataSource = cs = FabricaL.GetContrato().ListarContrato(emp, usuario);
+            DGVContrato.DataSource = cs = SServicio.ListarContrato(emp, usuario).ToList();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -106,7 +110,7 @@ namespace BiosMoneyApp.GerenteApp
             {
                 Contrato contrato = (Contrato)DGVContrato.CurrentRow.DataBoundItem;
 
-                FabricaL.GetContrato().BajaContrato(contrato, usuario);
+                SServicio.BajaContrato(contrato, usuario);
                 Refresh();
             }
             catch(Exception ex) { MessageBox.Show(ex.Message, "Error"); }
@@ -131,7 +135,7 @@ namespace BiosMoneyApp.GerenteApp
 
                 contrato.NomContrato = txtNombre.Text;
 
-                FabricaL.GetContrato().ModContrato(contrato, usuario);
+                SServicio.ModContrato(contrato, usuario);
 
                 Refresh();
             }

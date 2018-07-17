@@ -89,11 +89,11 @@ namespace Persistencia
             }
         }
 
-        public Empresa BuscarEmpresa(int _codigo, string usuario, string clave)
+        public Empresa BuscarEmpresa(int _codigo)
         {
             Empresa _Empresa = null;
 
-            using(SqlConnection cnn = new SqlConnection(Conexion.Cnn(usuario, clave)))
+            using(SqlConnection cnn = new SqlConnection(Conexion.CnnLogueo()))
             {
                 using(SqlCommand cmd = new SqlCommand("BuscarEmpresa", cnn))
                 {
