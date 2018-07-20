@@ -147,6 +147,7 @@ namespace BiosMoneyApp.GerenteApp
                 //Refresco el DataGrid con los nuevos datos.
                 Refresh();
             }
+            
             catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
         }
 

@@ -266,9 +266,7 @@
   </xs:element>
   <xs:element name="GenerarXMLContratos">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="logueo" nillable="true" type="q37:Usuario" />
-      </xs:sequence>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="GenerarXMLContratosResponse">
@@ -282,7 +280,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="factura" nillable="true" type="xs:string" />
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="logueo" nillable="true" type="q38:Usuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -296,8 +293,8 @@
   <xs:element name="AltaPago">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="pago" nillable="true" type="q39:Pago" />
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="logueo" nillable="true" type="q40:Usuario" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="pago" nillable="true" type="q37:Pago" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="logueo" nillable="true" type="q38:Usuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -309,14 +306,14 @@
   <xs:element name="ListarPagos">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="logueo" nillable="true" type="q41:Usuario" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="logueo" nillable="true" type="q39:Usuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ListarPagosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="ListarPagosResult" nillable="true" type="q42:ArrayOfPago" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="ListarPagosResult" nillable="true" type="q40:ArrayOfPago" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -324,14 +321,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="_NumeroInterno" type="xs:int" />
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="logueo" nillable="true" type="q43:Usuario" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="logueo" nillable="true" type="q41:Usuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ListarFacturasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="ListarFacturasResult" nillable="true" type="q44:ArrayOfLineaPago" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="ListarFacturasResult" nillable="true" type="q42:ArrayOfLineaPago" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

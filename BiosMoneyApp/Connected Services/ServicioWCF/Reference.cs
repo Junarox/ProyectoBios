@@ -693,16 +693,16 @@ namespace BiosMoneyApp.ServicioWCF {
         System.Threading.Tasks.Task<BiosMoneyApp.ServicioWCF.Contrato[]> ListarContratoAsync(BiosMoneyApp.ServicioWCF.Empresa empresa, BiosMoneyApp.ServicioWCF.Usuario logueo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMiServicio/GenerarXMLContratos", ReplyAction="http://tempuri.org/IMiServicio/GenerarXMLContratosResponse")]
-        string GenerarXMLContratos(BiosMoneyApp.ServicioWCF.Usuario logueo);
+        string GenerarXMLContratos();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMiServicio/GenerarXMLContratos", ReplyAction="http://tempuri.org/IMiServicio/GenerarXMLContratosResponse")]
-        System.Threading.Tasks.Task<string> GenerarXMLContratosAsync(BiosMoneyApp.ServicioWCF.Usuario logueo);
+        System.Threading.Tasks.Task<string> GenerarXMLContratosAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMiServicio/ChequearFacturaPaga", ReplyAction="http://tempuri.org/IMiServicio/ChequearFacturaPagaResponse")]
-        System.DateTime ChequearFacturaPaga(string factura, BiosMoneyApp.ServicioWCF.Usuario logueo);
+        System.DateTime ChequearFacturaPaga(string factura);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMiServicio/ChequearFacturaPaga", ReplyAction="http://tempuri.org/IMiServicio/ChequearFacturaPagaResponse")]
-        System.Threading.Tasks.Task<System.DateTime> ChequearFacturaPagaAsync(string factura, BiosMoneyApp.ServicioWCF.Usuario logueo);
+        System.Threading.Tasks.Task<System.DateTime> ChequearFacturaPagaAsync(string factura);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMiServicio/AltaPago", ReplyAction="http://tempuri.org/IMiServicio/AltaPagoResponse")]
         void AltaPago(BiosMoneyApp.ServicioWCF.Pago pago, BiosMoneyApp.ServicioWCF.Usuario logueo);
@@ -902,20 +902,20 @@ namespace BiosMoneyApp.ServicioWCF {
             return base.Channel.ListarContratoAsync(empresa, logueo);
         }
         
-        public string GenerarXMLContratos(BiosMoneyApp.ServicioWCF.Usuario logueo) {
-            return base.Channel.GenerarXMLContratos(logueo);
+        public string GenerarXMLContratos() {
+            return base.Channel.GenerarXMLContratos();
         }
         
-        public System.Threading.Tasks.Task<string> GenerarXMLContratosAsync(BiosMoneyApp.ServicioWCF.Usuario logueo) {
-            return base.Channel.GenerarXMLContratosAsync(logueo);
+        public System.Threading.Tasks.Task<string> GenerarXMLContratosAsync() {
+            return base.Channel.GenerarXMLContratosAsync();
         }
         
-        public System.DateTime ChequearFacturaPaga(string factura, BiosMoneyApp.ServicioWCF.Usuario logueo) {
-            return base.Channel.ChequearFacturaPaga(factura, logueo);
+        public System.DateTime ChequearFacturaPaga(string factura) {
+            return base.Channel.ChequearFacturaPaga(factura);
         }
         
-        public System.Threading.Tasks.Task<System.DateTime> ChequearFacturaPagaAsync(string factura, BiosMoneyApp.ServicioWCF.Usuario logueo) {
-            return base.Channel.ChequearFacturaPagaAsync(factura, logueo);
+        public System.Threading.Tasks.Task<System.DateTime> ChequearFacturaPagaAsync(string factura) {
+            return base.Channel.ChequearFacturaPagaAsync(factura);
         }
         
         public void AltaPago(BiosMoneyApp.ServicioWCF.Pago pago, BiosMoneyApp.ServicioWCF.Usuario logueo) {

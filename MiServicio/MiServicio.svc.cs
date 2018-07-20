@@ -6,6 +6,10 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Web;
+using System.Web.Services;
+using System.Web.Services.Protocols;
+using System.Xml;
 
 namespace MiServicio
 {
@@ -13,6 +17,8 @@ namespace MiServicio
     // NOTE: In order to launch WCF Test Client for testing this service, please select MiServicio.svc or MiServicio.svc.cs at the Solution Explorer and start debugging.
     public class MiServicio : IMiServicio
     {
+
+
         #region Empleados
 
         Usuario IMiServicio.Logueo(string usuario, string clave)
