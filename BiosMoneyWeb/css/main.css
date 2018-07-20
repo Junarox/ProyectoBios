@@ -1,0 +1,304 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color: #3d4044;
+}
+/*-------------------MENU NAV-------------------*/
+#contenedor_header
+{
+    position: absolute;
+    background: #327fb3;
+    width: 100%;
+    height: 80px;
+    top: 0;
+    border-bottom: solid 2px #fff;
+}
+#contenedor_menu
+{
+    position: absolute;
+    width: 1200px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0px;
+    height: 70px;
+    background: transparent;
+}
+
+#imgLogo
+{
+    position: absolute;
+    width: 250px;
+    height: 60px;
+    top: 50%;
+    transform: translateY(-35%);
+}
+#contenedor_botones
+{
+    position: absolute;
+    right: 0;
+    background: transparent;
+    height: 100%;
+}
+#navi
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#navi li
+{
+    margin-left: 30px;
+    margin-top: 23px;
+    padding: 0;
+    border: 0px;
+    height: 70px;
+    float: left; /*para eliminar el comportamiento de elemento de bloque(salto de linea)*/
+}
+#navi li a
+{
+    color: azure;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 27px;
+    font-family: 'Open Sans' , sans-serif;
+    letter-spacing: -2px;
+}
+#navi li a:hover
+{
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+/*-------------------FIN MENU NAV-------------------*/
+
+/*--------------------FIN BANNER--------------------*/
+#contenedor_principal
+{
+    position: relative;
+    z-index: -10;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #327fb3;
+    height: 1200px;
+    width: 1280px;
+    border: solid 2px #fff;
+    top: -4px;
+}
+#contenedor_banner
+{
+    position: relative;
+    background: transparent;
+    top: 78px;
+    width: 1280px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: solid 2px #fff;
+}
+#imgBanner
+{
+    position: relative;
+    width: 100%;
+    filter: blur(2px);
+    filter: brightness(0.7);
+}
+#logoBanner
+{
+    position: absolute;
+    top: 20px;
+    width: 50%;
+    left: 50px;
+}
+#contenedor_banner h2
+{
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Open Sans' , sans-serif;
+}
+/*--------------------FIN BANNER--------------------*/
+/*--------------CONTENEDOR DESCRIPCION--------------*/
+
+#contenedor_descripcion
+{
+    position: relative;
+    top: 120px;
+    height: 600px;
+    background-color: transparent;
+}
+#logoDescripcion
+{
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#contenedor_descripcion div
+{
+    position: absolute;
+    background: transparent;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 200px;
+    text-align: center;
+    width: 100%;
+}
+#contenedor_descripcion h2
+{
+    font-size: 50px;
+    font-family: 'Open Sans' , sans-serif;
+    color: white;
+    margin-bottom: 100px;
+}
+#contenedor_descripcion h3
+{
+    margin-top: 60px;
+    font-size: 30px;
+    font-family: 'Open Sans' , sans-serif;
+    color: white;
+}
+i
+{
+    color: white;
+}
+/*------------FIN CONTENEDOR DESCRIPCION------------*/
+
+/*--------------CONSULTA PAGO-----------------*/
+
+#contenedorConsulta
+{
+    position: relative;
+    text-align: center;
+    top: 200px;
+    color: white;
+    font-size: 30px;
+    font-family: 'Open Sans' , sans-serif;
+}
+/*--------------FIN CONSULTA PAGO-----------------*/
+
+
+
+/*--------------CONSULTA EMPRESAS-----------------*/
+#contenedorGeneral
+{
+    position: absolute;
+    top: 0;
+    width: 80%;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -2;
+
+
+}
+#contenedorRepeater
+{
+    position:absolute;
+    color:White;    
+    top: 150px;
+    width: 100%;
+    text-align: center;
+font-family: 'Open Sans' , sans-serif;
+    font-size: 50px;
+}
+table
+{
+    width: 60%;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#contenedorEmpresa 
+{
+    position: relative;
+    top: 50px;
+    border-style: solid;
+    border-width: 2px;    
+    width: auto;
+    padding: 15px 50px 15px 50px;
+    margin: 5px 0px 5px 0px;
+    background: #327fb3;
+    font-family: 'Open Sans' , sans-serif;
+    font-size: 40px;
+}
+.contenedorEmpresa:hover
+{
+    background: rgba(255,255,255,0.5);
+}
+.labelNombreEmpresa
+{
+    margin-right: 150px;
+}
+.botonSeleccionarEmpresa 
+{
+    float:right;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    background: #327fb3;
+    padding: 10px 20px 10px 20px;
+    border: solid #ffffff 2px;
+    text-decoration: none;
+}
+
+.botonSeleccionarEmpresa:hover 
+{
+    cursor:pointer;
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+}
+#repeaterEmpresas
+{
+    position:absolute;
+    left: 50%;
+}
+
+
+
+#tabla_contratos{
+    position: absolute;
+    width: auto;
+    top: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #3d4044;
+    font-size: 30px;
+    font-family: 'Open Sans' , sans-serif;
+    color: white;
+}
+#tabla_contratos td{
+    width: auto;
+    border-style:solid;
+    border-color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+#row_titulos td{
+    background: #327fb3;
+}
+#contenedorRepeater label{
+    color: blue;
+
+}
+#lblTitulo{
+    position: absolute;
+    top: 200px;
+    z-index: 2000;
+
+}
+
+/*--------------FIN CONSULTA EMPRESAS-----------------*/

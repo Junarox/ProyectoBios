@@ -16,10 +16,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Sistema\Per
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiServicio", "MiServicio\MiServicio.csproj", "{4E0AD424-729A-4CB7-B513-66C28EC9AC78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiosMoneyWeb", "..\..\..\Downloads\BiosMoney_v12\BiosMoney_v11\BiosMoneyWeb\BiosMoneyWeb.csproj", "{1C569741-BAAA-40BF-9ED3-7FF4A7C7115D}"
-	ProjectSection(ProjectDependencies) = postProject
-		{4E0AD424-729A-4CB7-B513-66C28EC9AC78} = {4E0AD424-729A-4CB7-B513-66C28EC9AC78}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiosMoneyWeb", "BiosMoneyWeb\BiosMoneyWeb.csproj", "{1C569741-BAAA-40BF-9ED3-7FF4A7C7115D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

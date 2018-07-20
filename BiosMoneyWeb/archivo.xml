@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Contratos>
+  <Contrato>
+    <CodigoContrato>1</CodigoContrato>
+    <NombreContrato>COCA</NombreContrato>
+    <NombreEmpresa>Coca-Cola</NombreEmpresa>
+    <CodigoEmpresa>1236</CodigoEmpresa>
+    <RUT>123456789123</RUT>
+    <DirFiscal>Colonia 968</DirFiscal>
+    <TelefonoEmpresa>29020082</TelefonoEmpresa>
+  </Contrato>
+  <Contrato>
+    <CodigoContrato>2</CodigoContrato>
+    <NombreContrato>PAPAS</NombreContrato>
+    <NombreEmpresa>Lays</NombreEmpresa>
+    <CodigoEmpresa>5678</CodigoEmpresa>
+    <RUT>123456789124</RUT>
+    <DirFiscal>Colonia 969</DirFiscal>
+    <TelefonoEmpresa>29020083</TelefonoEmpresa>
+  </Contrato>
+  <Contrato>
+    <CodigoContrato>3</CodigoContrato>
+    <NombreContrato>HAMBURGUESAS</NombreContrato>
+    <NombreEmpresa>Toyota</NombreEmpresa>
+    <CodigoEmpresa>1235</CodigoEmpresa>
+    <RUT>123456789126</RUT>
+    <DirFiscal>Colonia 971</DirFiscal>
+    <TelefonoEmpresa>29020085</TelefonoEmpresa>
+  </Contrato>
+  <Contrato>
+    <CodigoContrato>4</CodigoContrato>
+    <NombreContrato>HAMBURGUESAS</NombreContrato>
+    <NombreEmpresa>Toyota</NombreEmpresa>
+    <CodigoEmpresa>1235</CodigoEmpresa>
+    <RUT>123456789126</RUT>
+    <DirFiscal>Colonia 971</DirFiscal>
+    <TelefonoEmpresa>29020085</TelefonoEmpresa>
+  </Contrato>
+</Contratos>

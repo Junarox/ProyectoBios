@@ -1,0 +1,39 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="BiosMoneyWeb.MasterPage" %>
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+        <head runat="server">
+            <title></title>
+             <meta name="tipo_contenido"  content="text/html;" http-equiv="content-type" charset="utf-8">
+             <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+            <asp:ContentPlaceHolder ID="head" runat="server">
+            </asp:ContentPlaceHolder>
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+            <link rel="stylesheet" href="css/main.css">
+            
+        </head>
+        <body>
+            <form id="form1" runat="server">
+                <div>
+                    <div id="contenedor_header">
+                        <div id="contenedor_menu">
+                            <img id="imgLogo" src="imagenes/logo_biosmoney.png" alt="">
+                            <div id="contenedor_botones">
+                                <ul id="navi"> 
+                                    <li><a href="Principal.aspx">Inicio</a></li>
+                                    <li><a href="ConsultaEmpresas.aspx">Empresas Adheridas</a></li>
+                                    <li><a href="ConsultaPago.aspx">Consulta de Pago</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                    </asp:ContentPlaceHolder>
+                </div>
+            </form>
+        </body>
+    </html>

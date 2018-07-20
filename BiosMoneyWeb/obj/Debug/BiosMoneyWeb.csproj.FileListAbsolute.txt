@@ -1,0 +1,118 @@
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\BiosMoneyWeb\bin\BiosMoneyWeb.dll
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\BiosMoneyWeb\bin\BiosMoneyWeb.pdb
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\BiosMoneyWeb\bin\Logica.dll
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\BiosMoneyWeb\bin\EntidadesCompartidas.dll
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\BiosMoneyWeb\bin\Logica.pdb
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\BiosMoneyWeb\bin\EntidadesCompartidas.pdb
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csprojResolveAssemblyReference.cache
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.dll
+C:\Users\mmendaro.PDCSERVTELEFAX\Desktop\Vademécum de Medicamentos Homeopáticos\BiosMoney\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.pdb
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\BiosMoneyWeb\bin\BiosMoneyWeb.dll.config
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\BiosMoneyWeb\bin\BiosMoneyWeb.dll
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\BiosMoneyWeb\bin\BiosMoneyWeb.pdb
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\BiosMoneyWeb\bin\Logica.dll
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\BiosMoneyWeb\bin\EntidadesCompartidas.dll
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\BiosMoneyWeb\bin\Logica.pdb
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\BiosMoneyWeb\bin\EntidadesCompartidas.pdb
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csproj.CoreCompileInputs.cache
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.dll
+C:\Users\Juna\Desktop\BiosMoney_xd\BiosMoney\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney\BiosMoneyWeb\bin\BiosMoneyWeb.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney\BiosMoneyWeb\bin\BiosMoneyWeb.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney\BiosMoneyWeb\bin\Logica.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney\BiosMoneyWeb\bin\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney\BiosMoneyWeb\bin\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney\BiosMoneyWeb\bin\Logica.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney\BiosMoneyWeb\bin\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney\BiosMoneyWeb\bin\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csprojResolveAssemblyReference.cache
+D:\bios\BIOSMONEY DIEGO\BiosMoney\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.pdb
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\BiosMoneyWeb\bin\BiosMoneyWeb.dll.config
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\BiosMoneyWeb\bin\BiosMoneyWeb.dll
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\BiosMoneyWeb\bin\BiosMoneyWeb.pdb
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\BiosMoneyWeb\bin\Logica.dll
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\BiosMoneyWeb\bin\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\BiosMoneyWeb\bin\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\BiosMoneyWeb\bin\Logica.pdb
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\BiosMoneyWeb\bin\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\BiosMoneyWeb\bin\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csprojResolveAssemblyReference.cache
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.dll
+D:\bios\BIOSMONEY DIEGO\ULTIMO\BiosMoney_EPETACULAR\BiosMoney\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\BiosMoneyWeb\bin\BiosMoneyWeb.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\BiosMoneyWeb\bin\BiosMoneyWeb.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\BiosMoneyWeb\bin\Logica.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\BiosMoneyWeb\bin\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\BiosMoneyWeb\bin\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\BiosMoneyWeb\bin\Logica.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\BiosMoneyWeb\bin\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\BiosMoneyWeb\bin\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csprojResolveAssemblyReference.cache
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\BiosMoneyWeb\bin\BiosMoneyWeb.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\BiosMoneyWeb\bin\BiosMoneyWeb.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\BiosMoneyWeb\bin\Logica.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\BiosMoneyWeb\bin\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\BiosMoneyWeb\bin\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\BiosMoneyWeb\bin\Logica.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\BiosMoneyWeb\bin\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\BiosMoneyWeb\bin\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csprojResolveAssemblyReference.cache
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ULTIMOMATEO2\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.pdb
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\BiosMoneyWeb\bin\BiosMoneyWeb.dll
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\BiosMoneyWeb\bin\BiosMoneyWeb.pdb
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\BiosMoneyWeb\bin\Logica.dll
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\BiosMoneyWeb\bin\EntidadesCompartidas.dll
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\BiosMoneyWeb\bin\Persistencia.dll
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\BiosMoneyWeb\bin\Logica.pdb
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\BiosMoneyWeb\bin\EntidadesCompartidas.pdb
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\BiosMoneyWeb\bin\Persistencia.pdb
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csprojResolveAssemblyReference.cache
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.dll
+D:\BIOS\ENSAMBLOVICH\BiosMoney_ensambladovich\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\BiosMoneyWeb\bin\BiosMoneyWeb.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\BiosMoneyWeb\bin\BiosMoneyWeb.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\BiosMoneyWeb\bin\Logica.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\BiosMoneyWeb\bin\EntidadesCompartidas.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\BiosMoneyWeb\bin\Persistencia.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\BiosMoneyWeb\bin\Logica.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\BiosMoneyWeb\bin\EntidadesCompartidas.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\BiosMoneyWeb\bin\Persistencia.pdb
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csprojResolveAssemblyReference.cache
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.dll
+D:\bios\BIOSMONEY DIEGO\BiosMoney_ensambladovich\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.pdb
+C:\Users\Juna\Desktop\BiosMoney_v6\BiosMoneyWeb\bin\BiosMoneyWeb.dll.config
+C:\Users\Juna\Desktop\BiosMoney_v6\BiosMoneyWeb\bin\BiosMoneyWeb.dll
+C:\Users\Juna\Desktop\BiosMoney_v6\BiosMoneyWeb\bin\BiosMoneyWeb.pdb
+C:\Users\Juna\Desktop\BiosMoney_v6\BiosMoneyWeb\bin\EntidadesCompartidas.dll
+C:\Users\Juna\Desktop\BiosMoney_v6\BiosMoneyWeb\bin\Logica.dll
+C:\Users\Juna\Desktop\BiosMoney_v6\BiosMoneyWeb\bin\Persistencia.dll
+C:\Users\Juna\Desktop\BiosMoney_v6\BiosMoneyWeb\bin\EntidadesCompartidas.pdb
+C:\Users\Juna\Desktop\BiosMoney_v6\BiosMoneyWeb\bin\Logica.pdb
+C:\Users\Juna\Desktop\BiosMoney_v6\BiosMoneyWeb\bin\Persistencia.pdb
+C:\Users\Juna\Desktop\BiosMoney_v6\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csprojResolveAssemblyReference.cache
+C:\Users\Juna\Desktop\BiosMoney_v6\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csproj.CoreCompileInputs.cache
+C:\Users\Juna\Desktop\BiosMoney_v6\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csproj.CopyComplete
+C:\Users\Juna\Desktop\BiosMoney_v6\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.dll
+C:\Users\Juna\Desktop\BiosMoney_v6\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.pdb
+C:\Users\Juna\Desktop\BiosMoney_v7\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csprojResolveAssemblyReference.cache
+C:\Users\Juna\Desktop\BiosMoney_v7\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csproj.CoreCompileInputs.cache
+C:\Users\Juna\Desktop\BiosMoney_v7\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.dll
+C:\Users\Juna\Desktop\BiosMoney_v7\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.pdb
+C:\Users\Juna\Desktop\BiosMoney_v7\BiosMoneyWeb\bin\BiosMoneyWeb.dll.config
+C:\Users\Juna\Desktop\BiosMoney_v7\BiosMoneyWeb\bin\BiosMoneyWeb.dll
+C:\Users\Juna\Desktop\BiosMoney_v7\BiosMoneyWeb\bin\BiosMoneyWeb.pdb
+C:\Users\sistemas\Desktop\BiosMoney_v11\BiosMoneyWeb\bin\BiosMoneyWeb.dll
+C:\Users\sistemas\Desktop\BiosMoney_v11\BiosMoneyWeb\bin\BiosMoneyWeb.pdb
+C:\Users\sistemas\Desktop\BiosMoney_v11\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.dll
+C:\Users\sistemas\Desktop\BiosMoney_v11\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.pdb
+C:\Users\diego\Downloads\BiosMoney_v12\BiosMoney_v11\BiosMoneyWeb\bin\BiosMoneyWeb.dll.config
+C:\Users\diego\Downloads\BiosMoney_v12\BiosMoney_v11\BiosMoneyWeb\bin\BiosMoneyWeb.dll
+C:\Users\diego\Downloads\BiosMoney_v12\BiosMoney_v11\BiosMoneyWeb\bin\BiosMoneyWeb.pdb
+C:\Users\diego\Downloads\BiosMoney_v12\BiosMoney_v11\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csprojAssemblyReference.cache
+C:\Users\diego\Downloads\BiosMoney_v12\BiosMoney_v11\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csproj.CoreCompileInputs.cache
+C:\Users\diego\Downloads\BiosMoney_v12\BiosMoney_v11\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.dll
+C:\Users\diego\Downloads\BiosMoney_v12\BiosMoney_v11\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.pdb
