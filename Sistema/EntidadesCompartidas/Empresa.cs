@@ -63,7 +63,7 @@ namespace EntidadesCompartidas
             {
                 if (value.Length > 100)
                     throw new FormatException("La Dirección Fiscal no puede contener más de 100 caracteres.");
-                else if(value.Equals(""))
+                else if (value.Equals(""))
                     throw new FormatException("La Dirección Fiscal no puede estar vacío.");
                 else
                     _DirFiscal = value;

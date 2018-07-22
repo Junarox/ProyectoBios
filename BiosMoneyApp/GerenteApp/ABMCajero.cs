@@ -1,4 +1,4 @@
-﻿using BiosMoneyApp.ServicioWCF;
+﻿using BiosMoneyApp.Servicio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.ServiceModel;
+using System.Web.Services.Protocols;
 
 namespace BiosMoneyApp.GerenteApp
 {
@@ -51,7 +53,7 @@ namespace BiosMoneyApp.GerenteApp
                 //Traigo la lista de cajeros y la guardo en el GridView
                 Refresh();
             }
-            catch(Exception ex) { MessageBox.Show(ex.Message, "Error"); }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
         }
 
         /// <summary>
@@ -95,7 +97,7 @@ namespace BiosMoneyApp.GerenteApp
                 try
                 {
                     c.Ci = Convert.ToInt32(txtCedula.Text);
-                    
+
                 }
                 catch (FormatException)
                 {
@@ -114,7 +116,7 @@ namespace BiosMoneyApp.GerenteApp
                 //Refresco el DataGrid con los nuevos datos.
                 Refresh();
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message,"Error"); }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
         }
 
         /// <summary>
@@ -132,9 +134,13 @@ namespace BiosMoneyApp.GerenteApp
                 try
                 {
                     c = (Cajero)DGVCajeros.CurrentRow.DataBoundItem;
-                }
-                catch (NullReferenceException) { MessageBox.Show("No se ha seleccionado ningún Cajero.", "Error"); }
 
+                }
+                catch (NullReferenceException)
+                {
+                    MessageBox.Show("No se ha seleccionado ningún Cajero.", "Error");
+                    return;
+                }
                 //Modifico sus atributos.
                 c.NomCompleto = txtNombreC.Text;
                 c.Usu = txtUsuario.Text;
@@ -146,9 +152,10 @@ namespace BiosMoneyApp.GerenteApp
 
                 //Refresco el DataGrid con los nuevos datos.
                 Refresh();
+
             }
-            
             catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
+
         }
 
         /// <summary>
@@ -166,7 +173,7 @@ namespace BiosMoneyApp.GerenteApp
 
             //Este if es porque la primera vez que se inicia la aplicación, cuando se cargan los controles se llama al TextChanged 
             //y como el DataGrid está aún en null, se lanza la exception NullReferenceException
-            if(DGVCajeros.DataSource != null)
+            if (DGVCajeros.DataSource != null)
             {
                 //Variable para ver si un txt se puede transformar a int.
                 int i = 0;
@@ -217,9 +224,9 @@ namespace BiosMoneyApp.GerenteApp
                 //Vacío y seteo el DataGrid con los nuevos valores.
                 Refresh();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Error");
+                MessageBox.Show(ex.Message, "Error");
             }
         }
     }

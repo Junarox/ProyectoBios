@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BiosMoneyApp.ServicioWCF;
+using BiosMoneyApp.Servicio;
 
 namespace BiosMoneyApp.GerenteApp
 {
@@ -48,7 +48,7 @@ namespace BiosMoneyApp.GerenteApp
 
         private void DGVEmpresas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            BtnOK_Click(sender,e);
+            BtnOK_Click(sender, e);
         }
     }
 }

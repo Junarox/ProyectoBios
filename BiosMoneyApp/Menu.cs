@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BiosMoneyApp.ServicioWCF;
+using BiosMoneyApp.Servicio;
 namespace BiosMoneyApp
 {
     public partial class Menu : Form
@@ -121,41 +121,41 @@ namespace BiosMoneyApp
 
         private void CheckUsu(Usuario usu)
         {
-            //if (usu is Gerente)
-            //{
-            //    TSMIABMCajero.Visible = true;
-            //    TSMIABMCajero.Enabled = true;
+            if (usu is Gerente)
+            {
+                TSMIABMCajero.Visible = true;
+                TSMIABMCajero.Enabled = true;
 
-            //    TSMIABMEmpresa.Visible = true;
-            //    TSMIABMEmpresa.Enabled = true;
+                TSMIABMEmpresa.Visible = true;
+                TSMIABMEmpresa.Enabled = true;
 
-            //    TSMIABMContrato.Visible = true;
-            //    TSMIABMContrato.Enabled = true;
+                TSMIABMContrato.Visible = true;
+                TSMIABMContrato.Enabled = true;
 
-            //    TSMIAltaGerente.Visible = true;
-            //    TSMIAltaGerente.Enabled = true;
+                TSMIAltaGerente.Visible = true;
+                TSMIAltaGerente.Enabled = true;
 
-            //    TSMIAltaPago.Visible = false;
-            //    TSMIAltaPago.Enabled = false;
-            //}
+                TSMIAltaPago.Visible = false;
+                TSMIAltaPago.Enabled = false;
+            }
 
-            //else
-            //{
-            //    TSMIABMCajero.Visible = false;
-            //    TSMIABMCajero.Enabled = false;
+            else
+            {
+                TSMIABMCajero.Visible = false;
+                TSMIABMCajero.Enabled = false;
 
-            //    TSMIABMEmpresa.Visible = false;
-            //    TSMIABMEmpresa.Enabled = false;
+                TSMIABMEmpresa.Visible = false;
+                TSMIABMEmpresa.Enabled = false;
 
-            //    TSMIABMContrato.Visible = false;
-            //    TSMIABMContrato.Enabled = false;
+                TSMIABMContrato.Visible = false;
+                TSMIABMContrato.Enabled = false;
 
-            //    TSMIAltaGerente.Visible = false;
-            //    TSMIAltaGerente.Enabled = false;
+                TSMIAltaGerente.Visible = false;
+                TSMIAltaGerente.Enabled = false;
 
-            //    TSMIAltaPago.Visible = true;
-            //    TSMIAltaPago.Enabled = true;
-            //}
+                TSMIAltaPago.Visible = true;
+                TSMIAltaPago.Enabled = true;
+            }
         }
     }
 }

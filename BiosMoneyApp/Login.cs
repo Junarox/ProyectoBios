@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BiosMoneyApp.ServicioWCF;
+using BiosMoneyApp.Servicio;
 
 namespace BiosMoneyApp
 {
     public partial class Login : Form
     {
-        IMiServicio SServicio = new MiServicioClient();
+        IMiServicio SServicio = new Servicio.MiServicioClient();
         public Login()
         {
             InitializeComponent();
@@ -24,15 +24,15 @@ namespace BiosMoneyApp
             try
             {
                 Usuario usu = SServicio.Logueo(lblUsu.Text, lblClave.Text);
-                if(usu is Cajero)
+                if (usu is Cajero)
                 {
                     //Abrir el form Menu Cajeros.
                     this.Hide();
                     Form f = new Menu(usu);
                     f.ShowDialog();
-                    
+
                 }
-                else if(usu is Gerente)
+                else if (usu is Gerente)
                 {
                     //Abrir el form Menu Gerente
                     this.Hide();
@@ -43,8 +43,9 @@ namespace BiosMoneyApp
                 {
                     throw new Exception("Error de logueo.");
                 }
-                
-            }catch(Exception ex)
+
+            }
+            catch (Exception ex)
             {
                 lblError.Text = ex.Message;
             }

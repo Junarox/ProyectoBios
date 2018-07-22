@@ -116,3 +116,9 @@ C:\Users\diego\Downloads\BiosMoney_v12\BiosMoney_v11\BiosMoneyWeb\obj\Debug\Bios
 C:\Users\diego\Downloads\BiosMoney_v12\BiosMoney_v11\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csproj.CoreCompileInputs.cache
 C:\Users\diego\Downloads\BiosMoney_v12\BiosMoney_v11\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.dll
 C:\Users\diego\Downloads\BiosMoney_v12\BiosMoney_v11\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.pdb
+C:\Users\diego\source\repos\ProyectoBios\BiosMoneyWeb\bin\BiosMoneyWeb.dll.config
+C:\Users\diego\source\repos\ProyectoBios\BiosMoneyWeb\bin\BiosMoneyWeb.dll
+C:\Users\diego\source\repos\ProyectoBios\BiosMoneyWeb\bin\BiosMoneyWeb.pdb
+C:\Users\diego\source\repos\ProyectoBios\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.csproj.CoreCompileInputs.cache
+C:\Users\diego\source\repos\ProyectoBios\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.dll
+C:\Users\diego\source\repos\ProyectoBios\BiosMoneyWeb\obj\Debug\BiosMoneyWeb.pdb

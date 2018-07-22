@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BiosMoneyApp.ServicioWCF;
+using BiosMoneyApp.Servicio;
 
 namespace BiosMoneyApp.GerenteApp
 {
@@ -95,7 +95,7 @@ namespace BiosMoneyApp.GerenteApp
                     emp.Rut = Convert.ToInt64(txtRut.Text);
                 }
                 catch (FormatException) { throw new FormatException("El Rut debe contener 12 digitos."); }
-                
+
                 emp.Nombre = txtNombre.Text;
                 emp.DirFiscal = txtDirF.Text;
                 emp.Tel = Convert.ToInt32(txtTel.Text);
@@ -105,7 +105,7 @@ namespace BiosMoneyApp.GerenteApp
                 Refresh();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
-            
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

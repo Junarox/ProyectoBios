@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BiosMoneyApp.ServicioWCF;
+using BiosMoneyApp.Servicio;
 
 namespace BiosMoneyApp.GerenteApp
 {
@@ -61,7 +61,7 @@ namespace BiosMoneyApp.GerenteApp
                 g.Email = txtEmail.Text;
 
                 //Llamo a la fabrica para darlo de alta.
-                SServicio.Alta(g,usuario);
+                SServicio.Alta(g, usuario);
 
                 //Refresco el DataGrid con los nuevos datos.
                 Refresh();

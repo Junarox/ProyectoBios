@@ -59,7 +59,7 @@ namespace EntidadesCompartidas
             LineasPago = pLineasPago;
         }
 
-        public Pago() 
+        public Pago()
         {
             NumeroInterno = 0;
             Fecha = DateTime.Now;

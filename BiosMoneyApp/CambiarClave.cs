@@ -1,4 +1,4 @@
-﻿using BiosMoneyApp.ServicioWCF;
+﻿using BiosMoneyApp.Servicio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +20,7 @@ namespace BiosMoneyApp
         {
             this.usu = usu;
             InitializeComponent();
-            
+
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -33,17 +33,17 @@ namespace BiosMoneyApp
                     {
                         SServicio.ModificarClave(usu, txtNuevaClave.Text, txtReClave.Text);
                     }
-                    catch(Exception ex) { MessageBox.Show(ex.Message, "Error"); }
+                    catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
 
                     MessageBox.Show("Se ha modificado la clave con exito.");
                     usu.Clave = txtNuevaClave.Text;
                     this.Close();
                 }
                 else
-                    MessageBox.Show("Las claves no coinciden.","Error");
+                    MessageBox.Show("Las claves no coinciden.", "Error");
             }
             else
-                MessageBox.Show("Clave incorrecta.","Error");
+                MessageBox.Show("Clave incorrecta.", "Error");
         }
     }
 }

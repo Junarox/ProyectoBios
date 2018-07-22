@@ -67,4 +67,3 @@ C:\Users\diego\source\repos\ProyectoBios\Sistema\EntidadesCompartidas\bin\Debug\
 C:\Users\diego\source\repos\ProyectoBios\Sistema\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.csproj.CoreCompileInputs.cache
 C:\Users\diego\source\repos\ProyectoBios\Sistema\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
 C:\Users\diego\source\repos\ProyectoBios\Sistema\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb
-C:\Users\diego\source\repos\ProyectoBios\Sistema\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.csprojAssemblyReference.cache

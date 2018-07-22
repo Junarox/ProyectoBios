@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BiosMoneyApp.ServicioWCF;
+using BiosMoneyApp.Servicio;
+using System.Reflection;
 
 namespace BiosMoneyApp.CajeroApp
 {
@@ -24,6 +25,14 @@ namespace BiosMoneyApp.CajeroApp
             usu = usuario;
             InitializeComponent();
             DGVPagos.AutoGenerateColumns = false;
+
+
+            var deleteButton = new DataGridViewButtonColumn();
+            deleteButton.Name = "botonEliminar";
+            deleteButton.HeaderText = "";
+            deleteButton.Text = "X";
+            deleteButton.UseColumnTextForButtonValue = true;
+            this.DGVPagos.Columns.Add(deleteButton);
         }
 
         private void AddCodigo_Click(object sender, EventArgs e)
@@ -70,6 +79,23 @@ namespace BiosMoneyApp.CajeroApp
                     lpago.FechaVencimiento = FechaVen;
                     lpago.CodigoCliente = Cli;
                     lpago.Contrato = contrato;
+                    lpago.CodContrato = contrato.CodContrato.ToString();
+
+                    //Creo lista auxiliar para verificar que no se repitan facturas
+                    List<LineaPago> listaAux = new List<LineaPago>();
+                    if (lpagos.Count > 0)
+                    {
+                        listaAux = (from o in lpagos
+                                    where (o.Monto == lpago.Monto &&
+                                    o.FechaVencimiento == lpago.FechaVencimiento &&
+                                    o.CodigoCliente == lpago.CodigoCliente &&
+                                    o.Contrato.CodContrato == lpago.Contrato.CodContrato &&
+                                    o.Contrato.Empresa.Codigo == lpago.Contrato.Empresa.Codigo)
+                                    select o).ToList();
+                    }
+                    //Si tiene elementos cargados es por que ya existe la factura
+                    if (listaAux.Count > 0)
+                        throw new Exception("Esta factura ya ha sido ingresada.");
 
                     lpagos.Add(lpago);
 
@@ -82,7 +108,7 @@ namespace BiosMoneyApp.CajeroApp
                     }
                 }
 
-                if(lpagos != null)
+                if (lpagos != null)
                 {
                     DGVPagos.DataSource = null;
                     DGVPagos.DataSource = lpagos;
@@ -111,8 +137,34 @@ namespace BiosMoneyApp.CajeroApp
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error"); }
-            
-            
         }
+
+        private void DGVPagos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //if click is on new row or header row
+            if (e.RowIndex == DGVPagos.NewRowIndex || e.RowIndex < 0)
+                return;
+
+            //Check if click is on specific column 
+            if (e.ColumnIndex == DGVPagos.Columns["botonEliminar"].Index)
+            {
+                //Put some logic here, for example to remove row from your binding list.
+                try
+                {
+                    int nuevoTotal = Convert.ToInt32(TxtTotal.Text) - lpagos[e.RowIndex].Monto;
+                    TxtTotal.Text = nuevoTotal.ToString();
+                    lpagos.RemoveAt(e.RowIndex);
+
+                    DGVPagos.DataSource = null;
+                    DGVPagos.DataSource = lpagos;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error al eliminar factura", "Error");
+                }
+            }
+        }
+
+
     }
 }

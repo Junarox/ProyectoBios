@@ -8,9 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>BiosMoneyApp</RootNamespace>
     <AssemblyName>BiosMoneyApp</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -60,7 +61,7 @@
     <Compile Include="CambiarClave.Designer.cs">
       <DependentUpon>CambiarClave.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\ServicioWCF\Reference.cs">
+    <Compile Include="Connected Services\Servicio\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -144,36 +145,37 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Connected Services\ServicioWCF\BiosMoneyApp.ServicioWCF.Cajero.datasource">
+    <None Include="Connected Services\Servicio\BiosMoneyApp.Servicio.Cajero.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWCF\BiosMoneyApp.ServicioWCF.Contrato.datasource">
+    <None Include="Connected Services\Servicio\BiosMoneyApp.Servicio.Contrato.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWCF\BiosMoneyApp.ServicioWCF.Empresa.datasource">
+    <None Include="Connected Services\Servicio\BiosMoneyApp.Servicio.Empresa.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWCF\BiosMoneyApp.ServicioWCF.Gerente.datasource">
+    <None Include="Connected Services\Servicio\BiosMoneyApp.Servicio.Gerente.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWCF\BiosMoneyApp.ServicioWCF.LineaPago.datasource">
+    <None Include="Connected Services\Servicio\BiosMoneyApp.Servicio.LineaPago.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWCF\BiosMoneyApp.ServicioWCF.Pago.datasource">
+    <None Include="Connected Services\Servicio\BiosMoneyApp.Servicio.Pago.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWCF\BiosMoneyApp.ServicioWCF.Usuario.datasource">
+    <None Include="Connected Services\Servicio\BiosMoneyApp.Servicio.Usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWCF\MiServicio.wsdl" />
-    <None Include="Connected Services\ServicioWCF\MiServicio.xsd">
+    <None Include="Connected Services\Servicio\MiServicio.wsdl" />
+    <None Include="Connected Services\Servicio\MiServicio.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioWCF\MiServicio1.xsd">
+    <None Include="Connected Services\Servicio\MiServicio1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioWCF\MiServicio2.xsd">
+    <None Include="Connected Services\Servicio\MiServicio2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -190,10 +192,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServicioWCF\MiServicio.disco" />
-    <None Include="Connected Services\ServicioWCF\configuration91.svcinfo" />
-    <None Include="Connected Services\ServicioWCF\configuration.svcinfo" />
-    <None Include="Connected Services\ServicioWCF\Reference.svcmap">
+    <None Include="Connected Services\Servicio\MiServicio.disco" />
+    <None Include="Connected Services\Servicio\configuration91.svcinfo" />
+    <None Include="Connected Services\Servicio\configuration.svcinfo" />
+    <None Include="Connected Services\Servicio\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -207,13 +209,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServicioWCF\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MiServicio\MiServicio.csproj">
-      <Project>{4e0ad424-729a-4cb7-b513-66c28ec9ac78}</Project>
-      <Name>MiServicio</Name>
-    </ProjectReference>
+    <WCFMetadataStorage Include="Connected Services\Servicio\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -54,7 +54,7 @@ namespace EntidadesCompartidas
             Contrato = pContrato;
         }
 
-        public LineaPago() 
+        public LineaPago()
         {
             Monto = 0;
             FechaVencimiento = DateTime.Now;

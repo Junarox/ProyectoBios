@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BiosMoneyApp.ServicioWCF;
+using BiosMoneyApp.Servicio;
 
 namespace BiosMoneyApp.GerenteApp
 {
@@ -20,7 +20,7 @@ namespace BiosMoneyApp.GerenteApp
         private Empresa emp;
         private List<Contrato> cs = new List<Contrato>();
 
-        public ABMContrato(FlowLayoutPanel panel , Empresa empresa, Usuario usuario)
+        public ABMContrato(FlowLayoutPanel panel, Empresa empresa, Usuario usuario)
         {
             this.usuario = usuario;
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace BiosMoneyApp.GerenteApp
 
         private void CargarContratos(Empresa empresa)
         {
-            DGVContrato.DataSource = SServicio.ListarContrato(empresa, usuario);   
+            DGVContrato.DataSource = SServicio.ListarContrato(empresa, usuario);
         }
 
         private void BtnCambiarEmp_Click(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace BiosMoneyApp.GerenteApp
 
                 Refresh();
             }
-            catch(Exception ex) { MessageBox.Show(ex.Message, "Error"); }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace BiosMoneyApp.GerenteApp
                         Refresh();
                 }
             }
-            catch(Exception ex) { MessageBox.Show(ex.Message, "Error"); }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
         }
 
         public override void Refresh()
@@ -113,7 +113,7 @@ namespace BiosMoneyApp.GerenteApp
                 SServicio.BajaContrato(contrato, usuario);
                 Refresh();
             }
-            catch(Exception ex) { MessageBox.Show(ex.Message, "Error"); }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

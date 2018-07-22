@@ -1,5 +1,6 @@
 ﻿using EntidadesCompartidas;
 using Logica;
+using MiServicioWCF;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -64,6 +64,6 @@ namespace EntidadesCompartidas
             NomContrato = "N/A";
         }
 
-        
+
     }
 }
