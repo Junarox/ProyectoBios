@@ -61,8 +61,6 @@ namespace BiosMoneyApp.GerenteApp
         {
             try
             {
-
-
                 Refresh();
 
                 List<Contrato> resultado = new List<Contrato>();

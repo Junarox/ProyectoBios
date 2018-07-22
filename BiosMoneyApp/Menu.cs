@@ -135,6 +135,9 @@ namespace BiosMoneyApp
                 TSMIAltaGerente.Visible = true;
                 TSMIAltaGerente.Enabled = true;
 
+                TSMIListadoPagos.Visible = true;
+                TSMIListadoPagos.Enabled = true;
+
                 TSMIAltaPago.Visible = false;
                 TSMIAltaPago.Enabled = false;
             }
@@ -153,9 +156,23 @@ namespace BiosMoneyApp
                 TSMIAltaGerente.Visible = false;
                 TSMIAltaGerente.Enabled = false;
 
+                TSMIListadoPagos.Visible = false;
+                TSMIListadoPagos.Enabled = false;
+
                 TSMIAltaPago.Visible = true;
                 TSMIAltaPago.Enabled = true;
             }
+        }
+
+        private void TSMIListadoPagos_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            ListadoPagos myForm = new ListadoPagos(usuario);
+            myForm.FormBorderStyle = FormBorderStyle.None;
+            myForm.TopLevel = false;
+            myForm.AutoScroll = true;
+            flowLayoutPanel1.Controls.Add(myForm);
+            myForm.Show();
         }
     }
 }

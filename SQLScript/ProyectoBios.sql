@@ -4,7 +4,6 @@ GO
 IF EXISTS(SELECT * FROM SYSDATABASES WHERE NAME = 'BiosMoney')
 BEGIN
 	DROP DATABASE BiosMoney
-	DROP SERVER ROLE [GerentesSQL]
 END
 GO
 
@@ -15,20 +14,7 @@ CREATE DATABASE BiosMoney ON(
 GO
 
 --	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--	ROLES	--
-
--- Creo un server role para manejar los grant y alter logins de los Cajeros
-CREATE SERVER ROLE [GerentesSQL]
-GO
-
--- Le doy al role de sql permisos para modificar logins
-GRANT ALTER ANY LOGIN TO [GerentesSQL]
-GO
-
-CREATE SERVER ROLE [IIS]
 CREATE LOGIN [IIS APPPOOL\DefaultAppPool] FROM WINDOWS WITH DEFAULT_DATABASE = master
-GO
-
-EXEC master..sp_addsrvrolemember @loginame = N'IIS APPPOOL\DefaultAppPool', @rolename = [IIS]
 GO
 
 USE BiosMoney
@@ -245,8 +231,11 @@ BEGIN
 						END
 						ELSE
 						BEGIN
+
 							-- Asigno el rol de SQL
-							EXEC sp_addsrvrolemember @loginame=@Usuario, @rolename=[GerentesSQL]
+							DECLARE @Sentencia3 VARCHAR(200)
+							SET @Sentencia3 = 'USE MASTER GRANT ALTER ANY LOGIN TO ['+@Usuario+'] USE BiosMoney'
+							EXEC(@Sentencia3)
 							IF(@@ERROR != 0)
 							BEGIN
 								RETURN -3;
@@ -721,6 +710,11 @@ BEGIN
 END
 GO
 
+CREATE PROCEDURE ListarPagos()
+BEGIN
+	SELECT * FROM Pagos P INNER JOIN FACTURASPAGO
+END
+GO
 
 --	PERMISOS	--	PERMISOS	--	PERMISOS	--	PERMISOS	--	PERMISOS	--	PERMISOS	--	PERMISOS	--	PERMISOS	--
 
@@ -768,6 +762,7 @@ go
 
 CREATE PROCEDURE DatosPrueba AS
 BEGIN
+
 	EXEC AltaGerente	'juna',		'asd',		48328032, 	'Diego Furtado',		'diego32junarox@gmail.com';
 
 	EXEC AltaGerente	'sebaok',	'kkk',		11111111, 	'Sebastian Figueredo',	'sebaok@hotmail.com';

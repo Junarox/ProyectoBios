@@ -41,6 +41,7 @@
             this.TSMIABMContrato = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIAltaGerente = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIAltaPago = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIListadoPagos = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,7 +117,8 @@
             this.TSMIABMEmpresa,
             this.TSMIABMContrato,
             this.TSMIAltaGerente,
-            this.TSMIAltaPago});
+            this.TSMIAltaPago,
+            this.TSMIListadoPagos});
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(51, 22);
@@ -126,37 +128,44 @@
             // TSMIABMCajero
             // 
             this.TSMIABMCajero.Name = "TSMIABMCajero";
-            this.TSMIABMCajero.Size = new System.Drawing.Size(150, 22);
+            this.TSMIABMCajero.Size = new System.Drawing.Size(180, 22);
             this.TSMIABMCajero.Text = "ABM Cajero";
             this.TSMIABMCajero.Click += new System.EventHandler(this.ABMCajero_Click);
             // 
             // TSMIABMEmpresa
             // 
             this.TSMIABMEmpresa.Name = "TSMIABMEmpresa";
-            this.TSMIABMEmpresa.Size = new System.Drawing.Size(150, 22);
+            this.TSMIABMEmpresa.Size = new System.Drawing.Size(180, 22);
             this.TSMIABMEmpresa.Text = "ABM Empresa";
             this.TSMIABMEmpresa.Click += new System.EventHandler(this.ABMEmpresa_Click);
             // 
             // TSMIABMContrato
             // 
             this.TSMIABMContrato.Name = "TSMIABMContrato";
-            this.TSMIABMContrato.Size = new System.Drawing.Size(150, 22);
+            this.TSMIABMContrato.Size = new System.Drawing.Size(180, 22);
             this.TSMIABMContrato.Text = "ABM Contrato";
             this.TSMIABMContrato.Click += new System.EventHandler(this.TSMIABMContrato_Click);
             // 
             // TSMIAltaGerente
             // 
             this.TSMIAltaGerente.Name = "TSMIAltaGerente";
-            this.TSMIAltaGerente.Size = new System.Drawing.Size(150, 22);
+            this.TSMIAltaGerente.Size = new System.Drawing.Size(180, 22);
             this.TSMIAltaGerente.Text = "Alta Gerente";
             this.TSMIAltaGerente.Click += new System.EventHandler(this.TSMIAltaGerente_Click);
             // 
             // TSMIAltaPago
             // 
             this.TSMIAltaPago.Name = "TSMIAltaPago";
-            this.TSMIAltaPago.Size = new System.Drawing.Size(150, 22);
+            this.TSMIAltaPago.Size = new System.Drawing.Size(180, 22);
             this.TSMIAltaPago.Text = "Alta de Pago";
             this.TSMIAltaPago.Click += new System.EventHandler(this.TSMIAltaPago_Click);
+            // 
+            // TSMIListadoPagos
+            // 
+            this.TSMIListadoPagos.Name = "TSMIListadoPagos";
+            this.TSMIListadoPagos.Size = new System.Drawing.Size(180, 22);
+            this.TSMIListadoPagos.Text = "Listado de Pagos";
+            this.TSMIListadoPagos.Click += new System.EventHandler(this.TSMIListadoPagos_Click);
             // 
             // Menu
             // 
@@ -193,5 +202,6 @@
         private System.Windows.Forms.ToolStripMenuItem TSMIABMContrato;
         private System.Windows.Forms.ToolStripMenuItem TSMIAltaGerente;
         private System.Windows.Forms.ToolStripMenuItem TSMIAltaPago;
+        private System.Windows.Forms.ToolStripMenuItem TSMIListadoPagos;
     }
 }

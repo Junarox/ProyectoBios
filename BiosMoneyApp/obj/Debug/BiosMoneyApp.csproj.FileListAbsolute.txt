@@ -57,3 +57,4 @@ C:\Users\diego\source\repos\ProyectoBios\BiosMoneyApp\bin\Debug\BiosMoneyApp.exe
 C:\Users\diego\source\repos\ProyectoBios\BiosMoneyApp\bin\Debug\BiosMoneyApp.pdb
 C:\Users\diego\source\repos\ProyectoBios\BiosMoneyApp\obj\Debug\BiosMoneyApp.exe
 C:\Users\diego\source\repos\ProyectoBios\BiosMoneyApp\obj\Debug\BiosMoneyApp.pdb
+C:\Users\diego\source\repos\ProyectoBios\BiosMoneyApp\obj\Debug\BiosMoneyApp.GerenteApp.ListadoPagos.resources
